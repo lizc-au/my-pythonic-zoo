@@ -59,10 +59,6 @@ This repository enforces strict code hygiene, style guidelines, and bug preventi
 
 ---
 
-<table width="100%" style="border: none; border-collapse: collapse;">
-  <tr style="border: none; font-style: italic;">
-    <td align="left" style="border: none; width: 33%;">README.md</td>
-    <td align="center" style="border: none; width: 33%;">4 August, 2026</td>
-    <td align="right" style="border: none; width: 33%;">lizc_au</td>
-  </tr>
-</table>
+| File | Last Updated | Maintainer |
+| :--- | :---: | ---: |
+| _README.md_ | _4 August 2026_ | _lizc-au_ |
