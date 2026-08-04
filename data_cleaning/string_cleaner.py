@@ -5,13 +5,16 @@ A self-contained utility script to clean and standardise messy text data strings
 Optimised for processing raw spreadsheet exports or user inputs.
 """
 
+
 def clean_office_data(messy_list: list) -> list:
     """
     Removes accidental white spaces and applies proper title capitalization 
     using a Pythonic list comprehension.
+    Filters out empty and whitespace-only entries.
     """
     # Pythonic list comprehension: fast, clean, and idiomatic
-    return [item.strip().title() for item in messy_list if item]
+    # Fixes the bug: strips the item FIRST, then checks if any characters remain
+    return [item.strip().title() for item in messy_list if item and item.strip()]
 
 
 # --- Self-Contained Execution Block ---
