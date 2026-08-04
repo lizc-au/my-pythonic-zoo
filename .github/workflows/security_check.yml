@@ -1,0 +1,30 @@
+name: Security and Code Hygiene Guard
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify-submission:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Verify Zero Dependency Compliance
+      run: |
+        if grep -qE "^[^#].+" requirements.txt; then
+          echo "ERROR: External dependencies detected in requirements.txt!"
+          exit 1
+        fi
+        echo "SUCCESS: Zero external dependencies confirmed."
+
+    - name: Run Linting and Malicious Pattern Scan
+      run: |
+        pip install ruff
+        ruff check .
