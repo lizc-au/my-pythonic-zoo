@@ -1,0 +1,7 @@
+[tool.ruff]
+# Target Python version alignment
+target-version = "py310"
+
+# Enforce standard professional coding rules
+line-length = 100
+select = ["E", "F", "BLE", "I"]

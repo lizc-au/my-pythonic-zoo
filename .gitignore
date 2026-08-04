@@ -1,0 +1,31 @@
+# ==============================================================================
+# GITIGNORE PROPERTIES - REPOSITORY HYGIENE CONTROL
+# ==============================================================================
+# PRINCIPLE: Keep the repository pristine. Never track machine-specific configurations,
+# local virtual environments, or compiled system cache files in a public repository.
+#
+# Why this matters:
+# 1. Environment Pollution: Virtual environments (.venv) contain thousands of dependency 
+#    files specific to your laptop's operating system. Tracking them breaks the repository 
+#    for other developers and floods your Git history with useless noise.
+# 2. Local Workflow Isolation: VS Code settings and workspace configurations are personal 
+#    preferences. They do not belong in a shared, public code exhibit.
+# 3. Cache Management: Python auto-generates '__pycache__' folders to speed up execution. 
+#    These are transient binary files that clutter version control and should never be pushed.
+# ==============================================================================
+
+# Ignore Python virtual environments
+.venv/
+venv/
+ENV/
+
+# Ignore local editor settings and workspaces
+.vscode/
+*.code-workspace
+
+# Ignore Python execution cache
+__pycache__/
+*.pyc
+
+# Ignore local mock database files generated during tests
+*.db
