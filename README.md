@@ -13,6 +13,8 @@ This repository is organized as an exhibition cookbook. Every script is entirely
 ### 🧹 [1. Data Cleaning](./data_cleaning/)
 Foundational text and data preprocessing utilities.
 * **`string_cleaner.py`**: Optimised text standardisation using Pythonic list comprehensions to fix whitespace and capitalization on raw datasets.
+* **`phone_sanitiser.py`**: Standalone Australian phone number sanitisation and structural block formatting with support for mobile, landlines (Perth/WA area codes), 13/1300/1800 numbers, and international prefixes.
+
 
 ### 🔐 [2. User Management](./user_management/)
 Authentication mechanisms and secure input architecture.
