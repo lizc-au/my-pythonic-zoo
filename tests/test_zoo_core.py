@@ -35,7 +35,10 @@ class TestEmailValidator(unittest.TestCase):
             self.assertEqual(result, email.strip().lower())
 
     def test_invalid_email_structures(self):
-        """Test rejection of malformed structures (missing @, multiples, empty fields)."""
+        """
+        Test rejection of malformed structures.
+        Checks missing symbols, multiples, and empty fields.
+        """
         invalid_cases = [
             ("bad_email_no_at.com", "Error: Invalid email structure"),
             ("double@@email.com", "Error: Invalid email structure"),
@@ -53,7 +56,7 @@ class TestPasswordHasher(unittest.TestCase):
         """Test that a correctly matched login password verifies successfully."""
         password = "SecurePerthVolunteer2026!"
         stored_hash, stored_salt = generate_secure_hash(password)
-        
+
         # Verify the correct password returns True
         self.assertTrue(verify_password(stored_hash, stored_salt, password))
 
@@ -61,7 +64,7 @@ class TestPasswordHasher(unittest.TestCase):
         """Test that an incorrect password attempt is securely rejected."""
         password = "SecurePerthVolunteer2026!"
         stored_hash, stored_salt = generate_secure_hash(password)
-        
+
         # Verify a bad password attempt returns False
         wrong_attempt = "wrong_password_123"
         self.assertFalse(verify_password(stored_hash, stored_salt, wrong_attempt))
@@ -74,7 +77,7 @@ class TestPasswordHasher(unittest.TestCase):
         password = "SamePassword123!"
         hash_one, salt_one = generate_secure_hash(password)
         hash_two, salt_two = generate_secure_hash(password)
-        
+
         # Even though the passwords are the same, the hashes and salts must be unique
         self.assertNotEqual(salt_one, salt_two)
         self.assertNotEqual(hash_one, hash_two)
