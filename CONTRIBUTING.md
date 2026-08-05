@@ -4,10 +4,24 @@ Thank you for visiting! This repository is designed to be a reliable, highly rea
 
 We actively welcome contributions, optimization pull requests, and use-case feature requests.
 
-### How to Contribute:
-1. **Fix an edge case:** Notice a bug or string formatting flaw in an exhibit? Open a Pull Request.
-2. **Optimize formatting:** Have a more concise, Pythonic way to write a function? Show me your logic.
-3. **Documentation:** Spotted a typo or want to improve an engineering explanation? Updates are welcome.
+## Pull Request & Assignment Policy
+
+To prevent duplicate effort and protect maintainer review time, **we do not accept unsolicited or unassigned Pull Requests.** Any PR submitted without an assigned issue will be automatically closed by our GitHub Action automation.
+
+### How to Contribute
+
+1. **Find an area to improve:** Spot a bug, an optimization opportunity, or a documentation typo.
+2. **Open or find an Issue:** 
+   * *For existing issues:* Open the issue and check if it is free.
+   * *For new bugs:* Open a **Bug Report Issue** describing the problem and how to reproduce it.
+   * *For new features:* Open a **Feature Request Issue** to discuss your idea first.
+3. **Request assignment:** Leave a comment on the issue explicitly asking to be assigned to the task.
+4. **Wait for approval:** Do not write code until a maintainer officially assigns the issue to you.
+5. **Submit your PR:** Once assigned, submit your Pull Request for review following our AI and attribution rules if applicable.
+
+### 🧪 Testing Requirements
+* **Comprehensive `unittest` Coverage Required**: You must always include an accompanying test module inside the `tests/` folder that covers your submitted code, unless explicitly instructed otherwise. Pull Requests with failing tests cannot be merged.
+* **Core File Restrictions**: Do **not** edit or add tests to `test_zoo_core.py`. Any unauthorized changes to this core file will cause your Pull Request to be rejected unless explicitly discussed and approved in your issue beforehand.
 
 ### AI & Automated Agent Submissions
 We welcome AI-assisted contributions, provided they maintain transparency and human oversight:

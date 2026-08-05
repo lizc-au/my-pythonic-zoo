@@ -1,4 +1,4 @@
-name: Security and Code Hygiene Guard
+name: Security, Hygiene, and Policy Guard
 
 on:
   pull_request:
@@ -8,27 +8,144 @@ jobs:
   verify-submission:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+      # =================================================================
+      # NEW POLICY ENFORCEMENT STEPS (Safely Quoted)
+      # =================================================================
 
-    - name: Verify Zero Dependency Compliance
-      run: |
-        if grep -qE "^[^#].+" requirements.txt; then
-          echo "ERROR: External dependencies detected in requirements.txt!"
-          exit 1
-        fi
-        echo "SUCCESS: Zero external dependencies confirmed."
+      - name: 'Policy Step 1: Check for restricted file changes'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+            const prNumber = context.payload.pull_request.number;
 
-    - name: Run Linting and Malicious Pattern Scan
-      run: |
-        pip install ruff
-        ruff check .
+            const { data: files } = await github.rest.pulls.listFiles({
+              owner: repoOwner,
+              repo: repoName,
+              pull_number: prNumber
+            });
 
-    - name: Run Automated Test Suite
-      run: |
-        python -m unittest discover tests
+            const containsCoreFile = files.some(file => file.filename === 'tests/test_zoo_core.py' || file.filename === 'test_zoo_core.py');
+            
+            if (containsCoreFile) {
+              await github.rest.issues.createComment({
+                owner: repoOwner,
+                repo: repoName,
+                issue_number: prNumber,
+                body: `⚠️ **Hi @${context.payload.pull_request.user.login}, your PR cannot be accepted.** \n\nAs per our \`CONTRIBUTING.md\` guidelines, changes to \`test_zoo_core.py\` are strictly restricted. You must discuss and receive explicit approval in an issue before altering core tests. \n\nThis Pull Request is being automatically closed.`
+              });
+
+              await github.rest.pulls.update({
+                owner: repoOwner,
+                repo: repoName,
+                pull_number: prNumber,
+                state: 'closed'
+              });
+              
+              core.setFailed('Unauthorized edits to test_zoo_core.py detected.');
+            }
+
+      - name: 'Policy Step 2: Check if PR author is assigned'
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prAuthor = context.payload.pull_request.user.login;
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+            const prNumber = context.payload.pull_request.number;
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: repoOwner,
+              repo: repoName,
+              assignee: prAuthor,
+              state: 'open'
+            });
+
+            if (issues.length === 0) {
+              await github.rest.issues.createComment({
+                owner: repoOwner,
+                repo: repoName,
+                issue_number: prNumber,
+                body: `⚠️ **Hi @${prAuthor}, thank you for your interest in contributing!** \n\nAs per our \`CONTRIBUTING.md\` guidelines, we require contributors to be officially assigned to an issue before submitting a Pull Request. \n\nBecause you are not currently assigned to an open issue, this PR is being automatically closed. Please find or open an issue, request an assignment, and wait for confirmation before coding.`
+              });
+
+              await github.rest.pulls.update({
+                owner: repoOwner,
+                repo: repoName,
+                pull_number: prNumber,
+                state: 'closed'
+              });
+              
+              core.setFailed('User is not assigned to an open issue.');
+            }
+
+      - name: 'Policy Step 3: Verify accompanying tests are included'
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+            const prNumber = context.payload.pull_request.number;
+
+            const { data: files } = await github.rest.pulls.listFiles({
+              owner: repoOwner,
+              repo: repoName,
+              pull_number: prNumber
+            });
+
+            const hasSourceCodeChanges = files.some(file => file.filename.endsWith('.py') && !file.filename.startsWith('tests/'));
+            const hasTestChanges = files.some(file => file.filename.startsWith('tests/'));
+
+            if (hasSourceCodeChanges && !hasTestChanges) {
+              await github.rest.issues.createComment({
+                owner: repoOwner,
+                repo: repoName,
+                issue_number: prNumber,
+                body: `🧪 **Hi @${context.payload.pull_request.user.login}, it looks like you missed something!** \n\nYou modified or added Python source code, but we couldn't find any corresponding changes or new files in the \`tests/\` folder. \n\nAs per our \`CONTRIBUTING.md\`, comprehensive \`unittest\` coverage is required for all code submissions. Please add a separate test module to your branch and push the update to reopen this PR.`
+              });
+
+              await github.rest.pulls.update({
+                owner: repoOwner,
+                repo: repoName,
+                pull_number: prNumber,
+                state: 'closed'
+              });
+              
+              core.setFailed('Missing accompanying test file in tests/ folder.');
+            }
+
+      # =================================================================
+      # YOUR ORIGINAL SECURITY AND CODE HYGIENE STEPS (Preserved intact)
+      # =================================================================
+
+      - name: Set up Python
+        if: success()
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Verify Zero Dependency Compliance
+        if: success()
+        run: |
+          if grep -qE "^[^#].+" requirements.txt; then
+            echo "ERROR: External dependencies detected in requirements.txt!"
+            exit 1
+          fi
+          echo "SUCCESS: Zero external dependencies confirmed."
+
+      - name: Run Linting and Malicious Pattern Scan
+        if: success()
+        run: |
+          pip install ruff
+          ruff check .
+
+      - name: Run Automated Test Suite
+        if: success()
+        run: |
+          python -m unittest discover tests
