@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📜 Read the Project Code Standards
+    url: https://github.com
+    about: Review our strict Pythonic guidelines, AI protocols, and automated PR rules before posting.

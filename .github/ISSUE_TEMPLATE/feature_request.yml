@@ -1,0 +1,46 @@
+name: 💡 Feature Request
+description: Propose a new pythonic validator, module category, or optimization.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea for a clean, zero-dependency Pythonic exhibit? Share it here!
+        ⚠️ **Reminder:** Please wait to be officially assigned by a maintainer before writing code. Unassigned Pull Requests are closed automatically.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature Summary
+      description: What cookbook use-case or core improvement are you proposing?
+      placeholder: E.g., Add a clean markdown table formatting utility to a new 'text_processing' category...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Pythonic Cookbook Use-Case
+      description: Explain how this feature adds educational or utility value to the zoo.
+      placeholder: E.g., This showcases clean string manipulation patterns without third-party libraries...
+    validations:
+      required: true
+
+  - type: textarea
+    id: interface-design
+    attributes:
+      label: Proposed Interface / Execution Design
+      description: Show a brief layout of how the terminal command or function signature should look.
+      placeholder: |
+        def format_markdown_table(raw_data: list[dict]) -> str:
+            # Expected usage and visual block sample...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: assignment
+    attributes:
+      label: Contribution Intent
+      options:
+        - label: 🙋‍♂️ I would like to be assigned to implement this feature myself!
+          required: false
