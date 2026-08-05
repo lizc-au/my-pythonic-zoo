@@ -17,7 +17,8 @@ To prevent duplicate effort and protect maintainer review time, **we do not acce
    * *For new features:* Open a **Feature Request Issue** to discuss your idea first.
 3. **Request assignment:** Leave a comment on the issue explicitly asking to be assigned to the task.
 4. **Wait for approval:** Do not write code until a maintainer officially assigns the issue to you.
-5. **Submit your PR:** Once assigned, submit your Pull Request for review following our AI and attribution rules if applicable.
+5. **Lint your code**: Before pushing your branch, run `pip install ruff` and execute `ruff check .` in your terminal to ensure your code passes our strict Pythonic guidelines.
+6. **Submit your PR:** Once assigned, submit your Pull Request for review following our AI and attribution rules if applicable.
 
 ### 🧪 Testing Requirements
 * **Comprehensive `unittest` Coverage Required**: You must always include an accompanying test module inside the `tests/` folder that covers your submitted code, unless explicitly instructed otherwise. Pull Requests with failing tests cannot be merged.
