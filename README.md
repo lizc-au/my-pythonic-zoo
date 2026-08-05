@@ -30,7 +30,7 @@ System durability, context safety, and resource management.
 
 ## 🛠️ Work in Progress & Upcoming Exhibits
 
-This zoo is an active, evolving cookbook. I am continuously curating and deploying new standalone use cases. 
+This zoo is an active, evolving cookbook. We are continuously curating and deploying new standalone use cases. 
 
 ### 🚀 On the Way / Teasers:
 * **Database Operations (CRUD)**: Implementing complete Create, Read, Update, and Delete transactional structures using safe parameterized queries.
@@ -39,6 +39,13 @@ This zoo is an active, evolving cookbook. I am continuously curating and deployi
 * **Data Science & AI Foundations**: Deploying mathematical array manipulations and lightweight data synthesis modules.
 
 *Have an idea for a clean utility? Feature requests and optimizations are welcome via Pull Requests!*
+
+---
+
+## 🤖 AI & Automated Contributions
+We welcome contributions assisted by AI tools and autonomous workflows, provided that:
+1. **Full Disclosure:** All AI-generated or agent-assisted code and documentation must be explicitly disclosed in the Pull Request description, detailing the tools or frameworks used.
+2. **Human Oversight:** The submitting contributor takes full responsibility for reviewing, testing, and understanding every line of submitted code. Undisclosed or unreviewed automated submissions may be closed without review.
 
 ---
 
@@ -63,4 +70,4 @@ This repository enforces strict code hygiene, style guidelines, and bug preventi
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _4 August 2026_ | _lizc-au_ |
+| _README.md_ | _5 August 2026_ | _lizc-au_ |
