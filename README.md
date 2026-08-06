@@ -26,6 +26,10 @@ Authentication mechanisms and secure input architecture.
 System durability, context safety, and resource management.
 * **`connection_tester.py`**: Safe SQLite execution environments wrapping queries in strict `try-except-finally` blocks to guarantee resource closure and prevent server memory leaks.
 
+### 💾 [4. Native GUI](./native_gui/)
+Cross-platform Graphical User Interface examples using Python's standard built-in library Tkinter.
+* **`basic_window_viewer.py`**: Simple window display (runs autonomously from Terminal via **`launch_window.pyw`**)
+
 ---
 
 ## 🛠️ Work in Progress & Upcoming Exhibits
