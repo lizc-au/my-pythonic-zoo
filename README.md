@@ -76,7 +76,12 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 - [ ] **Environment Checker**: Simple diagnostic script verifying Python version, active virtualenv, and installed system packages.
 
 ### 🧩 Algorithms & Data Structures
-- [ ] **Knuth DLX Exact Cover Solver**: Production-ready Implementation of Knuth's Dancing Links (Algorithm X) for solving matrix cover problems like Sudoku and Pentominoes efficiently.
+- [ ] **Knuth DLX Exact Cover Solver**: Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems.
+- [ ] **Graph Network & Traversal Visualizer**: Terminal or lightweight visualizer showing graph structures, shortest path (Dijkstra/A*), and node connections.
+
+### 📈 Math & Data Visualization
+- [ ] **Mathematical Formula Plotter**: Render mathematical equations and trigonometric functions (e.g., sine waves, parabolas, fractals) into visual plots using pure Python or Matplotlib.
+- [ ] **Statistical Charting Utility**: Lightweight generator for statistical distributions, histograms, and data trendlines.
 
 ### 📊 Data Science & AI Foundations
 - [ ] **Lightweight CSV Matrix Math**: Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
