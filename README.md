@@ -77,12 +77,9 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 
 ### 📊 Data Science & AI Foundations
 - [ ] **Lightweight CSV Matrix Math**: Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
-- [ ] **Database Operations (CRUD)**: Implementing complete Create, Read, Update, and Delete transactional structures using safe parameterized queries.
-- [ ] **System Automation & DevOps**: Writing robust Python scripts for automated file system archiving, backup routines, and local directory cleanup operations.
-- [ ] **Data Science & AI Foundations**: Deploying mathematical array manipulations and lightweight data synthesis modules.
 
 ---
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _6 August 2026_ | _lizc-au_ |
+| _README.md_ | _28 August 2026_ | _lizc-au_ |
