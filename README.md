@@ -1,5 +1,7 @@
 # 🐍 my-pythonic-zoo
 
+💡 Philosophy: Pure Python. Zero external dependencies where possible. Clear, educational math over complex frameworks.
+
 **Minimum Runtime Requirement:** Python 3.10+ (Utilises modern type-hinting features).
 
 Housing a variety of self-contained Python scripts built with clean formatting and clear logic. - improvements welcome 🧐
@@ -82,6 +84,11 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 ### 📈 Math & Data Visualization
 - [ ] **Mathematical Formula Plotter**: Render mathematical equations and trigonometric functions (e.g., sine waves, parabolas, fractals) into visual plots using pure Python or Matplotlib.
 - [ ] **Statistical Charting Utility**: Lightweight generator for statistical distributions, histograms, and data trendlines.
+
+### ⚛️ Physics & Dimensional Simulations
+- [ ] **2D Physics Engine & Vector Mechanics**: Terminal or Tkinter interactive canvas simulating gravity, bouncing collisions, and velocity vectors.
+- [ ] **4D Tesseract Projection Engine**: Mathematical projection rendering a rotating 4D hypercube (tesseract) onto a 2D viewport using transformation matrices.
+- [ ] **Orbital & Pendulum Simulator**: Visualizing chaotic motion (double pendulum) or gravitational orbit paths using simple differential step equations.
 
 ### 📊 Data Science & AI Foundations
 - [ ] **Lightweight CSV Matrix Math**: Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
