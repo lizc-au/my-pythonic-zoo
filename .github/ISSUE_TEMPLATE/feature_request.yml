@@ -6,7 +6,6 @@ body:
     attributes:
       value: |
         Have an idea for a clean, zero-dependency Pythonic exhibit? Share it here!
-        ⚠️ **Reminder:** Please wait to be officially assigned by a maintainer before writing code. Unassigned Pull Requests are closed automatically.
 
   - type: textarea
     id: summary
