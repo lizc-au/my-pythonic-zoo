@@ -1,12 +1,27 @@
 # 🐍 my-pythonic-zoo
+_**"All creatures great and small, wise and wonderful."**_
 
-💡 Philosophy: Pure Python. Zero external dependencies where possible. Clear, educational math over complex frameworks.
+💡 **Philosophy:** Pure Python. Zero external dependencies where possible. Clear, educational math over complex frameworks.
 
 **Minimum Runtime Requirement:** Python 3.10+ (Utilises modern type-hinting features).
 
-Housing a variety of self-contained Python scripts built with clean formatting and clear logic. - improvements welcome 🧐
+Housing a variety of self-contained Python scripts built with clean formatting and clear logic—improvements welcome 🧐
 
-*Have an idea or optimization? We welcome contributions! Check out our CONTRIBUTING.md guide to get started. To avoid duplicate work on larger features, drop a quick comment on an Issue to let us know you're working on it.*
+*Have an idea or optimization? We welcome contributions! Check out our `CONTRIBUTING.md` guide to get started. To avoid duplicate work on larger features, drop a quick comment on an Issue to let us know you're working on it.*
+
+---
+
+## 🚀 Open Issues
+
+We are actively seeking contributions for the following interactive terminal visualizers and algorithms! Check out the issue links for specs and starter templates:
+
+* **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** — CLI utility for querying location data via public APIs.
+* **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** — Real-time maze creation and pathfinding algorithm rendering.
+* **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** — Pure Python 3D-to-2D spatial transformation matrix engine.
+* **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** — Dynamic tree insertion/deletion with ASCII branch layouts.
+
+---
+*Want to tackle one? Drop a comment on the issue to claim it!*
 
 ---
 
@@ -24,7 +39,7 @@ This repository is organized as an exhibition cookbook. Every script is entirely
 ### 🧹 [1. Data Cleaning](./data_cleaning/)
 Foundational text and data preprocessing utilities.
 * **`string_cleaner.py`**: Optimised text standardisation using Pythonic list comprehensions to fix whitespace and capitalization on raw datasets.
-* **`phone_sanitiser.py`**: Standalone Australian phone number sanitisation and structural block formatting with support for mobile, landlines (Perth/WA area codes), 13/1300/1800 numbers, and international prefixes.
+* **`phone_sanitiser.py`**: Standalone Australian phone number sanitisation and structural block formatting with support for mobile, landlines (Perth/WA area codes), 13/1300/1800 numbers, and international prefixes. *(Contributed by [@HeaTTap](https://github.com/HeaTTap) via [#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))*
 
 ### 🔐 [2. User Management](./user_management/)
 Authentication mechanisms and secure input architecture.
@@ -35,13 +50,13 @@ Authentication mechanisms and secure input architecture.
 System durability, context safety, and resource management.
 * **`connection_tester.py`**: Safe SQLite execution environments wrapping queries in strict `try-except-finally` blocks to guarantee resource closure and prevent server memory leaks.
 
-### 💾 [4. Native GUI](./native_gui/)
+### 🖥️ [4. Native GUI](./native_gui/)
 Cross-platform Graphical User Interface examples using Python's standard built-in library Tkinter.
-* **`basic_window_viewer.py`**: Simple window display (runs autonomously from Terminal via **`launch_window.pyw`**)
+* **`basic_window_viewer.py`**: Simple window display (runs autonomously from Terminal via **`launch_window.pyw`**).
 
 ---
 
-## Code Quality
+## 🧪 Code Quality
 This repository enforces strict code hygiene, style guidelines, and bug prevention rules using the **Ruff** linter. Configuration maps are located in `pyproject.toml`.
 
 ---
@@ -62,36 +77,45 @@ Every script in this zoo includes its own mock data block and execution wrapper.
 
 ## 🛠️ Work in Progress & Upcoming Exhibits
 
-This zoo is an active, evolving cookbook. We are continuously curating and deploying new standalone use cases. 
-
-## 🚀 On the Way / Open for Contribution:
+This zoo is an active, evolving cookbook. We are continuously curating and deploying new standalone use cases.
 
 ### 📡 Core Communication & API Routing
-- [ ] **Australian Postcode API Lookup**: Terminal utility fetching suburb/postcode data via public API. *(See [Issue #3](https://github.com/lizc-au/my-pythonic-zoo/issues/3) — Open for Contribution)*
-- [ ] **HTTP Status Checker**: Lightweight URL health monitor and status code logger.
+* **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** — Terminal utility fetching suburb/postcode data via public API.
+* **HTTP Status Checker** — Lightweight URL health monitor and status code logger.
 
 ### 💾 Database Operations (CRUD)
-- [ ] **SQLite CRUD Execution Script**: Transactional Create, Read, Update, and Delete module using parameterized queries.
+* **SQLite CRUD Execution Script** — Transactional Create, Read, Update, and Delete module using parameterized queries.
 
 ### ⚙️ System Automation & DevOps
-- [ ] **File System Cleanup & Archiver**: Directory cleanup utility that compresses old files and organizes logs by date.
-- [ ] **Environment Checker**: Simple diagnostic script verifying Python version, active virtualenv, and installed system packages.
+* **File System Cleanup & Archiver** — Directory cleanup utility that compresses old files and organizes logs by date.
+* **Environment Checker** — Simple diagnostic script verifying Python version, active virtualenv, and installed system packages.
+
+### 💻 Visualizations & Interactive Displays
+* **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** — Real-time maze creation and pathfinding algorithm rendering.
+* **Mathematical Formula Plotter** — Render mathematical equations and trigonometric functions into visual terminal graphs.
+* **Statistical Charting Utility** — Lightweight generator for statistical distributions, histograms, and data trendlines.
 
 ### 🧩 Algorithms & Data Structures
-- [ ] **Knuth DLX Exact Cover Solver**: Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems.
-- [ ] **Graph Network & Traversal Visualizer**: Terminal or lightweight visualizer showing graph structures, shortest path (Dijkstra/A*), and node connections.
-
-### 📈 Math & Data Visualization
-- [ ] **Mathematical Formula Plotter**: Render mathematical equations and trigonometric functions (e.g., sine waves, parabolas, fractals) into visual plots using pure Python or Matplotlib.
-- [ ] **Statistical Charting Utility**: Lightweight generator for statistical distributions, histograms, and data trendlines.
+* **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** — Dynamic tree insertion/deletion with ASCII branch layouts.
+* **Knuth DLX Exact Cover Solver** — Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems.
+* **Graph Network & Traversal Visualizer** — Terminal visualizer showing graph structures and shortest paths (Dijkstra/A*).
 
 ### ⚛️ Physics & Dimensional Simulations
-- [ ] **2D Physics Engine & Vector Mechanics**: Terminal or Tkinter interactive canvas simulating gravity, bouncing collisions, and velocity vectors.
-- [ ] **4D Tesseract Projection Engine**: Mathematical projection rendering a rotating 4D hypercube (tesseract) onto a 2D viewport using transformation matrices.
-- [ ] **Orbital & Pendulum Simulator**: Visualizing chaotic motion (double pendulum) or gravitational orbit paths using simple differential step equations.
+* **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** — Pure Python 3D-to-2D spatial transformation matrix engine.
+* **2D Physics Engine & Vector Mechanics** — Interactive canvas simulating gravity, bouncing collisions, and velocity vectors.
+* **4D Tesseract Projection Engine** — Mathematical projection rendering a rotating 4D hypercube onto a 2D viewport.
+* **Orbital & Pendulum Simulator** — Visualizing chaotic motion (double pendulum) or gravitational orbit paths using step equations.
 
 ### 📊 Data Science & AI Foundations
-- [ ] **Lightweight CSV Matrix Math**: Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
+* **Lightweight CSV Matrix Math** — Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
+
+---
+
+## 🤝 Contributors
+
+Special thanks to everyone who has built exhibits for the Pythonic Zoo!
+
+* [@HeaTTap](https://github.com/HeaTTap) — Australian Phone Number Sanitiser ([#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))
 
 ---
 
