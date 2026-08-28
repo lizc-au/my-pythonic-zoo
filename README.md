@@ -63,7 +63,20 @@ Every script in this zoo includes its own mock data block and execution wrapper.
 This zoo is an active, evolving cookbook. We are continuously curating and deploying new standalone use cases. 
 
 ## 🚀 On the Way / Open for Contribution:
-- [ ] **Core Communication & API Routing**: Australian Postcode API lookup terminal utility. *(See [Issue #3](https://github.com/lizc-au/my-pythonic-zoo/issues/3) — Help Wanted)*
+
+### 📡 Core Communication & API Routing
+- [ ] **Australian Postcode API Lookup**: Terminal utility fetching suburb/postcode data via public API. *(See [Issue #3](https://github.com/lizc-au/my-pythonic-zoo/issues/3) — Open for Contribution)*
+- [ ] **HTTP Status Checker**: Lightweight URL health monitor and status code logger.
+
+### 💾 Database Operations (CRUD)
+- [ ] **SQLite CRUD Execution Script**: Transactional Create, Read, Update, and Delete module using parameterized queries.
+
+### ⚙️ System Automation & DevOps
+- [ ] **File System Cleanup & Archiver**: Directory cleanup utility that compresses old files and organizes logs by date.
+- [ ] **Environment Checker**: Simple diagnostic script verifying Python version, active virtualenv, and installed system packages.
+
+### 📊 Data Science & AI Foundations
+- [ ] **Lightweight CSV Matrix Math**: Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
 - [ ] **Database Operations (CRUD)**: Implementing complete Create, Read, Update, and Delete transactional structures using safe parameterized queries.
 - [ ] **System Automation & DevOps**: Writing robust Python scripts for automated file system archiving, backup routines, and local directory cleanup operations.
 - [ ] **Data Science & AI Foundations**: Deploying mathematical array manipulations and lightweight data synthesis modules.
