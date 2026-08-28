@@ -4,7 +4,7 @@
 
 Housing a variety of self-contained Python scripts built with clean formatting and clear logic. - improvements welcome 🧐
 
-*Have an idea or optimization? Please review our CONTRIBUTING.md guide before starting; you must first place a **comment on an existing Issue to request assignment** to prevent duplication of effort, or use our Bug Report / Feature Request templates using the New Issue option including a request to be assigned if required. **Direct Pull Requests from unassigned developers will not be accepted**.*
+*Have an idea or optimization? We welcome contributions! Check out our CONTRIBUTING.md guide to get started. To avoid duplicate work on larger features, drop a quick comment on an Issue to let us know you're working on it.*
 
 ---
 
