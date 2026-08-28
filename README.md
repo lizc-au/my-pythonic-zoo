@@ -75,6 +75,9 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 - [ ] **File System Cleanup & Archiver**: Directory cleanup utility that compresses old files and organizes logs by date.
 - [ ] **Environment Checker**: Simple diagnostic script verifying Python version, active virtualenv, and installed system packages.
 
+### 🧩 Algorithms & Data Structures
+- [ ] **Knuth DLX Exact Cover Solver**: Production-ready Implementation of Knuth's Dancing Links (Algorithm X) for solving matrix cover problems like Sudoku and Pentominoes efficiently.
+
 ### 📊 Data Science & AI Foundations
 - [ ] **Lightweight CSV Matrix Math**: Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
 
