@@ -8,17 +8,13 @@ We actively welcome contributions, optimization pull requests, and use-case feat
 
 To prevent duplicate effort and protect maintainer review time, **we do not accept unsolicited or unassigned Pull Requests.** Any PR submitted without an assigned issue will be automatically closed by our GitHub Action automation.
 
-### How to Contribute
+## 🚀 How to Contribute
 
-1. **Find an area to improve:** Spot a bug, an optimization opportunity, or a documentation typo.
-2. **Open or find an Issue:** 
-   * *For existing issues:* Open the issue and check if it is free.
-   * *For new bugs:* Open a **Bug Report Issue** describing the problem and how to reproduce it.
-   * *For new features:* Open a **Feature Request Issue** to discuss your idea first.
-3. **Request assignment:** Leave a comment on the issue explicitly asking to be assigned to the task.
-4. **Wait for approval:** Do not write code until a maintainer officially assigns the issue to you.
-5. **Lint your code**: Before pushing your branch, run `pip install ruff` and execute `ruff check .` in your terminal to ensure your code passes our strict Pythonic guidelines.
-6. **Submit your PR:** Once assigned, submit your Pull Request for review following our AI and attribution rules if applicable.
+1. **Pick or Suggest an Issue:** Check our open issues labeled `good-first-issue` or `help wanted`, or open a new issue to discuss a feature idea.
+2. **Comment First:** Drop a quick comment on the issue to let us know you're working on it so we can prevent duplicate effort.
+3. **Fork & Branch:** Create a branch on your fork (`git checkout -b feat/my-new-script`).
+4. **Clean & Test:** Ensure your code runs standalone and passes formatting checks (`ruff check .`).
+5. **Submit a PR:** Open a Pull Request referencing the issue (e.g., `Fixes #3`). Be sure to disclose if any AI assistance was used!
 
 ### 🧪 Testing Requirements
 * **Comprehensive `unittest` Coverage Required**: You must always include an accompanying test module inside the `tests/` folder that covers your submitted code, unless explicitly instructed otherwise. Pull Requests with failing tests cannot be merged.
