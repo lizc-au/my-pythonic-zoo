@@ -20,6 +20,7 @@ We are actively seeking contributions for the following interactive terminal vis
 * **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** — Pure Python 3D-to-2D spatial transformation matrix engine.
 * **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** — Dynamic tree insertion/deletion with ASCII branch layouts.
 * **[#10] [Knuth DLX Exact Cover Solver](https://github.com/lizc-au/my-pythonic-zoo/issues/10)** — Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems (currently assigned to maintainer but you're welcome to collaborate or wow us with your contribution😊).
+* **[#12] [SQLite CRUD Execution Script](https://github.com/lizc-au/my-pythonic-zoo/issues/12)** — Transactional Create, Read, Update, and Delete module using parameterized queries.
 
 ---
 *Want to tackle one? Drop a comment on the issue to claim it!*
@@ -87,7 +88,7 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 * **HTTP Status Checker** — Lightweight URL health monitor and status code logger.
 
 ### 💾 Database Operations (CRUD)
-* **SQLite CRUD Execution Script** — Transactional Create, Read, Update, and Delete module using parameterized queries.
+* **[#12] [SQLite CRUD Execution Script](https://github.com/lizc-au/my-pythonic-zoo/issues/12)** — Transactional Create, Read, Update, and Delete module using parameterized queries.
 
 ### ⚙️ System Automation & DevOps
 * **File System Cleanup & Archiver** — Directory cleanup utility that compresses old files and organizes logs by date.
