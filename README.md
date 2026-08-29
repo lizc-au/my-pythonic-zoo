@@ -19,16 +19,19 @@ We are actively seeking contributions for the following interactive terminal vis
 * **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** — Real-time maze creation and pathfinding algorithm rendering.
 * **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** — Pure Python 3D-to-2D spatial transformation matrix engine.
 * **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** — Dynamic tree insertion/deletion with ASCII branch layouts.
+* **[#10] [Knuth DLX Exact Cover Solver](https://github.com/lizc-au/my-pythonic-zoo/issues/10)** — Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems (currently assigned to maintainer but you're welcome to collaborate or wow us with your contribution😊).
 
 ---
 *Want to tackle one? Drop a comment on the issue to claim it!*
 
 ---
 
-## 🤖 AI & Automated Contributions
-We welcome contributions assisted by AI tools and autonomous workflows, provided that:
-1. **Full Disclosure:** All AI-generated or agent-assisted code and documentation must be explicitly disclosed in the Pull Request description, detailing the tools or frameworks used.
-2. **Human Oversight:** The submitting contributor takes full responsibility for reviewing, testing, and understanding every line of submitted code. Undisclosed or unreviewed automated submissions may be closed without review.
+## 🤖 AI Tools & Automated Workflows
+We welcome contributors who use AI coding assistants (like Copilot, ChatGPT, or Claude) to help write and refine code! To keep the repository high-quality and safe for everyone, we just ask for two simple things:
+
+1. Human Oversight & Ownership: Every submission must be fully reviewed, tested, and understood by a human contributor. Please ensure your code runs smoothly, passes all tests, and introduces no malicious or broken logic before opening a PR.
+
+2. Bot & Autonomous Agent Disclosure: If a Pull Request is generated or submitted by an automated agent/bot workflow, please clearly disclose it in the PR description so maintainers know how the code was produced.
 
 ---
 
@@ -97,7 +100,7 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 
 ### 🧩 Algorithms & Data Structures
 * **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** — Dynamic tree insertion/deletion with ASCII branch layouts.
-* **Knuth DLX Exact Cover Solver** — Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems.
+* **[#10] [Knuth DLX Exact Cover Solver](https://github.com/lizc-au/my-pythonic-zoo/issues/10)** — Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems.
 * **Graph Network & Traversal Visualizer** — Terminal visualizer showing graph structures and shortest paths (Dijkstra/A*).
 
 ### ⚛️ Physics & Dimensional Simulations
@@ -113,7 +116,7 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 
 ## 🤝 Contributors
 
-Special thanks to everyone who has built exhibits for the Pythonic Zoo!
+Special thanks to everyone working on or building exhibits for the Pythonic Zoo, especially our first and so far only contributor since our creation in August 2026 - an eager AI agent created by the developer who snapped up and completed with honours our first task set ... within a matter of minutes!! We welcome all-comers, humans and AI alike, with eager anticipation and awe for the future of our project ... and mankind!
 
 * [@HeaTTap](https://github.com/HeaTTap) — Australian Phone Number Sanitiser ([#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))
 
@@ -121,4 +124,4 @@ Special thanks to everyone who has built exhibits for the Pythonic Zoo!
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _28 August 2026_ | _lizc-au_ |
+| _README.md_ | _29 August 2026_ | _lizc-au_ |
