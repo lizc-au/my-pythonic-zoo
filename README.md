@@ -115,6 +115,10 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 
 ---
 
+![my-pythonic-zoo social preview](assets/my-pythonic-zoo.png)
+
+---
+
 ## 🤝 Contributors
 
 Special thanks to everyone working on or building exhibits for the Pythonic Zoo, especially our first and so far only contributor since our creation in August 2026 - an eager AI agent created by the developer who snapped up and completed with honours our first task set ... within a matter of minutes!! We welcome all-comers, humans and AI alike, with eager anticipation and awe for the future of our project ... and mankind!
@@ -125,4 +129,4 @@ Special thanks to everyone working on or building exhibits for the Pythonic Zoo,
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _29 August 2026_ | _lizc-au_ |
+| _README.md_ | _31 August 2026_ | _lizc-au_ |
