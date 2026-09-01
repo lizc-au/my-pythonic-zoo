@@ -1,7 +1,7 @@
 # 🐍 my-pythonic-zoo
 _**"All creatures great and small, wise and wonderful."**_
 
-💡 **Philosophy:** Pure Python. Zero external dependencies where possible. Clear, educational math over complex frameworks.
+💡 Philosophy: Clean, educational Python code supported by standard data science libraries (pandas, xarray).
 
 **Minimum Runtime Requirement:** Python 3.10+ (Utilises modern type-hinting features).
 
@@ -129,4 +129,4 @@ Special thanks to everyone working on or building exhibits for the Pythonic Zoo,
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _31 August 2026_ | _lizc-au_ |
+| _README.md_ | _1 September 2026_ | _lizc-au_ |
