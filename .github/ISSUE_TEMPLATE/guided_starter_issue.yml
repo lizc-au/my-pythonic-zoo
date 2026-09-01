@@ -1,0 +1,73 @@
+name: 🎓 Guided Starter Issue
+description: Propose or publish a beginner-friendly task with pre-written tests and stubs.
+labels: ["good first issue", "guided-starter", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 🎓 Guided Starter Issue
+        Use this template to set up an onboarding task for Python learners and first-time open-source contributors!
+
+  - type: input
+    id: module-path
+    attributes:
+      label: Target Files
+      description: Specify the path for the stub module and test file.
+      placeholder: E.g., database_basics/sqlite_crud.py and tests/test_sqlite_crud.py
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: 🎯 Goal & Concept
+      description: Briefly describe the standard-library concept being practiced and what the contributor needs to build.
+      placeholder: E.g., Implement context-safe SQLite CRUD operations using parameterized queries to make all tests pass.
+    validations:
+      required: true
+
+  - type: textarea
+    id: stub-and-test-details
+    attributes:
+      label: 🛠️ Stub & Test Suite Details
+      description: Provide the function signatures, docstrings, type hints, or links to the pre-committed stub/test files.
+      placeholder: |
+        class SQLiteManager:
+            def insert_record(self, name: str, value: float) -> int:
+                """Insert a new record using parameterized queries."""
+                ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: instructions
+    attributes:
+      label: 📋 Contributor Instructions
+      description: Step-by-step guidance for completing this issue.
+      value: |
+        1. Fork and clone the repo, then switch to a new branch: `git checkout -b fix/your-task-name`
+        2. Run the test suite (it should fail initially): `python -m unittest tests/test_<module_name>.py`
+        3. Fill in the missing logic in the stub file until all tests pass!
+        4. Verify formatting and typing locally:
+           - `python -m mypy .`
+           - `python -m ruff format .`
+        5. Submit your PR and tag the maintainer!
+    validations:
+      required: false
+
+  - type: textarea
+    id: hints
+    attributes:
+      label: 💡 Helpful Hints & Documentation
+      description: Include links to relevant Python standard library docs or conceptual tips.
+      placeholder: E.g., Check out the official docs for sqlite3 context managers (`sqlite3.connect`).
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: claim-status
+    attributes:
+      label: Claiming This Issue
+      options:
+        - label: 🙋‍♀️ I am a first-time contributor and would like to claim this starter task!
+          required: false
