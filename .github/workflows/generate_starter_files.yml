@@ -1,0 +1,81 @@
+name: Generate Guided Starter Files
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  create-files:
+    if: contains(github.event.issue.labels.*.name, 'guided-starter')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Parse Issue Body & Write Files
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body;
+
+            // Helper to extract section content from GitHub Issue Form output
+            function getSection(heading) {
+              const regex = new RegExp(`### ${heading}\\s*\\n\\n([\\s\\S]*?)(?=\\n### |$)`);
+              const match = body.match(regex);
+              if (!match) return '';
+              return match[1].replace(/```python|```/g, '').trim();
+            }
+
+            const stubPath = getSection('Stub File Path');
+            const testPath = getSection('Test File Path');
+            const stubCode = getSection('Stub Code');
+            const testCode = getSection('Test Code');
+
+            if (stubPath && stubCode && testPath && testCode) {
+              const fs = require('fs');
+              const path = require('path');
+
+              // Create parent directories if they don't exist
+              fs.mkdirSync(path.dirname(stubPath), { recursive: true });
+              fs.mkdirSync(path.dirname(testPath), { recursive: true });
+
+              // Write files
+              fs.writeFileSync(stubPath, stubCode + '\n');
+              fs.writeFileSync(testPath, testCode + '\n');
+
+              core.setOutput('stub_path', stubPath);
+              core.setOutput('test_path', testPath);
+              core.setOutput('success', 'true');
+            }
+
+      - name: Commit and Push Starter Files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: auto-generate starter files for issue #${{ github.event.issue.number }}"
+          git push
+
+      - name: Post Confirmation Comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = context.payload.issue.number;
+            const sourceUrl = getSection('🔗 Original Question Link (Optional)');
+
+            let commentBody = `🚀 **Starter files auto-generated and committed to \`main\`!**\n\n- Stub: \`${stubPath}\`\n- Test: \`${testPath}\`\n\nContributors can now fork the repo, run the test file, and fill in the missing logic!`;
+
+            if (sourceUrl && sourceUrl !== 'None') {
+              commentBody += `\n\n💬 **Original Context / Question:** [View Post](${sourceUrl})`;
+            }
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: commentBody
+            });
