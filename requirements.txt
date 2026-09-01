@@ -11,9 +11,9 @@
 #   3. Install requirements: pip install -r requirements.txt
 # ==============================================================================
 
+numpy
 pandas
 pandas-stubs
-numpy
 xarray
 netcdf4
 pytest
