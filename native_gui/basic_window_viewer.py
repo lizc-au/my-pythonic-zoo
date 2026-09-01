@@ -42,9 +42,7 @@ def create_terminal_box(text: str, padding: int = 2) -> str:
     """Wraps a multi-line string payload into a dynamically sized terminal box."""
     if not isinstance(text, str):
         err_type = type(text).__name__
-        return (
-            f"Error: Input must be a string value (received: {err_type})."
-        )
+        return f"Error: Input must be a string value (received: {err_type})."
 
     lines = [line.rstrip() for line in text.strip().splitlines()]
     if not lines:
@@ -82,12 +80,12 @@ def display_in_window(title: str, content: str) -> None:
     text_area = tk.Text(
         root,
         font=base_font,
-        fg="#d4d4d4",      # Default light grey text
-        bg="#1e1e1e",      # Dark mode background
+        fg="#d4d4d4",  # Default light grey text
+        bg="#1e1e1e",  # Dark mode background
         padx=20,
         pady=20,
-        bd=0,              # Remove default border lines
-        highlightthickness=0, # Clear window focal focus boxes
+        bd=0,  # Remove default border lines
+        highlightthickness=0,  # Clear window focal focus boxes
     )
 
     # Insert the raw boxed text payload
@@ -108,7 +106,7 @@ def display_in_window(title: str, content: str) -> None:
     # =================================================================
     # 1. Format the Box Borders (Line 1, Line 2, and the final 2 lines)
     # Tkinter text coordinates start at 1.0 (Line 1, Column 0)
-    text_area.tag_add("border_style", "1.0", "3.0") # Lines 1 & 2
+    text_area.tag_add("border_style", "1.0", "3.0")  # Lines 1 & 2
 
     # Target the last two border rows dynamically
     total_lines = int(text_area.index(tk.END).split(".")[0])
@@ -128,6 +126,7 @@ def display_in_window(title: str, content: str) -> None:
     # Disable editing so users cannot modify the text block inside the UI
     text_area.config(state=tk.DISABLED)
     root.mainloop()
+
 
 # =============================================================================
 # ARCHITECTURAL NOTE: Why an execution block (`if __name__ == "__main__":`)

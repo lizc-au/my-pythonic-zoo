@@ -38,10 +38,10 @@ def generate_secure_hash(password: str) -> tuple:
 
     # Combine salt and password, then hash them together
     hashed_password = hashlib.pbkdf2_hmac(
-        'sha256',
-        password.encode('utf-8'),
+        "sha256",
+        password.encode("utf-8"),
         salt,
-        100000  # Number of iterations
+        100000,  # Number of iterations
     )
     return hashed_password, salt
 
@@ -51,10 +51,7 @@ def verify_password(stored_hash: bytes, stored_salt: bytes, login_attempt: str) 
     Verifies an incoming login password attempt against the stored hash and salt.
     """
     new_hash = hashlib.pbkdf2_hmac(
-        'sha256',
-        login_attempt.encode('utf-8'),
-        stored_salt,
-        100000
+        "sha256", login_attempt.encode("utf-8"), stored_salt, 100000
     )
     return new_hash == stored_hash
 

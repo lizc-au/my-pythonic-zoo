@@ -58,7 +58,7 @@ if __name__ == "__main__":
     print("--- Test Case 1: Standard Connection ---")
     test_database_connection("perth_volunteer_mock.db")
 
-    print("\n" + "="*40 + "\n")
+    print("\n" + "=" * 40 + "\n")
 
     print("--- Test Case 2: Simulating a Connection Failure ---")
     test_database_connection("C:/InvalidFolder/NonExistentDisk/broken_db.db")

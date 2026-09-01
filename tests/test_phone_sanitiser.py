@@ -24,9 +24,7 @@ class TestPhoneSanitiser(unittest.TestCase):
             is_valid, result = sanitize_australian_phone_number(
                 item, format_type="national"
             )
-            self.assertTrue(
-                is_valid, f"Failed for valid Perth landline: {item}"
-            )
+            self.assertTrue(is_valid, f"Failed for valid Perth landline: {item}")
             self.assertEqual(result, "(08) 9380 1234")
 
     def test_perth_landline_international_format(self):
@@ -69,15 +67,11 @@ class TestPhoneSanitiser(unittest.TestCase):
 
     def test_toll_free_and_special_numbers(self):
         """Test 1300, 1800, and 13 numbers."""
-        is_valid_1300, res_1300 = sanitize_australian_phone_number(
-            "1300 224 636"
-        )
+        is_valid_1300, res_1300 = sanitize_australian_phone_number("1300 224 636")
         self.assertTrue(is_valid_1300)
         self.assertEqual(res_1300, "1300 224 636")
 
-        is_valid_1800, res_1800 = sanitize_australian_phone_number(
-            "1800123456"
-        )
+        is_valid_1800, res_1800 = sanitize_australian_phone_number("1800123456")
         self.assertTrue(is_valid_1800)
         self.assertEqual(res_1800, "1800 123 456")
 

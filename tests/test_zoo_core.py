@@ -43,7 +43,7 @@ class TestEmailValidator(unittest.TestCase):
             ("bad_email_no_at.com", "Error: Invalid email structure"),
             ("double@@email.com", "Error: Invalid email structure"),
             ("user@", "Error: Invalid email structure"),
-            ("", "Error: Email field cannot be empty.")
+            ("", "Error: Email field cannot be empty."),
         ]
         for email, expected_error in invalid_cases:
             is_valid, result = validate_user_email(email)
