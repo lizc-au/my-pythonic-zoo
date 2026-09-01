@@ -2,6 +2,8 @@
 test_basic_window_viewer.py
 
 Unit tests for the Basic Window Viewer text processing engine.
+Use `# type: ignore[arg-type]` as signal to mypy to allow deliberate invalid tests,
+  i.e. ignore type checking specific lines for argument type mismatches.
 """
 
 import unittest
@@ -15,7 +17,7 @@ class TestBasicWindowViewer(unittest.TestCase):
     def test_basic_text_box(self):
         """Test wrapping a single line of text into a box structure."""
         text = "Hello You!"
-        result = create_terminal_box(text, padding=1)
+        result = create_terminal_box(text, padding=1)  # type: ignore[arg-type]
 
         # Split lines to inspect the output layout rows cleanly
         lines = result.splitlines()
@@ -29,12 +31,12 @@ class TestBasicWindowViewer(unittest.TestCase):
 
     def test_empty_input_handling(self):
         """Test graceful error message feedback for empty or layout strings."""
-        result = create_terminal_box("   \n  \n ")
+        result = create_terminal_box("   \n  \n ")  # type: ignore[arg-type]
         self.assertEqual(result, "Error: Text payload cannot be empty.")
 
     def test_invalid_type_defensiveness(self):
         """Test intercepting bad structural data types cleanly."""
-        result = create_terminal_box(42)  # Pass integer instead of string
+        result = create_terminal_box(42)  # type: ignore[arg-type]
         self.assertIn("Error: Input must be a string", result)
 
 

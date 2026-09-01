@@ -20,7 +20,7 @@ import sqlite3
 from sqlite3 import Error
 
 
-def test_database_connection(db_name: str):
+def test_database_connection(db_name: str) -> None:
     """
     Attempts to connect to a database, execute a simple query,
     and handles connection errors gracefully.
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     print("--- Test Case 1: Standard Connection ---")
     test_database_connection("perth_volunteer_mock.db")
 
-    print("\n" + "="*40 + "\n")
+    print("\n" + "=" * 40 + "\n")
 
     print("--- Test Case 2: Simulating a Connection Failure ---")
     test_database_connection("C:/InvalidFolder/NonExistentDisk/broken_db.db")
