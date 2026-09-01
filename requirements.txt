@@ -13,6 +13,7 @@
 
 pandas
 pandas-stubs
+numpy
 xarray
 netcdf4
 pytest
