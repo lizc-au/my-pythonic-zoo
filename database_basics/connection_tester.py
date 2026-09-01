@@ -20,7 +20,7 @@ import sqlite3
 from sqlite3 import Error
 
 
-def test_database_connection(db_name: str):
+def test_database_connection(db_name: str) -> None:
     """
     Attempts to connect to a database, execute a simple query,
     and handles connection errors gracefully.
