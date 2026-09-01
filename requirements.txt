@@ -1,9 +1,21 @@
 # ==============================================================================
 # PROJECT DEPENDENCIES & ENVIRONMENT SPECIFICATION
 # ==============================================================================
-# BEST PRACTICE: Omitting this file forces developers to guess which libraries 
-# to install, causing tedious "trial-and-error" dependency crashes. 
+# This repository relies on external dependencies for data processing, 
+# spatial analysis, type checking, and testing.
 #
-# This repository uses 100% built-in libraries. Zero installations required.
+# QUICK START:
+#   1. Create environment:   python -m venv .venv
+#   2. Activate environment: .\.venv\Scripts\Activate.ps1  (Windows PowerShell)
+#                            source .venv/bin/activate      (macOS / Linux)
+#   3. Install requirements: pip install -r requirements.txt
 # ==============================================================================
 
+numpy
+pandas
+pandas-stubs
+xarray
+netcdf4
+pytest
+ruff
+mypy

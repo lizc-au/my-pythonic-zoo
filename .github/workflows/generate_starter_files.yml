@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
       issues: write
 
     steps:
@@ -17,12 +18,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Parse Issue Body & Write Files
+        id: parse
         uses: actions/github-script@v7
         with:
           script: |
             const body = context.payload.issue.body;
 
-            // Helper to extract section content from GitHub Issue Form output
             function getSection(heading) {
               const regex = new RegExp(`### ${heading}\\s*\\n\\n([\\s\\S]*?)(?=\\n### |$)`);
               const match = body.match(regex);
@@ -34,42 +35,44 @@ jobs:
             const testPath = getSection('Test File Path');
             const stubCode = getSection('Stub Code');
             const testCode = getSection('Test Code');
+            const sourceUrl = getSection('🔗 Original Question Link (Optional)');
 
             if (stubPath && stubCode && testPath && testCode) {
               const fs = require('fs');
               const path = require('path');
 
-              // Create parent directories if they don't exist
               fs.mkdirSync(path.dirname(stubPath), { recursive: true });
               fs.mkdirSync(path.dirname(testPath), { recursive: true });
 
-              // Write files
               fs.writeFileSync(stubPath, stubCode + '\n');
               fs.writeFileSync(testPath, testCode + '\n');
 
               core.setOutput('stub_path', stubPath);
               core.setOutput('test_path', testPath);
-              core.setOutput('success', 'true');
+              core.setOutput('source_url', sourceUrl);
+              core.setOutput('has_files', 'true');
             }
 
-      - name: Commit and Push Starter Files
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "chore: auto-generate starter files for issue #${{ github.event.issue.number }}"
-          git push
+      - name: Create Pull Request
+        if: steps.parse.outputs.has_files == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: "auto-starter-issue-${{ github.event.issue.number }}"
+          title: "chore: add starter files for issue #${{ github.event.issue.number }}"
+          body: "Auto-generated stub and test files for Issue #${{ github.event.issue.number }}."
+          commit-message: "chore: auto-generate starter files for issue #${{ github.event.issue.number }}"
 
       - name: Post Confirmation Comment
+        if: steps.parse.outputs.has_files == 'true'
         uses: actions/github-script@v7
         with:
           script: |
             const issueNumber = context.payload.issue.number;
-            const sourceUrl = getSection('🔗 Original Question Link (Optional)');
+            const sourceUrl = '${{ steps.parse.outputs.source_url }}';
 
-            let commentBody = `🚀 **Starter files auto-generated and committed to \`main\`!**\n\n- Stub: \`${stubPath}\`\n- Test: \`${testPath}\`\n\nContributors can now fork the repo, run the test file, and fill in the missing logic!`;
+            let commentBody = `🚀 **Starter files generated!** A Pull Request has been opened to merge the stub and test files into \`main\`.\n\nOnce merged, contributors can claim this issue!`;
 
-            if (sourceUrl && sourceUrl !== 'None') {
+            if (sourceUrl && sourceUrl !== 'None' && sourceUrl.startsWith('http')) {
               commentBody += `\n\n💬 **Original Context / Question:** [View Post](${sourceUrl})`;
             }
 
