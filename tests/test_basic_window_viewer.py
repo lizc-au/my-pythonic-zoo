@@ -17,7 +17,7 @@ class TestBasicWindowViewer(unittest.TestCase):
     def test_basic_text_box(self):
         """Test wrapping a single line of text into a box structure."""
         text = "Hello You!"
-        result = create_terminal_box(text, padding=1) # type: ignore[arg-type]
+        result = create_terminal_box(text, padding=1)  # type: ignore[arg-type]
 
         # Split lines to inspect the output layout rows cleanly
         lines = result.splitlines()
@@ -31,7 +31,7 @@ class TestBasicWindowViewer(unittest.TestCase):
 
     def test_empty_input_handling(self):
         """Test graceful error message feedback for empty or layout strings."""
-        result = create_terminal_box("   \n  \n ") # type: ignore[arg-type]
+        result = create_terminal_box("   \n  \n ")  # type: ignore[arg-type]
         self.assertEqual(result, "Error: Text payload cannot be empty.")
 
     def test_invalid_type_defensiveness(self):
