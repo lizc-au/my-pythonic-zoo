@@ -6,17 +6,19 @@ We actively welcome contributions, optimization pull requests, and use-case feat
 
 ## Pull Request & Assignment Policy
 
-To prevent duplicate effort and protect maintainer review time, **we do not accept unsolicited or unassigned Pull Requests.** Any PR submitted without an assigned issue will be automatically closed by our GitHub Action automation.
+To help prevent duplicate effort, contributors are encouraged to start with an open issue or discuss a proposed change before beginning substantial work. If an issue already exists, please comment on it so we can coordinate scope and avoid multiple contributors working on the same task.
 
-## 🚀 How to Contribute
+Pull Requests submitted without an assigned issue are still welcome. If the PR relates to an existing roadmap item, we may ask that it be linked to the relevant issue before review.
 
-1. **Pick or Suggest an Issue:** Check our open issues labeled `good-first-issue` or `help wanted`, or open a new issue to discuss a feature idea.
-2. **Comment First:** Drop a quick comment on the issue to let us know you're working on it so we can prevent duplicate effort.
+## Contribution Workflow
+
+1. **Choose Your Contribution:** Check the open issues labelled `good-first-issue` or `help wanted`, or propose your own improvement. For substantial changes, opening an issue first is encouraged so the scope can be discussed before you begin.
+2. **Coordinate Existing Issues:** If you are working on an existing issue, leave a quick comment before starting so we can avoid duplicate effort.
 3. **Fork & Branch:** Create a branch on your fork (`git checkout -b feat/my-new-script`).
-4. **Clean & Test:** Ensure your code runs standalone and passes formatting checks (`ruff check .`).
-5. **Submit a PR:** Open a Pull Request referencing the issue (e.g., `Fixes #3`). Be sure to disclose if any AI assistance was used!
+4. **Clean & Test:** Run the local quality checks described below and resolve any failures before submitting your PR.
+5. **Submit a PR:** Open a Pull Request describing the change and why it is useful. If it relates to an issue, reference it (e.g., `Fixes #3`). If an autonomous agent substantially contributed to the work or submitted the PR, follow the disclosure guidance below.
 
-### 🛠️ Local Development Setup
+### Local Development Setup
 
 From the repository root, create a virtual environment:
 
@@ -47,39 +49,43 @@ python -m pip install --group dev
 
 The `dev` group includes both the runtime dependencies and the tools needed for linting, type checking, and testing.
 
-### 🧪 Testing Requirements
-* **Comprehensive `unittest` Coverage Required**: You must always include an accompanying test module inside the `tests/` folder that covers your submitted code, unless explicitly instructed otherwise. Pull Requests with failing tests cannot be merged.
-* **Core File Restrictions**: Do **not** edit or add tests to `test_zoo_core.py`. Any unauthorized changes to this core file will cause your Pull Request to be rejected unless explicitly discussed and approved in your issue beforehand.
+---
 
-### AI & Automated Agent Submissions
-We welcome AI-assisted contributions, provided they maintain transparency and human oversight:
+### Testing Requirements
+* **Tests for Code Changes:** Python code contributions should include appropriate automated test coverage. Add or update tests in the `tests/` folder when the change introduces new behaviour or modifies existing behaviour. Documentation, configuration, and other non-code changes do not require new tests. The test suite is run with `pytest`, which also discovers and runs the repository's existing `unittest`-based tests. Pull Requests with failing tests cannot be merged.
 
-* **Full Disclosure:** State clearly in your PR description if code or documentation was generated using an LLM or autonomous agent, and specify the tool or framework used (e.g., as outlined in [GitHub's guidelines on reviewing AI-generated code](https://docs.github.com/en/copilot/tutorials/review-ai-generated-code)).
-* **Human Ownership:** You are responsible for reviewing, testing, and understanding all submitted code. Undisclosed or automated PRs submitted without human verification will be closed.
-* **Copyright & Provenance:** Ensure all submitted AI code complies with applicable open-source licenses and does not infringe on third-party intellectual property or proprietary datasets.
+* **Core Test File:** `tests/test_zoo_core.py` provides shared regression coverage for several core repository modules. Please do not modify it without first discussing the proposed change in an issue. Changes may be appropriate when core behaviour genuinely changes, but they should be reviewed deliberately so existing protections are not weakened accidentally.
 
-#### Recommended Git Commit Trailers
-When committing AI-assisted code, append standard footers to the end of your commit message as shown in the examples below:
+#### Local Quality Checks
 
-**Option A: GitHub Co-author (Appears visually on GitHub UI)**
+Before submitting a Pull Request, run the same core quality checks used by CI from the repository root:
+
 ```text
-feat: add regex-free email validator
-
-Co-authored-by: AI Agent <agent@users.noreply.github.com>
-```
-*(See [GitHub's multi-author commit docs](https://docs.github.com/en/pull-requests/how-tos/commit-changes/creating-a-commit-with-multiple-authors) for details).*
-
-**Option B: Explicit Metadata (Open-source standard)**
-```text
-refactor: optimize string cleaning function
-
-Generated-by: Claude 3.5 Sonnet
-Assisted-by: SWE-agent v1.0
+python -m ruff check .
+python -m ruff format --check .
+python -m mypy .
+python -m pytest
 ```
 
-> **Note:** Leave a blank line between the commit message body and the trailer lines so Git parses them correctly.
+All checks should pass before the Pull Request is submitted.
 
-*All reviews and interactions are conducted asynchronously through standard GitHub Pull Requests.*
+---
+
+### Autonomous Agent Submissions
+
+Developers are welcome to use AI tools as part of their normal development workflow. Routine AI assistance does not require disclosure.
+
+If an autonomous agent performs substantial implementation work or submits a Pull Request, the following additional guidelines apply:
+
+* **Agent Disclosure:** In the interests of transparency and good open-source practice, please identify the autonomous agent or framework used in the Pull Request description.
+* **Human Ownership:** Agent-generated Pull Requests are welcome, but a human contributor should review and understand the completed work and remain responsible for the submission before it is considered for merge.
+* **Copyright & Provenance:** Contributors are responsible for taking reasonable care that submitted content complies with applicable licenses, does not knowingly reproduce protected third-party material without permission, and does not include proprietary data without authorization.
+
+---
+
+### Response Times
+
+This project is maintained by a single maintainer. Issues and Pull Requests are welcome, but responses may take several days depending on availability. Thank you for your patience.
 
 ---
 
