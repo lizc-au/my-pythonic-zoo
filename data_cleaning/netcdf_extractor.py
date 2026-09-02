@@ -7,8 +7,6 @@ Slices multidimensional NetCDF (.nc) climate/environmental datasets
 by target latitude/longitude coordinates and exports to CSV.
 """
 
-from typing import Any
-
 import numpy as np
 import pandas as pd
 import xarray as xr
@@ -39,7 +37,7 @@ def extract_point_data(
 
 
 def extract_coordinate_subset(
-    dataset: Any,
+    dataset: xr.Dataset,
     lat: float,
     lon: float,
     output_csv: str = "subset_output.csv",
