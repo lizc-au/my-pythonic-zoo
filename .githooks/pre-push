@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Run the repository quality gate before allowing a push.
+python scripts/check_quality.py

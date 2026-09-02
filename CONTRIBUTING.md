@@ -58,16 +58,34 @@ The `dev` group includes both the runtime dependencies and the tools needed for 
 
 #### Local Quality Checks
 
-Before submitting a Pull Request, run the same core quality checks used by CI from the repository root:
+Before submitting a Pull Request, activate the project's virtual environment and run the repository quality helper from the repository root:
 
 ```text
-python -m ruff check .
-python -m ruff format --check .
-python -m mypy .
-python -m pytest
+python scripts/check_quality.py
 ```
 
+The helper runs the same core checks used by CI:
+
+* Ruff linting
+* Ruff formatting
+* mypy type checking
+* pytest
+
 All checks should pass before the Pull Request is submitted.
+
+#### Optional Pre-Push Hook
+
+The repository includes an optional Git pre-push hook that runs the same quality helper automatically before each push.
+
+With the project's virtual environment activated, enable the hook for your local clone by running:
+
+```text
+git config core.hooksPath .githooks
+```
+
+Once enabled, Git will run `python scripts/check_quality.py` before allowing a push. If any quality check fails, the push is stopped so the issue can be fixed first.
+
+The hook is optional. GitHub Actions remains the authoritative CI check for Pull Requests.
 
 ---
 
