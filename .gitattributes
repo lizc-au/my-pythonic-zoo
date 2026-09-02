@@ -1,0 +1,6 @@
+# Normalize text files to LF in the repository.
+# Working-tree line endings remain appropriate to each contributor's Git configuration.
+* text=auto
+
+# Treat image assets as binary.
+*.png binary
