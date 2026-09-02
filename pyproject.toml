@@ -1,10 +1,18 @@
 [tool.ruff]
-# Target Python version alignment
-target-version = "py310"
+target-version = "py312"
+line-length = 88
 
-# Enforce standard professional coding rules
-line-length = 100
-select = ["E", "F", "BLE", "I"]
+[tool.ruff.lint]
+select = ["E", "W", "F", "B", "I", "UP", "N", "PL", "RUF"]
+ignore = []
+
+[tool.ruff.lint.mccabe]
+max-complexity = 7
+
+[tool.ruff.lint.pylint]
+max-args = 5
+max-returns = 3
+max-statements = 25
 
 [dependency-groups]
 runtime = [

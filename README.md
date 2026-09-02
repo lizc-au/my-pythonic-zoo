@@ -3,7 +3,7 @@ _**"All creatures great and small, wise and wonderful."**_
 
 💡 Philosophy: Clean, educational Python code supported by standard data science libraries (pandas, xarray).
 
-**Minimum Runtime Requirement:** Python 3.10+ (Utilises modern type-hinting features).
+**Minimum Runtime Requirement:** Python 3.12+ (Utilises modern type-hinting features).
 
 Housing a variety of self-contained Python scripts built with clean formatting and clear logic—improvements welcome 🧐
 
@@ -129,4 +129,4 @@ Special thanks to everyone working on or building exhibits for the Pythonic Zoo,
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _1 September 2026_ | _lizc-au_ |
+| _README.md_ | _2 September 2026_ | _lizc-au_ |
