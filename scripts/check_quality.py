@@ -25,21 +25,33 @@ QUALITY_CHECKS = (
 
 
 def run_check(check: QualityCheck) -> bool:
-    """Run one quality check and report whether it succeeded."""
-    print(f"\n=== {check.name} ===")
-
+    """Run one quality check and show detailed output only on failure."""
     result = subprocess.run(
         [sys.executable, *check.arguments],
         cwd=REPOSITORY_ROOT,
         check=False,
+        capture_output=True,
+        text=True,
     )
 
-    return result.returncode == 0
+    if result.returncode == 0:
+        print(f"PASS  {check.name}")
+        return True
+
+    print(f"FAIL  {check.name}")
+
+    if result.stdout:
+        print(result.stdout.rstrip())
+
+    if result.stderr:
+        print(result.stderr.rstrip())
+
+    return False
 
 
 def main() -> int:
     """Run all configured quality checks, stopping at the first failure."""
-    print("Running My Pythonic Zoo quality checks...")
+    print("Running quality checks...")
 
     for check in QUALITY_CHECKS:
         if not run_check(check):
