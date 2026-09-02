@@ -1,54 +1,40 @@
 """
 connection_tester.py
 
-Robust Database Connection and Error Handling Module
-----------------------------------------------------
+SQLite Connection and Error Handling Example
+--------------------------------------------
 
-CRITICAL ENGINEERING PRINCIPLE: Never assume a database connection will succeed.
-Always wrap database interactions in try-except-finally blocks to prevent memory
-leaks, unclosed connections, and catastrophic application crashes.
+Demonstrates how to:
 
-Why this matters:
-1. Graceful Failures: If a network drops or a database server goes offline, your
-   app should log the error cleanly and alert the system, not crash for the user.
-2. Resource Management: Open database connections consume server memory. If code
-   crashes midway without a 'finally' block, that connection stays open, slowly
-   bleeding server resources until the system collapses.
+1. Open an SQLite database connection safely.
+2. Execute a simple query to verify the connection.
+3. Handle SQLite-specific connection errors.
+4. Close the database connection reliably.
+5. Use an in-memory database when a persistent file is not required.
 """
 
 import sqlite3
-from sqlite3 import Error
+from contextlib import closing
+from pathlib import Path
 
 
-def test_database_connection(db_name: str) -> None:
-    """
-    Attempts to connect to a database, execute a simple query,
-    and handles connection errors gracefully.
-    """
-    connection = None
+def check_database_connection(db_name: str | Path) -> bool:
+    """Attempt an SQLite connection and report whether it succeeds."""
+    print(f"[PROCESS] Attempting connection to: '{db_name}'...")
 
     try:
-        print(f"[PROCESS] Attempting connection to: '{db_name}'...")
-        connection = sqlite3.connect(db_name)
+        with closing(sqlite3.connect(db_name)) as connection:
+            cursor = connection.execute("SELECT sqlite_version();")
+            version = cursor.fetchone()
 
-        cursor = connection.cursor()
-        cursor.execute("SELECT SQLite_Version();")
-        version = cursor.fetchone()
+            print(f"[SUCCESS] Connection established. SQLite version: {version}")
 
-        print(f"[SUCCESS] Connection Established. SQLite Version: {version}")
+    except sqlite3.Error as error:
+        print(f"[DATABASE ERROR] Encountered: {error}")
+        return False
 
-    except Error as error_message:
-        print(f"[DATABASE ERROR] Encontered: {error_message}")
-        print("[ALERT] Triggering automatic alert system... (Simulated)")
-
-    except OSError as system_error:
-        print(f"[OS ERROR] Filesystem failure: {system_error}")
-        print("[ALERT] Verify path string formatting or disk write permissions.")
-
-    finally:
-        if connection:
-            connection.close()
-            print("[INFO] Safe Exit: Database connection closed securely.")
+    print("[INFO] Safe exit: Database connection closed.")
+    return True
 
 
 # --- Standalone Verification Exhibit ---
@@ -56,9 +42,10 @@ if __name__ == "__main__":
     print("=== Pythonic Database Basics Zoo Exhibit ===\n")
 
     print("--- Test Case 1: Standard Connection ---")
-    test_database_connection("perth_volunteer_mock.db")
+    check_database_connection(":memory:")
 
     print("\n" + "=" * 40 + "\n")
 
     print("--- Test Case 2: Simulating a Connection Failure ---")
-    test_database_connection("C:/InvalidFolder/NonExistentDisk/broken_db.db")
+    invalid_database = Path("missing_directory") / "broken_db.db"
+    check_database_connection(invalid_database)
