@@ -2,5 +2,8 @@
 # Working-tree line endings remain appropriate to each contributor's Git configuration.
 * text=auto
 
+# Git hook scripts must use LF line endings on all platforms.
+.githooks/* text eol=lf
+
 # Treat image assets as binary.
 *.png binary
