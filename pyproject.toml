@@ -5,3 +5,19 @@ target-version = "py310"
 # Enforce standard professional coding rules
 line-length = 100
 select = ["E", "F", "BLE", "I"]
+
+[dependency-groups]
+runtime = [
+    "numpy",
+    "pandas",
+    "xarray",
+    "netcdf4",
+]
+
+dev = [
+    { include-group = "runtime" },
+    "pandas-stubs",
+    "pytest",
+    "ruff",
+    "mypy",
+]

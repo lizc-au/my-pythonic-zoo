@@ -16,6 +16,37 @@ To prevent duplicate effort and protect maintainer review time, **we do not acce
 4. **Clean & Test:** Ensure your code runs standalone and passes formatting checks (`ruff check .`).
 5. **Submit a PR:** Open a Pull Request referencing the issue (e.g., `Fixes #3`). Be sure to disclose if any AI assistance was used!
 
+### 🛠️ Local Development Setup
+
+From the repository root, create a virtual environment:
+
+```text
+python -m venv .venv
+```
+
+Activate it:
+
+**Windows PowerShell**
+
+```text
+.\.venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux**
+
+```text
+source .venv/bin/activate
+```
+
+Then upgrade `pip` and install the development dependency group defined in `pyproject.toml`:
+
+```text
+python -m pip install --upgrade pip
+python -m pip install --group dev
+```
+
+The `dev` group includes both the runtime dependencies and the tools needed for linting, type checking, and testing.
+
 ### 🧪 Testing Requirements
 * **Comprehensive `unittest` Coverage Required**: You must always include an accompanying test module inside the `tests/` folder that covers your submitted code, unless explicitly instructed otherwise. Pull Requests with failing tests cannot be merged.
 * **Core File Restrictions**: Do **not** edit or add tests to `test_zoo_core.py`. Any unauthorized changes to this core file will cause your Pull Request to be rejected unless explicitly discussed and approved in your issue beforehand.
@@ -54,4 +85,4 @@ Assisted-by: SWE-agent v1.0
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _CONTRIBUTING.md_ | _5 August 2026_ | _lizc-au_ |
+| _CONTRIBUTING.md_ | _2 September 2026_ | _lizc-au_ |
