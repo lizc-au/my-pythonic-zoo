@@ -54,7 +54,7 @@ The `dev` group includes both the runtime dependencies and the tools needed for 
 ### Testing Requirements
 * **Tests for Code Changes:** Python code contributions should include appropriate automated test coverage. Add or update tests in the `tests/` folder when the change introduces new behaviour or modifies existing behaviour. Documentation, configuration, and other non-code changes do not require new tests. The test suite is run with `pytest`, which also discovers and runs the repository's existing `unittest`-based tests. Pull Requests with failing tests cannot be merged.
 
-* **Core Test File:** `tests/test_zoo_core.py` provides shared regression coverage for several core repository modules. Please do not modify it without first discussing the proposed change in an issue. Changes may be appropriate when core behaviour genuinely changes, but they should be reviewed deliberately so existing protections are not weakened accidentally.
+* **Test Organisation:** Keep tests focused and easy to locate. When adding or changing a repository example, place its tests in a correspondingly named test module under `tests/`.
 
 #### Local Quality Checks
 
