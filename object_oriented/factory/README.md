@@ -226,3 +226,20 @@ Trumpet!
 
 The output is intentionally simple. The interesting part of this example is
 how the objects are designed, created, typed, and used.
+
+## Related concepts
+
+The [Object-Oriented Python Glossary](../GLOSSARY.md) explains terminology used
+throughout this example, including:
+
+- [Abstraction](../GLOSSARY.md#abstraction)
+- [Client Code](../GLOSSARY.md#client-code)
+- [Concrete Class](../GLOSSARY.md#concrete-class)
+- [Contract](../GLOSSARY.md#contract)
+- [Coupling](../GLOSSARY.md#coupling)
+- [Factory](../GLOSSARY.md#factory)
+- [Polymorphism](../GLOSSARY.md#polymorphism)
+- [Protocol](../GLOSSARY.md#protocol)
+- [Public API](../GLOSSARY.md#public-api)
+- [Registry](../GLOSSARY.md#registry)
+- [Structural Typing](../GLOSSARY.md#structural-typing)

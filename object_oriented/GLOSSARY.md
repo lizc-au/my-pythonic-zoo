@@ -149,6 +149,29 @@ services, or other resources.
 Making dependencies clear helps keep responsibilities and relationships
 understandable.
 
+### Dependency Injection
+
+A technique in which an object receives a [dependency](#dependency) from
+outside rather than creating that dependency itself.
+
+For example:
+
+```python
+animal = Animal(species="Python", movement=Slither())
+```
+
+`Animal` depends on a movement behaviour, but it does not construct `Slither`
+itself. The movement object is supplied when the animal is created.
+
+Dependency injection can make dependencies explicit and allow implementations
+to be replaced without changing the object that uses them. This is particularly
+useful for configurable behaviour, testing, and reducing coupling.
+
+Dependency injection is often used with [Composition](#composition), but the
+terms are not interchangeable. Composition describes building an object from
+collaborating parts; dependency injection describes how one of those parts is
+supplied.
+
 ## Encapsulation
 
 **Encapsulation** keeps related state and behaviour together and controls which
