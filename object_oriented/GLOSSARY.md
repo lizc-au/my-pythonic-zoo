@@ -99,6 +99,25 @@ other operation that happens to involve an animal.
 
 ---
 
+## Collaboration
+
+**Collaboration** is the way objects or other components work together to
+complete a larger task while retaining their own responsibilities.
+
+Rather than one object performing every operation itself, collaborating objects
+ask one another for the behaviour or information they own. This can make
+responsibility boundaries clearer and reduce the need for one class to know how
+every part of a process works.
+
+In the [Responsibilities & Collaboration examples](responsibilities/README.md),
+`KeeperReport` collaborates with `FeedingGuide` and `CareSchedule` to produce a
+report. Each object contributes the part of the work it owns.
+
+Collaboration describes the interaction between components. It does not by
+itself determine whether those responsibility boundaries are well designed.
+
+---
+
 ## Composition
 
 **Composition** builds an object by combining it with other objects that provide
@@ -156,6 +175,27 @@ class itself.
 Low coupling does not mean "no dependencies." Useful software components must
 collaborate. The goal is to avoid unnecessary knowledge of implementation
 details.
+
+---
+
+## Delegation
+
+**Delegation** occurs when one object asks another object to perform work that
+belongs to the second object's responsibility.
+
+Delegation allows an object to participate in a larger operation without
+implementing every rule itself. The delegating object remains responsible for
+its own part of the process while relying on collaborators for work they own.
+
+In the [Responsibilities & Collaboration examples](responsibilities/README.md),
+`KeeperReport` delegates feeding guidance to `FeedingGuide` and care-date
+calculation to `CareSchedule`. It then uses those results to perform its own
+responsibility: formatting the keeper-facing report.
+
+Delegation is commonly used with composition and collaboration, but the terms
+describe different ideas. Composition describes how objects are assembled,
+collaboration describes how components work together, and delegation describes
+one component handing a specific piece of work to another.
 
 ---
 
@@ -459,6 +499,32 @@ creating concrete animal objects. Client code is responsible for using the
 returned object, not deciding how it should be constructed.
 
 See the Responsibilities and Collaboration examples for deeper treatment.
+
+---
+
+## Single Responsibility Principle (SRP)
+
+The **Single Responsibility Principle (SRP)** is the design principle that a
+class or other component should have one coherent responsibility, often
+expressed as having one reason to change.
+
+SRP does not mean that every class should contain only one method or that every
+small piece of behaviour requires its own class. A class can have several
+methods when those methods contribute to the same responsibility. For example,
+a `KeeperReport` might have methods to create a report heading, format report
+details, and produce the final report. Those methods all support the same
+responsibility: presenting keeper-facing information. Feeding rules, however,
+change for different reasons and belong to a different responsibility. Several
+methods are fine when they are all part of the same job.
+
+In the [Responsibilities & Collaboration examples](responsibilities/README.md),
+the overloaded `Animal` can change because of animal-domain requirements,
+feeding policy, care scheduling, or report formatting. The collaborating design
+gives those distinct responsibilities more focused owners.
+
+Applying SRP therefore requires judgement. Separating responsibilities can
+improve cohesion and make change safer, but creating abstractions before the
+current requirements justify them can make a design unnecessarily complex.
 
 ---
 

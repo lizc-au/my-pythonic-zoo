@@ -31,12 +31,11 @@ ones that appear in larger production systems.
    - Compare one shared `Animal` model with explicit animal types introduced
      only when type-specific behaviour creates a meaningful responsibility.
 
-4. Responsibilities & Collaboration
+4. [Responsibilities & Collaboration](responsibilities/README.md)
    - Decide which object should own which work.
-   - Explore cohesion, responsibility boundaries, collaboration, and the
+   - Compare an overloaded `Animal` with focused collaborating objects.
+   - Explore cohesion, delegation, responsibility boundaries, and the
      Single Responsibility Principle.
-
-The final exhibit is a planned addition to this category.
 
 ---
 
@@ -69,7 +68,7 @@ At the same time:
   should remain data or justify distinct domain types with their own
   responsibilities.
 - **Responsibilities & Collaboration** determines which object should own each
-  decision.
+  responsibility and how objects should collaborate to complete larger tasks.
 
 The important question is therefore not:
 
@@ -123,6 +122,13 @@ python -m object_oriented.domain_modelling.data_model_example
 python -m object_oriented.domain_modelling.domain_types_example
 ```
 
+Responsibilities & Collaboration provides two contrasting designs:
+
+```text
+python -m object_oriented.responsibilities.overloaded_animal_example
+python -m object_oriented.responsibilities.collaborating_objects_example
+```
+
 ---
 
 ## Glossary
@@ -133,8 +139,11 @@ definitions for terminology used throughout these exhibits.
 Useful starting points include:
 
 - [Abstraction](GLOSSARY.md#abstraction)
+- [Cohesion](GLOSSARY.md#cohesion)
+- [Collaboration](GLOSSARY.md#collaboration)
 - [Composition](GLOSSARY.md#composition)
 - [Coupling](GLOSSARY.md#coupling)
+- [Delegation](GLOSSARY.md#delegation)
 - [Dependency](GLOSSARY.md#dependency)
 - [Dependency Injection](GLOSSARY.md#dependency-injection)
 - [Domain Modelling](GLOSSARY.md#domain-modelling)
@@ -143,6 +152,7 @@ Useful starting points include:
 - [Polymorphism](GLOSSARY.md#polymorphism)
 - [Protocol](GLOSSARY.md#protocol)
 - [Responsibility](GLOSSARY.md#responsibility)
+- [Single Responsibility Principle (SRP)](GLOSSARY.md#single-responsibility-principle-srp)
 - [Structural Typing](GLOSSARY.md#structural-typing)
 
 ---
