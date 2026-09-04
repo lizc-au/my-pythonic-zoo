@@ -27,6 +27,8 @@ or some increasingly specialised hierarchy.
 
 It delegates movement description to the object it contains.
 
+---
+
 ## Has-a rather than is-a
 
 [Inheritance](../GLOSSARY.md#inheritance) commonly represents an **is-a**
@@ -49,6 +51,8 @@ objects using them.
 
 Python, Panda, Lion, and Elephant do not need separate inheritance branches
 merely because they move differently.
+
+---
 
 ## The Movement contract
 
@@ -84,6 +88,8 @@ the demonstration requires. In larger software, a composed behaviour might
 perform calculations, update state, issue commands, access another service, or
 drive an animation.
 
+---
+
 ## Composition does not decide who selects the behaviour
 
 This example set demonstrates an important distinction:
@@ -96,6 +102,8 @@ models.
 
 The three runnable examples deliberately produce the same animal behaviour
 while placing the selection decision in three different locations.
+
+---
 
 ## 1. Client-selected composition
 
@@ -157,6 +165,8 @@ A panda walks.
 A lion walks.
 An elephant walks.
 ```
+
+---
 
 ## 2. Construction-selected composition
 
@@ -221,6 +231,8 @@ A lion walks.
 An elephant walks.
 ```
 
+---
+
 ## 3. Domain-type-selected composition
 
 See `domain_type_selected_example.py`.
@@ -282,6 +294,8 @@ A lion walks.
 An elephant walks.
 ```
 
+---
+
 ## Comparing the three approaches
 
 All three examples use Composition.
@@ -299,6 +313,8 @@ None of these is universally the "correct" form of Composition.
 The correct placement depends on the responsibility being modelled.
 
 That is an important architectural question in its own right.
+
+---
 
 ## Composition and dependency injection
 
@@ -321,6 +337,8 @@ outside rather than having the object construct that dependency itself.
 The domain-type-selected example demonstrates why the distinction matters: it
 still uses Composition, even though ordinary client code does not inject the
 movement.
+
+---
 
 ## Composition versus inheritance
 
@@ -346,6 +364,8 @@ The question is not:
 The better question is:
 
 > Which relationship accurately represents this responsibility?
+
+---
 
 ## Patterns can work together
 
@@ -373,6 +393,8 @@ As the Object-Oriented examples develop, look for places where several
 techniques cooperate rather than assuming that one pattern must be selected in
 isolation.
 
+---
+
 ## When not to use Composition
 
 Composition introduces another object and another relationship that developers
@@ -389,6 +411,8 @@ The goal is not to maximise the number of collaborating objects.
 The goal is to place responsibilities where they make the software easier to
 understand, change, test, and maintain.
 
+---
+
 ## Related concepts
 
 The [Object-Oriented Python Glossary](../GLOSSARY.md) explains terminology used
@@ -404,3 +428,10 @@ throughout this example, including:
 - [Protocol](../GLOSSARY.md#protocol)
 - [Responsibility](../GLOSSARY.md#responsibility)
 - [Structural Typing](../GLOSSARY.md#structural-typing)
+
+---
+
+| File | Last Updated | Maintainer |
+| :--- | :---: | ---: |
+| _object_oriented/composition/README.md_ | _4 September 2026_ | _lizc-au_ |
+

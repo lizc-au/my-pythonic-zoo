@@ -1,4 +1,6 @@
 """
+test_composition_examples.py
+
 Tests for the Object-Oriented Composition examples.
 
 These tests verify the shared movement behaviours and the three different

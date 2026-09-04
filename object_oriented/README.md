@@ -10,6 +10,8 @@ technique can help address it.
 The examples are intentionally small, but the design questions are the same
 ones that appear in larger production systems.
 
+---
+
 ## Suggested learning order
 
 1. [Factory Pattern](factory/README.md)
@@ -23,18 +25,20 @@ ones that appear in larger production systems.
      composition.
    - Explore dependency injection and responsibility placement.
 
-3. Domain Modelling
-   - Decide when a difference should be represented as data and when it should
-     become a distinct domain type.
-   - Explore modelling choices such as `"Python"` as a species value versus
-     `Python` as its own type.
+3. [Domain Modelling](domain_modelling/README.md)
+   - Decide when a difference should remain data and when it should become a
+     distinct domain type.
+   - Compare one shared `Animal` model with explicit animal types introduced
+     only when type-specific behaviour creates a meaningful responsibility.
 
 4. Responsibilities & Collaboration
    - Decide which object should own which work.
    - Explore cohesion, responsibility boundaries, collaboration, and the
      Single Responsibility Principle.
 
-The final two exhibits are planned additions to this category.
+The final exhibit is a planned addition to this category.
+
+---
 
 ## Patterns are not mutually exclusive
 
@@ -61,8 +65,9 @@ At the same time:
 
 - **Composition** defines how `Animal` collaborates with `Movement`.
 - **Factory** may own construction of the correctly composed object.
-- **Domain Modelling** determines whether Python, Panda, Lion, and Elephant
-  should be data values or distinct domain types.
+- **Domain Modelling** determines whether differences such as animal species
+  should remain data or justify distinct domain types with their own
+  responsibilities.
 - **Responsibilities & Collaboration** determines which object should own each
   decision.
 
@@ -74,6 +79,8 @@ A better question is:
 
 > What design responsibility am I trying to place, and which technique helps
 > express it clearly?
+
+---
 
 ## Why the examples stay small
 
@@ -91,12 +98,14 @@ That does not mean the examples should be intentionally poor or unrealistic.
 Where an abstraction is introduced, it should have a genuine reason to exist
 and should be defensible for the scope of the example.
 
+---
+
 ## Run the examples
 
 From the repository root:
 
 ```text
-python -m object_oriented.factory.example
+python -m object_oriented.factory.factory_example
 ```
 
 Composition provides three runnable variants:
@@ -106,6 +115,15 @@ python -m object_oriented.composition.client_selected_example
 python -m object_oriented.composition.construction_selected_example
 python -m object_oriented.composition.domain_type_selected_example
 ```
+
+Domain Modelling provides two contrasting models:
+
+```text
+python -m object_oriented.domain_modelling.data_model_example
+python -m object_oriented.domain_modelling.domain_types_example
+```
+
+---
 
 ## Glossary
 
@@ -119,12 +137,15 @@ Useful starting points include:
 - [Coupling](GLOSSARY.md#coupling)
 - [Dependency](GLOSSARY.md#dependency)
 - [Dependency Injection](GLOSSARY.md#dependency-injection)
+- [Domain Modelling](GLOSSARY.md#domain-modelling)
 - [Factory](GLOSSARY.md#factory)
 - [Inheritance](GLOSSARY.md#inheritance)
 - [Polymorphism](GLOSSARY.md#polymorphism)
 - [Protocol](GLOSSARY.md#protocol)
 - [Responsibility](GLOSSARY.md#responsibility)
 - [Structural Typing](GLOSSARY.md#structural-typing)
+
+---
 
 ## Approach used throughout this section
 
@@ -141,3 +162,10 @@ These exhibits favour:
 
 The aim is to make object-oriented design easier to reason about by connecting
 terminology directly to executable examples.
+
+---
+
+| File | Last Updated | Maintainer |
+| :--- | :---: | ---: |
+| _object_oriented/README.md_ | _4 September 2026_ | _lizc-au_ |
+

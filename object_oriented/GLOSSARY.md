@@ -8,6 +8,8 @@ formal computer-science definitions. Zoo examples are used where helpful, but
 the concepts apply equally to other domains such as documents, orders,
 notifications, reports, storage systems, and payment processing.
 
+---
+
 ## Abstraction
 
 An **abstraction** exposes the important parts of something while hiding details
@@ -18,6 +20,8 @@ particular animal implements that behaviour.
 
 Good abstractions reduce the amount of knowledge one part of a program needs
 about another.
+
+---
 
 ## Abstract Base Class (ABC)
 
@@ -30,6 +34,8 @@ relationship.
 An ABC is useful when classes genuinely belong to the same inheritance
 hierarchy, particularly when they also share implementation or state.
 
+---
+
 ## Attribute
 
 An **attribute** is data or behaviour associated with an object or class.
@@ -39,6 +45,8 @@ as an animal's name or age.
 
 Methods are also attributes, although in everyday discussion "attribute" often
 refers specifically to stored data.
+
+---
 
 ## Behaviour
 
@@ -50,6 +58,8 @@ class.
 More complex designs may model behaviours separately and combine them with the
 objects that use them. See the Composition examples.
 
+---
+
 ## Class
 
 A **class** defines a type of object.
@@ -59,17 +69,21 @@ It describes the data and behaviour that its instances can provide.
 For example, `Lion` is a class. Individual lion objects can be created from
 that class.
 
+---
+
 ## Client Code
 
 **Client code** is code that uses another component through its public
 interface.
 
-In the Factory example, `example.py` is client code. It asks `AnimalFactory`
+In the Factory example, `factory_example.py` is client code. It asks `AnimalFactory`
 for an animal and then uses the returned `Animal` without needing to understand
 the factory's internal construction logic.
 
 "Client" here does not necessarily mean a person, web browser, or remote
 computer. It simply means code consuming another piece of code.
+
+---
 
 ## Cohesion
 
@@ -82,6 +96,8 @@ rather than accumulating unrelated jobs.
 For example, an `Animal` object should not automatically become responsible
 for persistence, reporting, notifications, veterinary scheduling, and every
 other operation that happens to involve an animal.
+
+---
 
 ## Composition
 
@@ -96,6 +112,8 @@ from increasingly specialised movement-based classes.
 
 Composition is particularly useful when behaviours can vary independently.
 
+---
+
 ## Concrete Class
 
 A **concrete class** is a class that can be instantiated to create usable
@@ -106,6 +124,8 @@ classes.
 
 They provide the real `speak()` implementations required by the `Animal`
 Protocol.
+
+---
 
 ## Contract
 
@@ -119,6 +139,8 @@ compatible `speak()` method.
 
 Programming contracts are design agreements expressed through code,
 documentation, types, tests, or a combination of these.
+
+---
 
 ## Coupling
 
@@ -135,6 +157,8 @@ Low coupling does not mean "no dependencies." Useful software components must
 collaborate. The goal is to avoid unnecessary knowledge of implementation
 details.
 
+---
+
 ## Dependency
 
 A **dependency** is something a piece of code needs in order to perform its
@@ -149,7 +173,9 @@ services, or other resources.
 Making dependencies clear helps keep responsibilities and relationships
 understandable.
 
-### Dependency Injection
+---
+
+## Dependency Injection
 
 A technique in which an object receives a [dependency](#dependency) from
 outside rather than creating that dependency itself.
@@ -172,6 +198,28 @@ terms are not interchangeable. Composition describes building an object from
 collaborating parts; dependency injection describes how one of those parts is
 supplied.
 
+---
+
+## Domain Modelling
+
+**Domain modelling** is the process of representing important concepts,
+relationships, data, rules, and responsibilities from a problem domain in
+software.
+
+A domain model does not need to reproduce every distinction that exists in the
+real world. It represents the distinctions that matter to the application's
+requirements.
+
+For example, different animal species may initially be represented by data on
+one `Animal` type. Separate animal types become useful when the application
+needs those concepts to own meaningfully different rules or behaviour.
+
+Good domain modelling therefore asks not only what things exist in the domain,
+but which differences the software actually needs to represent and where the
+resulting responsibilities belong.
+
+---
+
 ## Encapsulation
 
 **Encapsulation** keeps related state and behaviour together and controls which
@@ -183,6 +231,8 @@ keeping implementation details internal.
 Encapsulation is not merely making attributes "private." Its broader purpose is
 to protect boundaries and prevent unrelated code from depending on details that
 should be free to change.
+
+---
 
 ## Factory
 
@@ -204,6 +254,8 @@ maps to the `Lion` class.
 A factory is unnecessary when direct construction is already the clearest
 solution.
 
+---
+
 ## Inheritance
 
 **Inheritance** creates a new class based on another class.
@@ -216,6 +268,8 @@ a common hierarchy provides value.
 
 It should not be introduced merely because two classes contain similar code.
 Composition or another form of reuse may provide a cleaner design.
+
+---
 
 ## Instance
 
@@ -233,6 +287,8 @@ lion = Lion()
 
 Multiple independent instances can normally be created from the same class.
 
+---
+
 ## Interface
 
 An **interface** describes the operations through which other code interacts
@@ -244,6 +300,8 @@ methods, functions, or other deliberately exposed operations.
 
 A good interface tells callers what they can do without requiring them to know
 how the component does it internally.
+
+---
 
 ## Method
 
@@ -263,6 +321,8 @@ calls the `speak()` method belonging to the object referenced by `animal`.
 Python also supports class methods and static methods, which have different
 relationships with the class and its instances.
 
+---
+
 ## Nominal Typing
 
 **Nominal typing** determines type compatibility from explicitly declared type
@@ -278,6 +338,8 @@ Here `Lion` explicitly declares that it derives from `Animal`.
 
 Compare this with structural typing, where compatibility can be based on the
 behaviour an object provides rather than its declared ancestry.
+
+---
 
 ## Object
 
@@ -298,6 +360,8 @@ In Python, many things are objects, including classes themselves.
 
 That is why the Factory example can store classes such as `Lion` inside a
 dictionary and call them later.
+
+---
 
 ## Polymorphism
 
@@ -320,6 +384,8 @@ Polymorphism is often associated with inheritance, but inheritance is not
 required. Python can also achieve polymorphism through structural typing and
 protocols.
 
+---
+
 ## Protocol
 
 A **Protocol** describes behaviour an object must provide without requiring the
@@ -337,6 +403,8 @@ it does not explicitly inherit from `Animal`.
 
 Protocols therefore work naturally with Python's structural typing.
 
+---
+
 ## Public API
 
 A **public API** is the deliberately exposed interface that other code is
@@ -351,6 +419,8 @@ parts of the Factory example are intended to import.
 
 Keeping a deliberate public API reduces unnecessary dependence on internal
 implementation details.
+
+---
 
 ## Registry
 
@@ -374,6 +444,8 @@ a long sequence of conditional branches.
 Registries are useful when a set of implementations must be selected by name
 or another key.
 
+---
+
 ## Responsibility
 
 A **responsibility** is a job that a class, object, function, module, or other
@@ -388,6 +460,8 @@ returned object, not deciding how it should be constructed.
 
 See the Responsibilities and Collaboration examples for deeper treatment.
 
+---
+
 ## State
 
 **State** is the data describing an object's current condition at a particular
@@ -400,6 +474,8 @@ Behaviour may depend on state, and behaviour may change state.
 Not every descriptive difference needs to become another class. See the Domain
 Modelling examples for deciding when information belongs in state/data and when
 a separate type is justified.
+
+---
 
 ## Structural Typing
 
@@ -425,3 +501,9 @@ determines compatibility.
 
 Structural typing formalises an idea closely related to Python's traditional
 duck typing while allowing static type checkers to verify the contract.
+
+---
+
+| File | Last Updated | Maintainer |
+| :--- | :---: | ---: |
+| _object_oriented/GLOSSARY.md_ | _4 September 2026_ | _lizc-au_ |

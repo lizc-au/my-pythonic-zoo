@@ -3,7 +3,7 @@
 The Factory Pattern separates **object creation** from the code that uses the
 created objects.
 
-This example uses four MyPythonicZoo animals:
+This factory example uses four MyPythonicZoo animals:
 
 - Python
 - Panda
@@ -11,12 +11,14 @@ This example uses four MyPythonicZoo animals:
 - Elephant
 
 The animals deliberately have very simple behaviour. The purpose of this
-example is not to build a complete animal model, but to demonstrate a
+factory example is not to build a complete animal model, but to demonstrate a
 production-shaped Factory design without unrelated complexity.
 
-## The problem Factory solves
+---
 
-Without a factory, client code that needs an animal may also need to know which
+## The problem Factory Pattern solves
+
+Without a Factory, client code that needs an animal may also need to know which
 concrete class to import and instantiate.
 
 For example, client code might directly create:
@@ -28,26 +30,28 @@ lion = Lion()
 That is perfectly reasonable when the caller already knows that it needs a
 `Lion`.
 
-A factory becomes useful when **choosing and constructing the concrete object
+A Factory becomes useful when **choosing and constructing the concrete object
 is itself a responsibility that should be separated from the code using the
 object**.
 
-In this example, client code instead asks:
+In this factory example, client code instead asks:
 
 ```python
 animal = AnimalFactory.create("lion")
 ```
 
-The caller requests what it needs. The factory decides which concrete class
+The caller requests what it needs. The Factory decides which concrete class
 satisfies that request.
+
+---
 
 ## The design used here
 
-The example separates several responsibilities:
+The factory example separates several responsibilities:
 
 ```text
 animals/animal.py
-    Defines the Animal Protocol - the behaviour factory-created objects promise.
+    Defines the Animal Protocol - the behaviour Factory-created objects promise.
 
 animals/python.py
 animals/panda.py
@@ -61,7 +65,7 @@ animals/__init__.py
 animal_factory.py
     Owns the mapping between identifiers and concrete animal creators.
 
-example.py
+factory_example.py
     Represents client code that asks the factory for animals and uses them.
 ```
 
@@ -82,7 +86,7 @@ registry and called later to create instances.
 
 ## Factory and polymorphism working together
 
-The most important client code in the example is deliberately small:
+The most important client code in the factory example is deliberately small:
 
 ```python
 animal = AnimalFactory.create(animal_type)
@@ -115,10 +119,12 @@ This is [polymorphism](../GLOSSARY.md#polymorphism) through
 the Protocol because they provide the required behaviour, rather than because
 they inherit from a shared base class.
 
+---
+
 ## Why use a Protocol?
 
 The concrete animal classes do not share implementation or state in this
-example. They simply need to provide compatible behaviour.
+factory example. They simply need to provide compatible behaviour.
 
 Using a `Protocol` allows the design to express:
 
@@ -133,9 +139,11 @@ inheritance relationship.
 
 See `animals/animal.py` for the complete contract and its scope.
 
+---
+
 ## Real-world uses of factories
 
-The construction in this example is intentionally small, but the same pattern
+The construction in this factory example is intentionally small, but the same pattern
 can isolate much more substantial creation decisions.
 
 A factory can be useful for:
@@ -159,6 +167,8 @@ A factory can be useful for:
 A factory does not need to perform all of these jobs. They are examples of
 creation responsibilities that can justify introducing a factory boundary.
 
+---
+
 ## Benefits
 
 This design provides several practical benefits:
@@ -171,6 +181,8 @@ This design provides several practical benefits:
 - Static type checking can verify the contract.
 - Creation policy can change without forcing equivalent changes throughout
   client code.
+
+---
 
 ## Trade-offs
 
@@ -190,9 +202,11 @@ with a factory merely because factories are considered a design pattern.
 
 A design pattern should solve an identifiable design problem.
 
+---
+
 ## Related object-oriented examples
 
-This Factory example intentionally keeps the `Animal` contract narrow.
+This factory example intentionally keeps the `Animal` contract narrow.
 
 For other OO design questions, see the related example sets:
 
@@ -207,12 +221,14 @@ These examples use familiar Zoo concepts, but the design principles apply
 equally to objects such as documents, orders, notifications, reports, storage
 providers, or payment processors.
 
-## Run the example
+---
+
+## Run the factory example
 
 From the repository root:
 
 ```text
-python -m object_oriented.factory.example
+python -m object_oriented.factory.factory_example
 ```
 
 Expected output:
@@ -224,13 +240,15 @@ Roar!
 Trumpet!
 ```
 
-The output is intentionally simple. The interesting part of this example is
+The output is intentionally simple. The interesting part of this factory example is
 how the objects are designed, created, typed, and used.
+
+---
 
 ## Related concepts
 
 The [Object-Oriented Python Glossary](../GLOSSARY.md) explains terminology used
-throughout this example, including:
+throughout this factory example, including:
 
 - [Abstraction](../GLOSSARY.md#abstraction)
 - [Client Code](../GLOSSARY.md#client-code)
@@ -243,3 +261,9 @@ throughout this example, including:
 - [Public API](../GLOSSARY.md#public-api)
 - [Registry](../GLOSSARY.md#registry)
 - [Structural Typing](../GLOSSARY.md#structural-typing)
+
+---
+
+| File | Last Updated | Maintainer |
+| :--- | :---: | ---: |
+| _object_oriented/factory/README.md_ | _4 September 2026_ | _lizc-au_ |

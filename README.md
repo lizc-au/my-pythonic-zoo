@@ -65,6 +65,7 @@ and the trade-offs involved in building collaborating Python objects. Full intro
 
 * **[Factory Pattern](./object_oriented/factory/README.md)**: Centralises object creation behind a stable interface.
 * **[Composition](./object_oriented/composition/README.md)**: Builds objects from collaborating behaviours and explores who should own composition decisions.
+* **[Domain Modelling](./object_oriented/domain_modelling/README.md)**: Explores when domain differences should remain data and when type-specific behaviour justifies distinct domain types.
 
 ---
 
@@ -137,4 +138,4 @@ Special thanks to everyone working on or building exhibits for the Pythonic Zoo,
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _2 September 2026_ | _lizc-au_ |
+| _README.md_ | _4 September 2026_ | _lizc-au_ |
