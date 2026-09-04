@@ -14,35 +14,43 @@ ones that appear in larger production systems.
 
 ## Suggested learning order
 
-1. [Factory Pattern](factory/README.md)
-   - Centralise object creation.
-   - Return a stable abstraction rather than exposing construction details.
-   - Understand registries, protocols, polymorphism, and client code.
-
-2. [Composition](composition/README.md)
-   - Build objects from collaborating behaviours.
-   - Compare client-selected, construction-selected, and domain-type-selected
-     composition.
-   - Explore dependency injection and responsibility placement.
-
-3. [Domain Modelling](domain_modelling/README.md)
+1. [Domain Modelling](domain_modelling/README.md)
    - Decide when a difference should remain data and when it should become a
      distinct domain type.
    - Compare one shared `Animal` model with explicit animal types introduced
      only when type-specific behaviour creates a meaningful responsibility.
 
-4. [Responsibilities & Collaboration](responsibilities/README.md)
-   - Decide which object should own which work.
-   - Compare an overloaded `Animal` with focused collaborating objects.
-   - Explore cohesion, delegation, responsibility boundaries, and the
-     Single Responsibility Principle.
-
-5. [Encapsulation & Invariants](encapsulation/README.md)
+2. [Encapsulation & Invariants](encapsulation/README.md)
    - Explore how objects can own and protect the rules governing their state.
    - Compare freely assignable state with a deliberate public interface for
     controlled state changes.
    - Examine what `_name`, `__name`, properties, and name mangling actually do
-    and do not protect in Python.    
+    and do not protect in Python.
+
+3. [Responsibilities & Collaboration](responsibilities/README.md)
+   - Decide which object should own which work.
+   - Compare an overloaded `Animal` with focused collaborating objects.
+   - Explore cohesion, delegation, responsibility boundaries, and the
+     Single Responsibility Principle.    
+
+4. [Composition](composition/README.md)
+   - Build objects from collaborating behaviours.
+   - Compare client-selected, construction-selected, and domain-type-selected
+     composition.
+   - Explore dependency injection and responsibility placement.
+
+5. [Inheritance](inheritance/README.md)
+   - Decide when a subtype genuinely represents a specialised form of its base
+     type rather than merely sharing some implementation.
+   - Compare inappropriate capability-based inheritance with meaningful
+     specialisation of a shared `Animal` abstraction.
+   - Explore contracts, substitutability, abstract base classes, and when
+     composition is a better design.
+
+6. [Factory Pattern](factory/README.md)
+   - Centralise object creation.
+   - Return a stable abstraction rather than exposing construction details.
+   - Understand registries, protocols, polymorphism, and client code.            
 
 ---
 
@@ -70,14 +78,17 @@ Movement
 At the same time:
 
 - **Composition** defines how `Animal` collaborates with `Movement`.
-- **Factory** may own construction of the correctly composed object.
 - **Domain Modelling** determines whether differences such as animal species
   should remain data or justify distinct domain types with their own
   responsibilities.
-- **Responsibilities & Collaboration** determines which object should own each
-  responsibility and how objects should collaborate to complete larger tasks.
 - **Encapsulation & Invariants** determines how an object controls access to its
   state and preserves the rules that must remain true as that state changes.
+- **Factory** may own construction of the correctly composed object.  
+- **Inheritance** determines when one type genuinely specialises another and
+  can honour the same contract, rather than using a superclass merely to reuse
+  implementation.
+- **Responsibilities & Collaboration** determines which object should own each
+  responsibility and how objects should collaborate to complete larger tasks.
 
 The important question is therefore not:
 
@@ -112,11 +123,7 @@ and should be defensible for the scope of the example.
 
 From the repository root:
 
-```text
-python -m object_oriented.factory.factory_example
-```
-
-Composition provides three runnable variants:
+**Composition** provides three runnable variants:
 
 ```text
 python -m object_oriented.composition.client_selected_example
@@ -124,25 +131,38 @@ python -m object_oriented.composition.construction_selected_example
 python -m object_oriented.composition.domain_type_selected_example
 ```
 
-Domain Modelling provides two contrasting models:
+**Domain Modelling** provides two contrasting models:
 
 ```text
 python -m object_oriented.domain_modelling.data_model_example
 python -m object_oriented.domain_modelling.domain_types_example
 ```
 
-Responsibilities & Collaboration provides two contrasting designs:
-
-```text
-python -m object_oriented.responsibilities.overloaded_animal_example
-python -m object_oriented.responsibilities.collaborating_objects_example
-```
-
-Encapsulation & Invariants provides two contrasting examples:
+**Encapsulation & Invariants** provides two contrasting examples:
 
 ```text
 python -m object_oriented.encapsulation.unprotected_state_example
 python -m object_oriented.encapsulation.protected_state_example
+```
+
+**Factory** provides a runnable example:
+
+```text
+python -m object_oriented.factory.factory_example
+```
+
+**Inheritance** provides two contrasting examples:
+
+```text
+python -m object_oriented.inheritance.inappropriate_inheritance_example
+python -m object_oriented.inheritance.appropriate_inheritance_example
+```
+
+**Responsibilities & Collaboration** provides two contrasting designs:
+
+```text
+python -m object_oriented.responsibilities.overloaded_animal_example
+python -m object_oriented.responsibilities.collaborating_objects_example
 ```
 
 ---
@@ -155,6 +175,9 @@ definitions for terminology used throughout these exhibits.
 Useful starting points include:
 
 - [Abstraction](GLOSSARY.md#abstraction)
+- [Attribute](GLOSSARY.md#attribute)
+- [Behaviour](GLOSSARY.md#behaviour)
+- [Class](GLOSSARY.md#class)
 - [Cohesion](GLOSSARY.md#cohesion)
 - [Collaboration](GLOSSARY.md#collaboration)
 - [Composition](GLOSSARY.md#composition)
@@ -167,10 +190,14 @@ Useful starting points include:
 - [Factory](GLOSSARY.md#factory)
 - [Inheritance](GLOSSARY.md#inheritance)
 - [Invariant](GLOSSARY.md#invariant)
+- [Liskov Substitution Principle (LSP)](GLOSSARY.md#liskov-substitution-principle-lsp)
+- [Method](GLOSSARY.md#method)
+- [Object](GLOSSARY.md#object)
 - [Polymorphism](GLOSSARY.md#polymorphism)
 - [Protocol](GLOSSARY.md#protocol)
 - [Responsibility](GLOSSARY.md#responsibility)
 - [Single Responsibility Principle (SRP)](GLOSSARY.md#single-responsibility-principle-srp)
+- [State](GLOSSARY.md#state)
 - [Structural Typing](GLOSSARY.md#structural-typing)
 
 ---

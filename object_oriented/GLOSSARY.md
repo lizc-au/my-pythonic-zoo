@@ -370,6 +370,22 @@ be changed arbitrarily.
 
 ---
 
+## Liskov Substitution Principle (LSP)
+
+The **Liskov Substitution Principle (LSP)** states that a subtype should be
+usable where its base type is expected without breaking the expectations
+established by that base type.
+
+This means more than simply inheriting from a class or passing an
+`isinstance()` check. A subtype should honour the relevant contract of its base
+type so that client code does not need special handling simply because a
+particular subtype was supplied.
+
+In the [Inheritance examples](inheritance/README.md), `Python`, `Panda`, `Lion`,
+and `Elephant` can each be supplied to code written to work with `Animal`.
+
+---
+
 ## Method
 
 A **method** is a function associated with a class.
