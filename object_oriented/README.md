@@ -37,6 +37,13 @@ ones that appear in larger production systems.
    - Explore cohesion, delegation, responsibility boundaries, and the
      Single Responsibility Principle.
 
+5. [Encapsulation & Invariants](encapsulation/README.md)
+   - Explore how objects can own and protect the rules governing their state.
+   - Compare freely assignable state with a deliberate public interface for
+    controlled state changes.
+   - Examine what `_name`, `__name`, properties, and name mangling actually do
+    and do not protect in Python.    
+
 ---
 
 ## Patterns are not mutually exclusive
@@ -69,6 +76,8 @@ At the same time:
   responsibilities.
 - **Responsibilities & Collaboration** determines which object should own each
   responsibility and how objects should collaborate to complete larger tasks.
+- **Encapsulation & Invariants** determines how an object controls access to its
+  state and preserves the rules that must remain true as that state changes.
 
 The important question is therefore not:
 
@@ -129,6 +138,13 @@ python -m object_oriented.responsibilities.overloaded_animal_example
 python -m object_oriented.responsibilities.collaborating_objects_example
 ```
 
+Encapsulation & Invariants provides two contrasting examples:
+
+```text
+python -m object_oriented.encapsulation.unprotected_state_example
+python -m object_oriented.encapsulation.protected_state_example
+```
+
 ---
 
 ## Glossary
@@ -147,8 +163,10 @@ Useful starting points include:
 - [Dependency](GLOSSARY.md#dependency)
 - [Dependency Injection](GLOSSARY.md#dependency-injection)
 - [Domain Modelling](GLOSSARY.md#domain-modelling)
+- [Encapsulation](GLOSSARY.md#encapsulation)
 - [Factory](GLOSSARY.md#factory)
 - [Inheritance](GLOSSARY.md#inheritance)
+- [Invariant](GLOSSARY.md#invariant)
 - [Polymorphism](GLOSSARY.md#polymorphism)
 - [Protocol](GLOSSARY.md#protocol)
 - [Responsibility](GLOSSARY.md#responsibility)

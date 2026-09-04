@@ -272,6 +272,13 @@ Encapsulation is not merely making attributes "private." Its broader purpose is
 to protect boundaries and prevent unrelated code from depending on details that
 should be free to change.
 
+Encapsulation also helps an object preserve its [invariants](#invariant) by
+providing deliberate operations for valid state changes. In Python, conventions
+such as a leading underscore and mechanisms such as name mangling communicate
+and support these boundaries, but they do not create an enforced security
+boundary. See [Encapsulation & Invariants](encapsulation/README.md) for a
+detailed example.
+
 ---
 
 ## Factory
@@ -340,6 +347,26 @@ methods, functions, or other deliberately exposed operations.
 
 A good interface tells callers what they can do without requiring them to know
 how the component does it internally.
+
+---
+
+## Invariant
+
+An **invariant** is a condition that must remain true for an object to be in a
+valid state.
+
+An invariant is more than an input-validation rule. If an object owns the rule,
+the condition should continue to hold throughout the object's valid lifetime,
+including after state changes.
+
+In the [Encapsulation & Invariants examples](encapsulation/README.md), an
+`Animal` has the invariant that its recorded weight must be greater than zero.
+Checking the weight only during construction is insufficient if client code can
+later replace it with an invalid value.
+
+Encapsulation can help an object preserve its invariants by exposing operations
+that validate meaningful state changes rather than allowing relevant state to
+be changed arbitrarily.
 
 ---
 
