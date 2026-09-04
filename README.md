@@ -58,6 +58,15 @@ System durability, context safety, and resource management.
 Cross-platform Graphical User Interface examples using Python's standard built-in library Tkinter.
 * **`basic_window_viewer.py`**: Simple window display (runs autonomously from Terminal via **`launch_window.pyw`**).
 
+### 🧩 [5. Object-Oriented Python](./object_oriented/)
+
+Object-oriented design examples exploring patterns, composition, responsibilities,
+and the trade-offs involved in building collaborating Python objects. Full introduction with Glossary links found in [object_oriented/README](./object_oriented/README.md).
+
+* **[Factory Pattern](./object_oriented/factory/README.md)**: Centralises object creation behind a stable interface.
+* **[Composition](./object_oriented/composition/README.md)**: Builds objects from collaborating behaviours and explores who should own composition decisions.
+* **[Domain Modelling](./object_oriented/domain_modelling/README.md)**: Explores when domain differences should remain data and when type-specific behaviour justifies distinct domain types.
+
 ---
 
 ## 🧪 Code Quality
@@ -129,4 +138,4 @@ Special thanks to everyone working on or building exhibits for the Pythonic Zoo,
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _2 September 2026_ | _lizc-au_ |
+| _README.md_ | _4 September 2026_ | _lizc-au_ |

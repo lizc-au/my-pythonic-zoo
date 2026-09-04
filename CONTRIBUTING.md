@@ -51,6 +51,18 @@ The `dev` group includes both the runtime dependencies and the tools needed for 
 
 ---
 
+### Documentation and Docstring Style
+
+Examples in this repository are intended to teach through both their code and their documentation. Public modules, classes, and methods should therefore include useful docstrings that explain intent, responsibilities, or design decisions where these are not obvious from the code alone.
+
+Docstrings use reStructuredText (reST) conventions. Enclose Python identifiers and short code expressions in double backticks, for example ``Animal``, ``speak()``, and ``AnimalFactory.create()``.
+
+Prefer docstrings that explain **why** an abstraction or design choice exists, its important benefits or trade-offs, and when an alternative may be more appropriate. Avoid docstrings that merely repeat information already clear from the identifier or signature.
+
+README files use Markdown rather than reStructuredText.
+
+---
+
 ### Testing Requirements
 * **Tests for Code Changes:** Python code contributions should include appropriate automated test coverage. Add or update tests in the `tests/` folder when the change introduces new behaviour or modifies existing behaviour. Documentation, configuration, and other non-code changes do not require new tests. The test suite is run with `pytest`, which also discovers and runs the repository's existing `unittest`-based tests. Pull Requests with failing tests cannot be merged.
 

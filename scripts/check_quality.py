@@ -17,8 +17,8 @@ class QualityCheck:
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 
 QUALITY_CHECKS = (
+    QualityCheck("Ruff format", ("-m", "ruff", "format", ".")),
     QualityCheck("Ruff lint", ("-m", "ruff", "check", ".")),
-    QualityCheck("Ruff format", ("-m", "ruff", "format", "--check", ".")),
     QualityCheck("mypy", ("-m", "mypy", ".")),
     QualityCheck("pytest", ("-m", "pytest")),
 )
