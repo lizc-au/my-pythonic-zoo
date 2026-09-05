@@ -5,7 +5,7 @@ _**"All creatures great and small, wise and wonderful."**_
 
 **Minimum Runtime Requirement:** Python 3.12+ (Utilises modern type-hinting features).
 
-Housing a variety of self-contained Python scripts built with clean formatting and clear logic—improvements welcome 🧐
+Housing a variety of self-contained Python scripts built with clean formatting and clear logic - improvements welcome 🧐
 
 *Have an idea or optimization? We welcome contributions! Check out our `CONTRIBUTING.md` guide to get started. To avoid duplicate work on larger features, drop a quick comment on an Issue to let us know you're working on it.*
 
@@ -15,12 +15,12 @@ Housing a variety of self-contained Python scripts built with clean formatting a
 
 We are actively seeking contributions for the following interactive terminal visualizers and algorithms! Check out the issue links for specs and starter templates:
 
-* **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** — CLI utility for querying location data via public APIs.
-* **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** — Real-time maze creation and pathfinding algorithm rendering.
-* **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** — Pure Python 3D-to-2D spatial transformation matrix engine.
-* **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** — Dynamic tree insertion/deletion with ASCII branch layouts.
-* **[#10] [Knuth DLX Exact Cover Solver](https://github.com/lizc-au/my-pythonic-zoo/issues/10)** — Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems (currently assigned to maintainer but you're welcome to collaborate or wow us with your contribution😊).
-* **[#12] [SQLite CRUD Execution Script](https://github.com/lizc-au/my-pythonic-zoo/issues/12)** — Transactional Create, Read, Update, and Delete module using parameterized queries.
+* **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** - CLI utility for querying location data via public APIs.
+* **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** - Real-time maze creation and pathfinding algorithm rendering.
+* **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** - Pure Python 3D-to-2D spatial transformation matrix engine.
+* **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** - Dynamic tree insertion/deletion with ASCII branch layouts.
+* **[#10] [Knuth DLX Exact Cover Solver](https://github.com/lizc-au/my-pythonic-zoo/issues/10)** - Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems (currently assigned to maintainer but you're welcome to collaborate or wow us with your contribution😊).
+* **[#12] [SQLite CRUD Execution Script](https://github.com/lizc-au/my-pythonic-zoo/issues/12)** - Transactional Create, Read, Update, and Delete module using parameterized queries.
 
 ---
 *Want to tackle one? Drop a comment on the issue to claim it!*
@@ -60,12 +60,16 @@ Cross-platform Graphical User Interface examples using Python's standard built-i
 
 ### 🧩 [5. Object-Oriented Python](./object_oriented/)
 
-Object-oriented design examples exploring patterns, composition, responsibilities,
-and the trade-offs involved in building collaborating Python objects. Full introduction with Glossary links found in [object_oriented/README](./object_oriented/README.md).
+Practical object-oriented design examples exploring patterns, composition, responsibilities, and the trade-offs involved in building collaborating Python objects.
 
-* **[Factory Pattern](./object_oriented/factory/README.md)**: Centralises object creation behind a stable interface.
-* **[Composition](./object_oriented/composition/README.md)**: Builds objects from collaborating behaviours and explores who should own composition decisions.
-* **[Domain Modelling](./object_oriented/domain_modelling/README.md)**: Explores when domain differences should remain data and when type-specific behaviour justifies distinct domain types.
+* **[Composition](./object_oriented/composition/)**: Builds objects from collaborating behaviours and explores who should own composition decisions.
+* **[Domain Modelling](./object_oriented/domain_modelling/)**: Explores when domain differences should remain data and when type-specific behaviour justifies distinct domain types.
+* **[Encapsulation & Invariants](./object_oriented/encapsulation/)** determines how an object controls access to its state and preserves the rules that must remain true as that state changes. 
+* **[Factory](./object_oriented/factory/)**: Centralises object creation behind a stable interface.
+* **[Inheritance](./object_oriented/inheritance/)** determines when one type genuinely specialises another and can honour the same contract, rather than using a superclass merely to reuse implementation.
+* **[Responsibilities & Collaboration](./object_oriented/responsibilities/)** determines which object should own each responsibility and how objects should collaborate to complete larger tasks.
+
+Full introduction with Glossary links found in [object_oriented/README](./object_oriented/README.md), plus each topic folder has it's own covering documentation with relevant links.
 
 ---
 
@@ -93,34 +97,34 @@ Every script in this zoo includes its own mock data block and execution wrapper.
 This zoo is an active, evolving cookbook. We are continuously curating and deploying new standalone use cases.
 
 ### 📡 Core Communication & API Routing
-* **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** — Terminal utility fetching suburb/postcode data via public API.
-* **HTTP Status Checker** — Lightweight URL health monitor and status code logger.
+* **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** - Terminal utility fetching suburb/postcode data via public API.
+* **HTTP Status Checker** - Lightweight URL health monitor and status code logger.
 
 ### 💾 Database Operations (CRUD)
-* **[#12] [SQLite CRUD Execution Script](https://github.com/lizc-au/my-pythonic-zoo/issues/12)** — Transactional Create, Read, Update, and Delete module using parameterized queries.
+* **[#12] [SQLite CRUD Execution Script](https://github.com/lizc-au/my-pythonic-zoo/issues/12)** - Transactional Create, Read, Update, and Delete module using parameterized queries.
 
 ### ⚙️ System Automation & DevOps
-* **File System Cleanup & Archiver** — Directory cleanup utility that compresses old files and organizes logs by date.
-* **Environment Checker** — Simple diagnostic script verifying Python version, active virtualenv, and installed system packages.
+* **File System Cleanup & Archiver** - Directory cleanup utility that compresses old files and organizes logs by date.
+* **Environment Checker** - Simple diagnostic script verifying Python version, active virtualenv, and installed system packages.
 
 ### 💻 Visualizations & Interactive Displays
-* **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** — Real-time maze creation and pathfinding algorithm rendering.
-* **Mathematical Formula Plotter** — Render mathematical equations and trigonometric functions into visual terminal graphs.
-* **Statistical Charting Utility** — Lightweight generator for statistical distributions, histograms, and data trendlines.
+* **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** - Real-time maze creation and pathfinding algorithm rendering.
+* **Mathematical Formula Plotter** - Render mathematical equations and trigonometric functions into visual terminal graphs.
+* **Statistical Charting Utility** - Lightweight generator for statistical distributions, histograms, and data trendlines.
 
 ### 🧩 Algorithms & Data Structures
-* **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** — Dynamic tree insertion/deletion with ASCII branch layouts.
-* **[#10] [Knuth DLX Exact Cover Solver](https://github.com/lizc-au/my-pythonic-zoo/issues/10)** — Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems.
-* **Graph Network & Traversal Visualizer** — Terminal visualizer showing graph structures and shortest paths (Dijkstra/A*).
+* **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** - Dynamic tree insertion/deletion with ASCII branch layouts.
+* **[#10] [Knuth DLX Exact Cover Solver](https://github.com/lizc-au/my-pythonic-zoo/issues/10)** - Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems.
+* **Graph Network & Traversal Visualizer** - Terminal visualizer showing graph structures and shortest paths (Dijkstra/A*).
 
 ### ⚛️ Physics & Dimensional Simulations
-* **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** — Pure Python 3D-to-2D spatial transformation matrix engine.
-* **2D Physics Engine & Vector Mechanics** — Interactive canvas simulating gravity, bouncing collisions, and velocity vectors.
-* **4D Tesseract Projection Engine** — Mathematical projection rendering a rotating 4D hypercube onto a 2D viewport.
-* **Orbital & Pendulum Simulator** — Visualizing chaotic motion (double pendulum) or gravitational orbit paths using step equations.
+* **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** - Pure Python 3D-to-2D spatial transformation matrix engine.
+* **2D Physics Engine & Vector Mechanics** - Interactive canvas simulating gravity, bouncing collisions, and velocity vectors.
+* **4D Tesseract Projection Engine** - Mathematical projection rendering a rotating 4D hypercube onto a 2D viewport.
+* **Orbital & Pendulum Simulator** - Visualizing chaotic motion (double pendulum) or gravitational orbit paths using step equations.
 
 ### 📊 Data Science & AI Foundations
-* **Lightweight CSV Matrix Math** — Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
+* **Lightweight CSV Matrix Math** - Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
 
 ---
 
@@ -132,10 +136,20 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 
 Special thanks to everyone working on or building exhibits for the Pythonic Zoo, especially our first and so far only contributor since our creation in August 2026 - an eager AI agent created by the developer who snapped up and completed with honours our first task set ... within a matter of minutes!! We welcome all-comers, humans and AI alike, with eager anticipation and awe for the future of our project ... and mankind!
 
-* [@HeaTTap](https://github.com/HeaTTap) — Australian Phone Number Sanitiser ([#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))
+* [@HeaTTap](https://github.com/HeaTTap) - Australian Phone Number Sanitiser ([#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))
+
+---
+
+## 🤝 Community
+
+Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python community who have offered helpful critiques, suggestions and encouragement, especially where their feedback has led to improvements in the project.
+
+* u/Diapolo10
+* u/ectomancer
+* u/0xGollumDev
 
 ---
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _4 September 2026_ | _lizc-au_ |
+| _README.md_ | _5 September 2026_ | _lizc-au_ |
