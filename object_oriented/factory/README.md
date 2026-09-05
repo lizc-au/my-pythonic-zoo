@@ -18,30 +18,15 @@ production-shaped Factory design without unrelated complexity.
 
 ## The problem Factory Pattern solves
 
-Without a Factory, client code that needs an animal may also need to know which
-concrete class to import and instantiate.
+If the coder already knows exactly which animal is needed at that point in the code, `lion = Lion()` will suffice to create a lion object. There is no need for a Factory because the choice of Lion has already been made and so can be hard-coded.
 
-For example, client code might directly create:
+A Factory becomes useful when the choice can vary. For example, the animal type might come from user input, a configuration file, or another part of the program:
 
-```python
-lion = Lion()
-```
+`animal = AnimalFactory.create(animal_type)`
 
-That is perfectly reasonable when the caller already knows that it needs a
-`Lion`.
+If animal_type contains `"lion"`, the Factory creates a Lion. If it contains `"panda"`, it creates a Panda.
 
-A Factory becomes useful when **choosing and constructing the concrete object
-is itself a responsibility that should be separated from the code using the
-object**.
-
-In this factory example, client code instead asks:
-
-```python
-animal = AnimalFactory.create("lion")
-```
-
-The caller requests what it needs. The Factory decides which concrete class
-satisfies that request.
+The calling code supplies the choice, while the Factory handles the details of creating the right kind of animal.
 
 ---
 
@@ -49,25 +34,23 @@ satisfies that request.
 
 The factory example separates several responsibilities:
 
-```text
-animals/animal.py
+[animals/animal.py](./animals/animal.py)
     Defines the Animal Protocol - the behaviour Factory-created objects promise.
 
-animals/python.py
-animals/panda.py
-animals/lion.py
-animals/elephant.py
+[animals/python.py](./animals/python.py)
+[animals/panda.py](./animals/panda.py)
+[animals/lion.py](./animals/lion.py)
+[animals/elephant.py](./animals/elephant.py)
     Provide concrete implementations of that contract.
 
-animals/__init__.py
+[animals/__init__.py](./animals/__init__.py)
     Defines the public interface of the animals package.
 
-animal_factory.py
+[animal_factory.py](./animal_factory.py)
     Owns the mapping between identifiers and concrete animal creators.
 
-factory_example.py
+[factory_example.py](./factory_example.py)
     Represents client code that asks the factory for animals and uses them.
-```
 
 `AnimalFactory` uses a registry rather than a growing chain of `if`, `elif`, or
 `match` branches:
