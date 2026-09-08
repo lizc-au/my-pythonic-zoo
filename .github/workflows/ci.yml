@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # =================================================================
       # 1. PR POLICY & SECURITY CHECKS
@@ -19,7 +19,7 @@ jobs:
 
       - name: 'Policy Step 1: Check if PR author is assigned'
         if: github.event_name == 'pull_request' && success()
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const prAuthor = context.payload.pull_request.user.login;
@@ -48,7 +48,7 @@ jobs:
       # =================================================================
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
