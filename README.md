@@ -36,9 +36,9 @@ We welcome contributors who use AI coding assistants (like Copilot, ChatGPT, or 
 
 ---
 
-## 🗺️ Zoo Map (Curated Progression)
+## 🗺 Zoo Map - Exhibits & Learning Paths
 
-This repository is organized as an exhibition cookbook. Every script is entirely self-contained, using built-in standard libraries to remain immediately runnable and easily forkable.
+This repository is organized as an exhibition cookbook. Use the Zoo Map below to browse categories and exhibits; larger categories may link to their own README for more detailed navigation and teaching notes.
 
 ### 🧹 [1. Data Cleaning](./data_cleaning/)
 Foundational text and data preprocessing utilities.
@@ -69,7 +69,7 @@ Practical object-oriented design examples exploring patterns, composition, respo
 * **[Inheritance](./object_oriented/inheritance/)** determines when one type genuinely specialises another and can honour the same contract, rather than using a superclass merely to reuse implementation.
 * **[Responsibilities & Collaboration](./object_oriented/responsibilities/)** determines which object should own each responsibility and how objects should collaborate to complete larger tasks.
 
-Full introduction with Glossary links found in [object_oriented/README](./object_oriented/README.md), plus each topic folder has it's own covering documentation with relevant links.
+See the **[Object-Oriented Python Guide](./object_oriented/README.md)** for the full introduction, topic navigation, glossary links, and detailed documentation for each exhibit.
 
 ---
 
