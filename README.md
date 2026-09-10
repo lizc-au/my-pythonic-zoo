@@ -71,6 +71,14 @@ Practical object-oriented design examples exploring patterns, composition, respo
 
 See the **[Object-Oriented Python Guide](./object_oriented/README.md)** for the full introduction, topic navigation, glossary links, and detailed documentation for each exhibit.
 
+### 🐍 [6. Pythonic Thinking](./pythonic_thinking/)
+
+Explore the mental models, characteristic idioms, common surprises, and language behaviours that help explain not just how to write Python, but why Python works the way it does.
+
+* **[Mental Model](./pythonic_thinking/mental_model/)**: Builds foundations for reasoning about names and objects, mutation and copying, iteration, and functions as first-class objects.
+
+See the **[Pythonic Thinking Guide](./pythonic_thinking/README.md)** for the full conceptual roadmap and planned exhibits.
+
 ---
 
 ## 🧪 Code Quality
@@ -152,4 +160,4 @@ Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python com
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _5 September 2026_ | _lizc-au_ |
+| _README.md_ | _10 September 2026_ | _lizc-au_ |
