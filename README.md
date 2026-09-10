@@ -55,8 +55,11 @@ System durability, context safety, and resource management.
 * **`connection_tester.py`**: Safe SQLite execution environments wrapping queries in strict `try-except-finally` blocks to guarantee resource closure and prevent server memory leaks.
 
 ### 🖥️ [4. Native GUI](./native_gui/)
-Cross-platform Graphical User Interface examples using Python's standard built-in library Tkinter.
-* **`basic_window_viewer.py`**: Simple window display (runs autonomously from Terminal via **`launch_basic_window_viewer.pyw`**).
+Cross-platform graphical user interface examples using Python's built-in Tkinter toolkit.
+* **[Basic Window Viewer](./native_gui/basic_window_viewer.py)**: Displays formatted text in a native desktop window.
+* **[Button & Event Handling](./native_gui/button_event_handling.py)**: Introduces callbacks, button events, widget updates, and simple GUI state changes.
+
+See the **[Native GUI Guide](./native_gui/README.md)** for the learning path, launcher notes, and related documentation.
 
 ### 🧩 [5. Object-Oriented Python](./object_oriented/)
 
@@ -160,4 +163,4 @@ Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python com
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _10 September 2026_ | _lizc-au_ |
+| _README.md_ | _11 September 2026_ | _lizc-au_ |

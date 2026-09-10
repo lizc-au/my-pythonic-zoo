@@ -24,7 +24,7 @@ Understand Python's iterable and iterator model, why `for` loops operate on obje
 
 ### [Functions as Objects](./functions_as_objects_example.py)
 
-Explore what it means for functions to be first-class objects: they can be assigned to names, stored, passed to other functions, and returned like other Python objects. This provides foundations for callbacks, decorators, and other common Python techniques.
+Explore what it means for functions to be first-class objects: they can be assigned to names, stored, passed to other functions, and returned like other Python objects. The exhibit also introduces `lambda` expressions, which create short function objects at the point where they are needed, and shows why this can be useful for callbacks and adapters. These ideas provide foundations for callbacks, decorators, and other common Python techniques.
 
 ---
 
