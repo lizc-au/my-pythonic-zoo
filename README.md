@@ -56,7 +56,7 @@ System durability, context safety, and resource management.
 
 ### 🖥️ [4. Native GUI](./native_gui/)
 Cross-platform Graphical User Interface examples using Python's standard built-in library Tkinter.
-* **`basic_window_viewer.py`**: Simple window display (runs autonomously from Terminal via **`launch_window.pyw`**).
+* **`basic_window_viewer.py`**: Simple window display (runs autonomously from Terminal via **`launch_basic_window_viewer.pyw`**).
 
 ### 🧩 [5. Object-Oriented Python](./object_oriented/)
 

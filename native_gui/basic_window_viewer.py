@@ -7,7 +7,11 @@ ENGINEERING PRINCIPLE: Standard Label widgets enforce uniform layouts. Utilizing
 Text widgets with Tag mappings allows in-situ rich text modifications, such as
 line highlighting and selective font styling, using native GUI frameworks.
 
-See end of this file for autonomous `launch_window.pyw` requirement explanation.
+The GUI application logic remains in this importable `.py` module so it can be
+tested, reused, and launched in different ways. On Windows, launching a normal
+`.py` application through `python.exe` can also create or retain a console
+window. The companion `launch_basic_window_viewer.pyw` provides a GUI-only entry
+point that Windows can run through `pythonw.exe` without displaying that console.
 """
 
 import tkinter as tk
@@ -128,16 +132,7 @@ def display_in_window(title: str, content: str) -> None:
     root.mainloop()
 
 
-# =============================================================================
-# ARCHITECTURAL NOTE: Why an execution block (`if __name__ == "__main__":`)
-# belongs in an autonomous launcher (`launch_window.pyw`) rather than here:
-#
-# 1. Terminal Decoupling: Executing `.py` files forces the host operating
-#    system to open and hold a captive terminal console window. Separating the
-#    runtime hook into a `.pyw` extension tells Windows to run via pythonw.exe,
-#    suppressing the console and allowing the UI window to run autonomously.
-# 2. Test Suite Compatibility: Python cannot cleanly resolve standard module
-#    namespace imports from `.pyw` target extensions during automated test runs.
-#    Keeping core showcase logic in a standard `.py` module ensures it remains
-#    fully visible, importable, and testable by our GitHub Actions gatekeepers.
-# =============================================================================
+def main() -> None:
+    """Prepare and display the Basic Window Viewer."""
+    boxed_output = create_terminal_box(ZEN_OF_PYTHON)
+    display_in_window(title="The Zen of Python", content=boxed_output)

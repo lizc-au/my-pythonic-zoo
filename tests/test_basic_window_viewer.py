@@ -7,8 +7,9 @@ Use `# type: ignore[arg-type]` as signal to mypy to allow deliberate invalid tes
 """
 
 import unittest
+from unittest.mock import patch
 
-from native_gui.basic_window_viewer import create_terminal_box
+from native_gui.basic_window_viewer import create_terminal_box, main
 
 
 class TestBasicWindowViewer(unittest.TestCase):
@@ -38,6 +39,17 @@ class TestBasicWindowViewer(unittest.TestCase):
         """Test intercepting bad structural data types cleanly."""
         result = create_terminal_box(42)  # type: ignore[arg-type]
         self.assertIn("Error: Input must be a string", result)
+
+    @patch("native_gui.basic_window_viewer.display_in_window")
+    def test_main_prepares_and_displays_viewer(self, mock_display):
+        """Test that main prepares the content and delegates to the GUI display."""
+        main()
+
+        mock_display.assert_called_once()
+        self.assertEqual(mock_display.call_args.kwargs["title"], "The Zen of Python")
+        self.assertIn(
+            "Beautiful is better than ugly.", mock_display.call_args.kwargs["content"]
+        )
 
 
 if __name__ == "__main__":
