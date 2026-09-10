@@ -10,19 +10,19 @@ Understanding these concepts provides a foundation for many of the pitfalls, idi
 
 ## 🗺️ Exhibits
 
-### Names and Objects
+### [Names and Objects](./names_and_objects_example.py)
 
 Understand that Python variables are names bound to objects rather than containers that inherently store or copy values. This foundation helps explain assignment, identity, function arguments, and many apparently surprising Python behaviours.
 
-### Mutation and Copying
+### [Mutation and Copying](./mutation_and_copying_example.py)
 
 Explore the difference between rebinding a name and changing an existing object, why multiple names can refer to the same mutable object, and why shallow and deep copying are importantly different operations.
 
-### Iteration
+### [Iteration](./iteration_example.py)
 
 Understand Python's iterable and iterator model, why `for` loops operate on objects that produce values rather than acting primarily as counting loops, and how this model supports many Pythonic constructs.
 
-### Functions as Objects
+### [Functions as Objects](./functions_as_objects_example.py)
 
 Explore what it means for functions to be first-class objects: they can be assigned to names, stored, passed to other functions, and returned like other Python objects. This provides foundations for callbacks, decorators, and other common Python techniques.
 
@@ -40,6 +40,6 @@ Later exhibits build on these ideas rather than treating each Python behaviour a
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _pythonic_thinking/mental_model/README.md_ | _9 September 2026_ | _lizc-au_ |
+| _pythonic_thinking/mental_model/README.md_ | _10 September 2026_ | _lizc-au_ |
 
 ---
