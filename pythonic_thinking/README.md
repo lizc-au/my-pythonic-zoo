@@ -26,7 +26,7 @@ PEP 20 and PEP 8 are not a complete rulebook for Pythonic programming, but they 
 
 ## 🗺️ Exhibit Map
 
-### 🧠 Mental Model
+### 🧠 [Mental Model](./mental_model/)
 
 Build the foundations for reasoning about Python: names and objects, mutation and copying, iteration, and functions as first-class objects.
 
@@ -74,7 +74,7 @@ The remaining sections can then be explored according to interest or as particul
 
 **Pythonic Thinking is under active development.**
 
-The **Mental Model** collection is the first area being developed. The remaining sections describe planned exhibits and provide a roadmap for future additions.
+The **Mental Model** collection is the first completed area. The remaining sections describe planned exhibits and provide a roadmap for future additions.
 
 Suggestions, corrections, and contributions from Python programmers of all experience levels are welcome.
 
@@ -82,6 +82,6 @@ Suggestions, corrections, and contributions from Python programmers of all exper
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _pythonic_thinking/README.md_ | _9 September 2026_ | _lizc-au_ |
+| _pythonic_thinking/README.md_ | _10 September 2026_ | _lizc-au_ |
 
 ---
