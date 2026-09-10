@@ -28,6 +28,8 @@ is required.
 
 from collections.abc import Callable
 
+# ========= Reusable helpers =========
+
 
 def python_sound() -> str:
     """Return the sound made by a python."""
@@ -42,6 +44,25 @@ def lion_sound() -> str:
 def panda_sound() -> str:
     """Return the sound made by a panda."""
     return "Bleat!"
+
+
+def announce_sound(sound_function: Callable[[], str]) -> None:
+    """Call a supplied sound function and display its result."""
+    print(f"    {sound_function.__name__}(): {sound_function()}")
+
+
+def choose_sound(animal: str) -> Callable[[], str]:
+    """Return the sound function associated with an animal."""
+    sound_functions = {
+        "python": python_sound,
+        "panda": panda_sound,
+        "lion": lion_sound,
+    }
+
+    return sound_functions[animal]
+
+
+# ========= Demonstrations =========
 
 
 def demonstrate_function_object() -> None:
@@ -88,11 +109,6 @@ def demonstrate_stored_functions() -> None:
     print()
 
 
-def announce_sound(sound_function: Callable[[], str]) -> None:
-    """Call a supplied sound function and display its result."""
-    print(f"    {sound_function.__name__}(): {sound_function()}")
-
-
 def demonstrate_passed_function() -> None:
     """Demonstrate passing a function object to another function."""
 
@@ -100,17 +116,6 @@ def demonstrate_passed_function() -> None:
 
     print("\n    Passing lion_sound function object to announce_sound:")
     announce_sound(lion_sound)
-
-
-def choose_sound(animal: str) -> Callable[[], str]:
-    """Return the sound function associated with an animal."""
-    sound_functions = {
-        "python": python_sound,
-        "panda": panda_sound,
-        "lion": lion_sound,
-    }
-
-    return sound_functions[animal]
 
 
 def demonstrate_returned_function() -> None:
@@ -125,14 +130,33 @@ def demonstrate_returned_function() -> None:
     print(f"    selected_sound(): {selected_sound()}")
 
 
+def demonstrate_lambda_function() -> None:
+    """Demonstrate creating a short function object with a lambda expression."""
+
+    print("\n=== DEMONSTRATION 5: Lambda expressions create functions ===")
+
+    print("\n    Passing a lambda function directly to announce_sound:")
+    announce_sound(lambda: "Growl!")
+
+    print("\n    A lambda expression creates a function object without using `def`.")
+    print("    It is useful when a short function is needed at the point of use,")
+    print("    such as adapting arguments for a callback that will run later.")
+
+
+# ========= Main =========
+
+
 def main() -> None:
     """Run the function-object demonstrations."""
     demonstrate_function_object()
     demonstrate_stored_functions()
     demonstrate_passed_function()
     demonstrate_returned_function()
+    demonstrate_lambda_function()
     print()
 
+
+# ========= Module Entry Point =========
 
 if __name__ == "__main__":
     main()
