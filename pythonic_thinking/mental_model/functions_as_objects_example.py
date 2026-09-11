@@ -27,6 +27,7 @@ is required.
 """
 
 from collections.abc import Callable
+from functools import partial
 
 # ========= Reusable helpers =========
 
@@ -49,6 +50,11 @@ def panda_sound() -> str:
 def announce_sound(sound_function: Callable[[], str]) -> None:
     """Call a supplied sound function and display its result."""
     print(f"    {sound_function.__name__}(): {sound_function()}")
+
+
+def announce_animal(animal: str, sound: str) -> None:
+    """Display an animal and its supplied sound."""
+    print(f"    {animal} says: {sound}")
 
 
 def choose_sound(animal: str) -> Callable[[], str]:
@@ -143,6 +149,26 @@ def demonstrate_lambda_function() -> None:
     print("    such as adapting arguments for a callback that will run later.")
 
 
+def demonstrate_partial_function() -> None:
+    """Demonstrate creating a callable with arguments already supplied."""
+
+    print("\n=== DEMONSTRATION 6: partial() pre-fills function arguments ===")
+
+    panda_announcement = partial(announce_animal, "Panda", "Bleat!")
+
+    print("\n    Original function requires two arguments:")
+    print("    announce_animal('Panda', 'Bleat!')")
+
+    print("\n    partial() creates a callable with those arguments already supplied:")
+    print(f"    callable type: {type(panda_announcement).__name__}")
+    print("    Calling panda_announcement() later:")
+    panda_announcement()
+
+    print("\n    This is useful for callbacks that must be passed now and called")
+    print("    later, when the callback needs arguments but its caller will")
+    print("    supply none.")
+
+
 # ========= Main =========
 
 
@@ -153,6 +179,7 @@ def main() -> None:
     demonstrate_passed_function()
     demonstrate_returned_function()
     demonstrate_lambda_function()
+    demonstrate_partial_function()
     print()
 
 
