@@ -60,6 +60,7 @@ Cross-platform graphical user interface examples using Python's built-in Tkinter
 * **[Button & Event Handling](./native_gui/button_event_handling.py)**: Introduces callbacks, button events, widget updates, and simple GUI state changes.
 * **[User Input & Validation](./native_gui/user_input_validation.py)**: Collects, normalises, and validates text input with keyboard and button submission.
 * **[Layout & Resizing](./native_gui/layout_resizing.py)**: Uses `Frame`, `grid`, relative weights, and `sticky` to build a responsive resizable interface.
+* **[Dialogs & Multi-step Interaction](./native_gui/dialogs_multistep.py)**: Uses modal dialogs and Yes, No, or Cancel decisions to control a simple multi-step workflow.
 
 See the **[Native GUI Guide](./native_gui/README.md)** for the learning path, launcher notes, and related documentation.
 
