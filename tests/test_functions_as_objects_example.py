@@ -17,3 +17,5 @@ def test_functions_as_objects_output(capsys) -> None:
     assert "selected_sound is panda_sound: True" in output
     assert "selected_sound(): Bleat!" in output
     assert "<lambda>(): Growl!" in output
+    assert "callable type: partial" in output
+    assert "Panda says: Bleat!" in output
