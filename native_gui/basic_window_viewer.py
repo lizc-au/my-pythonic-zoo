@@ -136,3 +136,7 @@ def main() -> None:
     """Prepare and display the Basic Window Viewer."""
     boxed_output = create_terminal_box(ZEN_OF_PYTHON)
     display_in_window(title="The Zen of Python", content=boxed_output)
+
+
+if __name__ == "__main__":
+    main()

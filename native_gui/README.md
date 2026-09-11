@@ -8,6 +8,14 @@ GUI applications are **event-driven**. Instead of simply executing from top to b
 
 ## 🗺️ Exhibits
 
+### [Native GUI Exhibit Launcher](./exhibit_launcher.py)
+
+Open the Native GUI category from a single Tkinter menu and launch each exhibit in its own Python process.
+
+The launcher deliberately shows one exhibit at a time: it hides while the selected exhibit is open, then returns when that exhibit closes. Choosing another exhibit starts it fresh, and closing the launcher cleans up any active child exhibit.
+
+On Windows, [`launch_exhibit_launcher.pyw`](./launch_exhibit_launcher.pyw) provides the corresponding no-console entry point.
+
 ### [Basic Window Viewer](./basic_window_viewer.py)
 
 Create a native window and display formatted text using Tkinter widgets and text tags.
