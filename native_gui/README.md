@@ -38,6 +38,16 @@ The exhibit demonstrates `rowconfigure()`, `columnconfigure()`, relative grid `w
 
 On Windows, [`launch_layout_resizing.pyw`](./launch_layout_resizing.pyw) provides the corresponding no-console entry point.
 
+### [Dialogs & Multi-step Interaction](./dialogs_multistep.py)
+
+Use Tkinter message boxes to pause a workflow, collect a user decision, and continue differently for Yes, No, or Cancel.
+
+The exhibit demonstrates an explicitly parented modal dialog, a small wrapper around Tkinter's `askyesnocancel()` API, and three distinct return values: `True`, `False`, and `None`.
+
+On Windows, [`launch_dialogs_multistep.pyw`](./launch_dialogs_multistep.pyw) provides the corresponding no-console entry point.
+
+See the [Python `tkinter.messagebox` documentation](https://docs.python.org/3/library/tkinter.messagebox.html) for the standard message-box functions and return values.
+
 ---
 
 ## 🌱 Where This Leads
