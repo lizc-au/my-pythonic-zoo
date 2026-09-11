@@ -30,6 +30,14 @@ The exhibit also demonstrates binding the Enter key to an action with `.bind()`,
 
 On Windows, [`launch_user_input_validation.pyw`](./launch_user_input_validation.pyw) provides the corresponding no-console entry point.
 
+### [Layout & Resizing](./layout_resizing.py)
+
+Organise widgets with Tkinter `Frame` containers and the `grid` geometry manager, then make selected rows and columns expand when the window is resized.
+
+The exhibit demonstrates `rowconfigure()`, `columnconfigure()`, relative grid `weight` values, and `sticky="nsew"` for responsive widget stretching.
+
+On Windows, [`launch_layout_resizing.pyw`](./launch_layout_resizing.pyw) provides the corresponding no-console entry point.
+
 ---
 
 ## 🌱 Where This Leads

@@ -58,6 +58,8 @@ System durability, context safety, and resource management.
 Cross-platform graphical user interface examples using Python's built-in Tkinter toolkit.
 * **[Basic Window Viewer](./native_gui/basic_window_viewer.py)**: Displays formatted text in a native desktop window.
 * **[Button & Event Handling](./native_gui/button_event_handling.py)**: Introduces callbacks, button events, widget updates, and simple GUI state changes.
+* **[User Input & Validation](./native_gui/user_input_validation.py)**: Collects, normalises, and validates text input with keyboard and button submission.
+* **[Layout & Resizing](./native_gui/layout_resizing.py)**: Uses `Frame`, `grid`, relative weights, and `sticky` to build a responsive resizable interface.
 
 See the **[Native GUI Guide](./native_gui/README.md)** for the learning path, launcher notes, and related documentation.
 
