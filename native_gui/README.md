@@ -22,6 +22,14 @@ The exhibit also demonstrates passing function objects to Tkinter and using a `l
 
 On Windows, [`launch_button_event_handling.pyw`](./launch_button_event_handling.pyw) provides the corresponding no-console entry point.
 
+### [User Input & Validation](./user_input_validation.py)
+
+Collect text with a Tkinter `Entry`, normalise and validate user input, update interface feedback, and clear successful input ready for the next entry.
+
+The exhibit also demonstrates binding the Enter key to an action with `.bind()`, setting initial keyboard focus with `.focus_set()`, and using `strip()` with `casefold()` for case-insensitive input comparison.
+
+On Windows, [`launch_user_input_validation.pyw`](./launch_user_input_validation.pyw) provides the corresponding no-console entry point.
+
 ---
 
 ## 🌱 Where This Leads
