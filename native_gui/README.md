@@ -16,6 +16,14 @@ The launcher deliberately shows one exhibit at a time: it hides while the select
 
 On Windows, [`launch_exhibit_launcher.pyw`](./launch_exhibit_launcher.pyw) provides the corresponding no-console entry point.
 
+### [Comprehensive Tkinter Showcase](./tkinter_showcase.py)
+
+Combine the Native GUI concepts into one clean, application-style example with persistent navigation, responsive layout, user input and validation, keyboard events, dialogs, and reusable view helpers.
+
+Unlike the separate teaching exhibits, this showcase keeps comments minimal and focuses on a tidy finished structure that can serve as a starting template for a small Tkinter desktop application.
+
+On Windows, [`launch_tkinter_showcase.pyw`](./launch_tkinter_showcase.pyw) provides the corresponding no-console entry point.
+
 ### [Basic Window Viewer](./basic_window_viewer.py)
 
 Create a native window and display formatted text using Tkinter widgets and text tags.

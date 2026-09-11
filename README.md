@@ -57,6 +57,7 @@ System durability, context safety, and resource management.
 ### 🖥️ [4. Native GUI](./native_gui/)
 Cross-platform graphical user interface examples using Python's built-in Tkinter toolkit.
 * **[Exhibit Launcher](./native_gui/exhibit_launcher.py)**: Provides a single graphical menu for opening the Native GUI exhibits one at a time.
+* **[Comprehensive Tkinter Showcase](./native_gui/tkinter_showcase.py)**: Combines persistent navigation, responsive layout, validation, keyboard events, and dialogs in one clean application-style example.
 * **[Basic Window Viewer](./native_gui/basic_window_viewer.py)**: Displays formatted text in a native desktop window.
 * **[Button & Event Handling](./native_gui/button_event_handling.py)**: Introduces callbacks, button events, widget updates, and simple GUI state changes.
 * **[User Input & Validation](./native_gui/user_input_validation.py)**: Collects, normalises, and validates text input with keyboard and button submission.
