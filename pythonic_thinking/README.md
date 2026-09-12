@@ -42,7 +42,7 @@ Understand common sources of surprising behaviour, including mutable defaults, s
 
 Examine features that may look familiar from other languages but behave differently in Python, including truthiness, Boolean operators, division, slicing, scope, `None`, and strings.
 
-### 🏷️ Type System
+### 🏷️ [Type System](./type_system/)
 
 Explore Python's dynamic type system, type annotations, static checking, protocols, optional values, equality, and hashability.
 
@@ -74,7 +74,7 @@ The remaining sections can then be explored according to interest or as particul
 
 **Pythonic Thinking is under active development.**
 
-The **Mental Model** collection is the first completed area. The remaining sections describe planned exhibits and provide a roadmap for future additions.
+The **Mental Model** collection is the first completed area, and **Type System** is now also under development. The remaining sections describe planned exhibits and provide a roadmap for future additions.
 
 Suggestions, corrections, and contributions from Python programmers of all experience levels are welcome.
 
@@ -82,6 +82,6 @@ Suggestions, corrections, and contributions from Python programmers of all exper
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _pythonic_thinking/README.md_ | _10 September 2026_ | _lizc-au_ |
+| _pythonic_thinking/README.md_ | _12 September 2026_ | _lizc-au_ |
 
 ---
