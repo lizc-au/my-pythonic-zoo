@@ -1,4 +1,7 @@
 # 🐍 my-pythonic-zoo
+
+[![CI & Policy Checks](https://github.com/lizc-au/my-pythonic-zoo/actions/workflows/ci.yml/badge.svg)](https://github.com/lizc-au/my-pythonic-zoo/actions/workflows/ci.yml) [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
 _**"All creatures great and small, wise and wonderful."**_
 
 💡 Philosophy: Clean, educational Python code supported by standard data science libraries (pandas, xarray).
@@ -84,6 +87,7 @@ See the **[Object-Oriented Python Guide](./object_oriented/README.md)** for the 
 Explore the mental models, characteristic idioms, common surprises, and language behaviours that help explain not just how to write Python, but why Python works the way it does.
 
 * **[Mental Model](./pythonic_thinking/mental_model/)**: Builds foundations for reasoning about names and objects, mutation and copying, iteration, and functions as first-class objects.
+* **[Type System](./pythonic_thinking/type_system/)**: Explores Python's dynamic type system, type annotations, type relationships, and how static analysis tools reason about Python code.
 
 See the **[Pythonic Thinking Guide](./pythonic_thinking/README.md)** for the full conceptual roadmap and planned exhibits.
 
@@ -168,4 +172,4 @@ Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python com
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _11 September 2026_ | _lizc-au_ |
+| _README.md_ | _12 September 2026_ | _lizc-au_ |
