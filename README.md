@@ -21,7 +21,7 @@ We are actively seeking contributions for the following interactive terminal vis
 * **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** - CLI utility for querying location data via public APIs.
 * **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** - Real-time maze creation and pathfinding algorithm rendering.
 * **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** - Pure Python 3D-to-2D spatial transformation matrix engine.
-* **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** - Dynamic tree insertion/deletion with ASCII branch layouts.
+* **[#52] [Binary Search Trees - Module 2: Traversal, Insertion and Searching](https://github.com/lizc-au/my-pythonic-zoo/issues/52)** - The next stage in the progressive BST learning path established in parent Issue #7.
 
 ---
 *Want to tackle one? Drop a comment on the issue to claim it!*
@@ -96,6 +96,11 @@ See the **[Pythonic Thinking Guide](./pythonic_thinking/README.md)** for the ful
 Explore algorithms by building the mental models, data structures, and operations
 behind them before combining those pieces into complete implementations.
 
+* **[Binary Search Trees](./algorithms/binary_search_tree/)**: A progressive
+  learning path beginning with linked nodes and the full BST ordering invariant,
+  then continuing through traversal, insertion, searching, deletion, rendering,
+  and an interactive terminal visualizer.
+
 * **[Dancing Links](./algorithms/dancing_links/)**: A structured study sequence
   progressing from Exact Cover and Algorithm X through linked nodes, circular
   structures, toroidal matrices, and reversible cover/uncover operations before
@@ -143,7 +148,7 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 * **Statistical Charting Utility** - Lightweight generator for statistical distributions, histograms, and data trendlines.
 
 ### 🧩 Algorithms & Data Structures
-* **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** - Dynamic tree insertion/deletion with ASCII branch layouts.
+* **[#7] [Binary Search Trees: From Linked Nodes to an Interactive Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** - Module 1 is complete; Modules 2 to 4 will continue through traversal, insertion, searching, deletion, rendering, and an interactive terminal visualizer.
 * **Graph Network & Traversal Visualizer** - Terminal visualizer showing graph structures and shortest paths (Dijkstra/A*).
 
 ### ⚛️ Physics & Dimensional Simulations
@@ -173,6 +178,7 @@ Special thanks to everyone who has contributed to the Pythonic Zoo. Contribution
 
 * [@HeaTTap](https://github.com/HeaTTap) - Australian Phone Number Sanitiser ([#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))
 * [@alejandrotg-code](https://github.com/alejandrotg-code) - Transactional SQLite CRUD Execution Script ([#48](https://github.com/lizc-au/my-pythonic-zoo/pull/48))
+* [@Reh1t](https://github.com/Reh1t) - Binary Search Trees Module 1: Structure and Ordering ([#55](https://github.com/lizc-au/my-pythonic-zoo/pull/55))
 
 ---
 
@@ -188,6 +194,6 @@ Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python com
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _17 September 2026_ | _lizc-au_ |
+| _README.md_ | _20 September 2026_ | _lizc-au_ |
 
 ---
