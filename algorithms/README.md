@@ -8,6 +8,59 @@ data structures, and transformations involved. Where an algorithm depends on
 less familiar foundations, those foundations may be taught as part of a
 deliberate progression before the complete algorithm is assembled.
 
+## Binary Search Trees
+
+A Binary Search Tree (BST) stores values in linked nodes while maintaining an
+ordering rule: every value in a node's left subtree is smaller than that node,
+and every value in its right subtree is larger.
+
+This progression introduces the structure and its operations in stages before
+combining them into an interactive terminal visualizer. The examples use an
+ordinary, unbalanced BST as a teaching structure. Its operations can be
+efficient when the tree is reasonably balanced, but a skewed tree can degrade
+to linear behaviour.
+
+### Study Sequence
+
+Follow the exhibits in this order:
+
+1. **[Structure and Ordering](./binary_search_tree/bst_structure_example.py)**
+   introduces nodes, child references, empty branches, and the full BST ordering
+   invariant by constructing trees manually.
+   *(Contributed by [@Reh1t](https://github.com/Reh1t) via
+   [#55](https://github.com/lizc-au/my-pythonic-zoo/pull/55))*
+
+2. **[Traversal, Insertion and Searching](https://github.com/lizc-au/my-pythonic-zoo/issues/52)**
+   will introduce recursive in-order traversal, automate the ordering decisions,
+   and use the invariant to guide searches.
+
+3. **[Deletion](https://github.com/lizc-au/my-pythonic-zoo/issues/53)**
+   will explain the leaf, one-child, and two-child deletion cases.
+
+4. **[Rendering and Interactive Terminal Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/54)**
+   will render the tree without changing it, then combine the completed
+   operations in an interactive terminal application.
+
+Each module is intended to remain directly runnable and understandable on its
+own. A small amount of repetition is deliberate so learners can study one stage
+without first reconstructing its foundations from several other files.
+
+### Where this leads
+
+In production systems, developers usually rely on balanced structures such as
+AVL or Red-Black trees, or storage-oriented B-tree variants supplied by
+libraries, language runtimes, and databases, rather than implementing an
+ordinary Binary Search Tree directly. For that reason, this progression
+culminates in visualizers that make the underlying structure and algorithms
+observable instead of inventing a contrived business application.
+
+The interactive terminal visualizer will complete this algorithmic progression.
+A later Native GUI exhibit may reuse the completed BST operations in a Tkinter
+visualizer, focusing on Canvas drawing, event handling, and responsive layout
+while cross-referencing these modules for the underlying tree algorithms.
+
+---
+
 ## Dancing Links
 
 ### What is Dancing Links?
@@ -111,6 +164,6 @@ be translated into Exact Cover and then solved using Algorithm X with DLX.
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _algorithms/README.md_ | _15 September 2026_ | _lizc-au_ |
+| _algorithms/README.md_ | _20 September 2026_ | _lizc-au_ |
 
 ---
