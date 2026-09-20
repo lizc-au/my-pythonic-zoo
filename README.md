@@ -16,11 +16,9 @@ Housing a variety of self-contained Python scripts built with clean formatting a
 
 ## 🚀 Open Issues
 
-We are actively seeking contributions for the following interactive terminal visualizers and algorithms! Check out the issue links for specs and starter templates:
+The following issues are currently open for contributions. Check each issue for its scope, learning goals, and contribution guidance:
 
 * **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** - CLI utility for querying location data via public APIs.
-* **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** - Real-time maze creation and pathfinding algorithm rendering.
-* **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** - Pure Python 3D-to-2D spatial transformation matrix engine.
 * **[#52] [Binary Search Trees - Module 2: Traversal, Insertion and Searching](https://github.com/lizc-au/my-pythonic-zoo/issues/52)** - The next stage in the progressive BST learning path established in parent Issue #7.
 
 ---
@@ -39,7 +37,7 @@ We welcome contributors who use AI coding assistants (like Copilot, ChatGPT, or 
 
 ## 🗺 Zoo Map - Exhibits & Learning Paths
 
-This repository is organized as an exhibition cookbook. Use the Zoo Map below to browse categories and exhibits; larger categories may link to their own README for more detailed navigation and teaching notes.
+This repository is organized as a collection of practical Python exhibits and learning paths. Use the Zoo Map below to browse categories and exhibits; larger categories may link to their own README for more detailed navigation and teaching notes.
 
 ### 🧹 [1. Data Cleaning](./data_cleaning/)
 Foundational text and data preprocessing utilities.
@@ -132,30 +130,32 @@ Every script in this zoo includes its own mock data block and execution wrapper.
 
 ## 🛠️ Work in Progress & Upcoming Exhibits
 
-This zoo is an active, evolving cookbook. We are continuously curating and deploying new standalone use cases.
+This zoo is an active, evolving learning resource. Upcoming ideas may become focused standalone exhibits or progressive series, depending on the concepts and prerequisites involved.
+
+Some ideas are deliberately weird and wonderful. Learning often begins by wondering how something marvellous works and asking, “Could I build that myself?”
 
 ### 📡 Core Communication & API Routing
 * **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** - Terminal utility fetching suburb/postcode data via public API.
 * **HTTP Status Checker** - Lightweight URL health monitor and status code logger.
 
 ### ⚙️ System Automation & DevOps
-* **File System Cleanup & Archiver** - Directory cleanup utility that compresses old files and organizes logs by date.
+* **Safe File Management & Archiving** - Progressive exhibits exploring directory inspection, file selection rules, dated organization, and recoverable archiving.
 * **Environment Checker** - Simple diagnostic script verifying Python version, active virtualenv, and installed system packages.
 
 ### 💻 Visualizations & Interactive Displays
-* **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** - Real-time maze creation and pathfinding algorithm rendering.
-* **Mathematical Formula Plotter** - Render mathematical equations and trigonometric functions into visual terminal graphs.
-* **Statistical Charting Utility** - Lightweight generator for statistical distributions, histograms, and data trendlines.
+* **Maze Generation & Pathfinding** - Progressive exhibits exploring grid representation, maze generation, pathfinding algorithms, and terminal visualization.
+* **Mathematical Functions & Plotting** - Progressive exhibits exploring coordinates, function evaluation, scaling, and terminal graph rendering.
+* **Statistics & Data Visualization** - Progressive exhibits exploring distributions, summary statistics, histograms, and data trends.
 
 ### 🧩 Algorithms & Data Structures
 * **[#7] [Binary Search Trees: From Linked Nodes to an Interactive Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** - Module 1 is complete; Modules 2 to 4 will continue through traversal, insertion, searching, deletion, rendering, and an interactive terminal visualizer.
-* **Graph Network & Traversal Visualizer** - Terminal visualizer showing graph structures and shortest paths (Dijkstra/A*).
+* **Graphs, Traversal & Pathfinding** - Progressive exhibits exploring graph representation, traversal, shortest-path algorithms, and terminal visualization.
 
 ### ⚛️ Physics & Dimensional Simulations
-* **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** - Pure Python 3D-to-2D spatial transformation matrix engine.
-* **2D Physics Engine & Vector Mechanics** - Interactive canvas simulating gravity, bouncing collisions, and velocity vectors.
-* **4D Tesseract Projection Engine** - Mathematical projection rendering a rotating 4D hypercube onto a 2D viewport.
-* **Orbital & Pendulum Simulator** - Visualizing chaotic motion (double pendulum) or gravitational orbit paths using step equations.
+* **3D Rotation & Projection** - Progressive exhibits exploring coordinates, rotation mathematics, 3D-to-2D projection, and terminal wireframe rendering.
+* **Vectors & 2D Physics** - Progressive exhibits exploring vector movement, gravity, velocity, and collision behaviour through visual simulations.
+* **Advanced Dimensional Projection** - Later exhibits building on the 3D progression to explore four-dimensional coordinates and projection through a rotating tesseract.
+* **Motion & Dynamic Systems** - Progressive exhibits exploring time-step simulation, pendulum motion, orbital paths, and eventually chaotic systems.
 
 ### 📊 Data Science & AI Foundations
 * **Lightweight CSV Matrix Math** - Pure-Python numeric summarizer calculating basic statistical metrics on CSV columns without heavy dependencies.
@@ -177,7 +177,7 @@ This project is developed with interactive assistance from ChatGPT for pair prog
 Special thanks to everyone who has contributed to the Pythonic Zoo. Contributions, ideas, reviews, and improvements that help make the Zoo a better learning resource are greatly appreciated.
 
 * [@HeaTTap](https://github.com/HeaTTap) - Australian Phone Number Sanitiser ([#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))
-* [@alejandrotg-code](https://github.com/alejandrotg-code) - Transactional SQLite CRUD Execution Script ([#48](https://github.com/lizc-au/my-pythonic-zoo/pull/48))
+* [@aletgdev](https://github.com/aletgdev) - Transactional SQLite CRUD Execution Script ([#48](https://github.com/lizc-au/my-pythonic-zoo/pull/48))
 * [@Reh1t](https://github.com/Reh1t) - Binary Search Trees Module 1: Structure and Ordering ([#55](https://github.com/lizc-au/my-pythonic-zoo/pull/55))
 
 ---
