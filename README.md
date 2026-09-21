@@ -39,57 +39,7 @@ We welcome contributors who use AI coding assistants (like Copilot, ChatGPT, or 
 
 This repository is organized as a collection of practical Python exhibits and learning paths. Use the Zoo Map below to browse categories and exhibits; larger categories may link to their own README for more detailed navigation and teaching notes.
 
-### 🧹 [1. Data Cleaning](./data_cleaning/)
-Foundational text and data preprocessing utilities.
-* **`string_cleaner.py`**: Optimised text standardisation using Pythonic list comprehensions to fix whitespace and capitalization on raw datasets.
-* **`phone_sanitiser.py`**: Standalone Australian phone number sanitisation and structural block formatting with support for mobile, landlines (Perth/WA area codes), 13/1300/1800 numbers, and international prefixes. *(Contributed by [@HeaTTap](https://github.com/HeaTTap) via [#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))*
-
-### 🔐 [2. User Management](./user_management/)
-Authentication mechanisms and secure input architecture.
-* **`password_hasher.py`**: Cryptographic credential handling implementing `hashlib.pbkdf2_hmac` with unique byte salts to defend against rainbow table and brute-force attacks.
-* **`email_validator.py`**: Lightweight, regex-free input validation module using fast Pythonic string parsing boundaries to catch and sanitize malformed data before database staging.
-
-### 💾 [3. Database Basics](./database_basics/)
-System durability, context safety, and resource management.
-* **`connection_tester.py`**: Safe SQLite execution environments wrapping queries in strict `try-except-finally` blocks to guarantee resource closure and prevent server memory leaks.
-* **`sqlite_crud.py`**: Transaction-safe SQLite Create, Read, Update, and Delete operations using context managers, parameterized queries, and dictionary-like query results.
-
-### 🖥️ [4. Native GUI](./native_gui/)
-Cross-platform graphical user interface examples using Python's built-in Tkinter toolkit.
-* **[Exhibit Launcher](./native_gui/exhibit_launcher.py)**: Provides a single graphical menu for opening the Native GUI exhibits one at a time.
-* **[Comprehensive Tkinter Showcase](./native_gui/tkinter_showcase.py)**: Combines persistent navigation, responsive layout, validation, keyboard events, and dialogs in one clean application-style example.
-* **[Basic Window Viewer](./native_gui/basic_window_viewer.py)**: Displays formatted text in a native desktop window.
-* **[Button & Event Handling](./native_gui/button_event_handling.py)**: Introduces callbacks, button events, widget updates, and simple GUI state changes.
-* **[User Input & Validation](./native_gui/user_input_validation.py)**: Collects, normalises, and validates text input with keyboard and button submission.
-* **[Layout & Resizing](./native_gui/layout_resizing.py)**: Uses `Frame`, `grid`, relative weights, and `sticky` to build a responsive resizable interface.
-* **[Dialogs & Multi-step Interaction](./native_gui/dialogs_multistep.py)**: Uses modal dialogs and Yes, No, or Cancel decisions to control a simple multi-step workflow.
-
-See the **[Native GUI Guide](./native_gui/README.md)** for the learning path, launcher notes, and related documentation.
-
-### 🧩 [5. Object-Oriented Python](./object_oriented/)
-
-Practical object-oriented design examples exploring patterns, composition, responsibilities, and the trade-offs involved in building collaborating Python objects.
-
-* **[Composition](./object_oriented/composition/)**: Builds objects from collaborating behaviours and explores who should own composition decisions.
-* **[Domain Modelling](./object_oriented/domain_modelling/)**: Explores when domain differences should remain data and when type-specific behaviour justifies distinct domain types.
-* **[Encapsulation & Invariants](./object_oriented/encapsulation/)** determines how an object controls access to its state and preserves the rules that must remain true as that state changes. 
-* **[Factory](./object_oriented/factory/)**: Centralises object creation behind a stable interface.
-* **[Inheritance](./object_oriented/inheritance/)** determines when one type genuinely specialises another and can honour the same contract, rather than using a superclass merely to reuse implementation.
-* **[Responsibilities & Collaboration](./object_oriented/responsibilities/)** determines which object should own each responsibility and how objects should collaborate to complete larger tasks.
-
-See the **[Object-Oriented Python Guide](./object_oriented/README.md)** for the full introduction, topic navigation, glossary links, and detailed documentation for each exhibit.
-
-### 🐍 [6. Pythonic Thinking](./pythonic_thinking/)
-
-Explore the mental models, characteristic idioms, common surprises, and language behaviours that help explain not just how to write Python, but why Python works the way it does.
-
-* **[Mental Model](./pythonic_thinking/mental_model/)**: Builds foundations for reasoning about names and objects, mutation and copying, iteration, and functions as first-class objects.
-* **[Type System](./pythonic_thinking/type_system/)**: Explores Python's dynamic type system, type annotations, type relationships, and how static analysis tools reason about Python code.
-* **[Context Managers](./pythonic_thinking/context_managers/)**: Explores Python's `with` statement and context manager protocol for reliable lifecycle, resource, and exception handling.
-
-See the **[Pythonic Thinking Guide](./pythonic_thinking/README.md)** for the full conceptual roadmap and planned exhibits.
-
-### 🧩 [7. Algorithms & Data Structures](./algorithms/)
+### 🧩 [Algorithms & Data Structures](./algorithms/)
 
 Explore algorithms by building the mental models, data structures, and operations
 behind them before combining those pieces into complete implementations.
@@ -106,6 +56,62 @@ behind them before combining those pieces into complete implementations.
 
 See the **[Algorithms Guide](./algorithms/README.md)** for the full study sequence
 and detailed teaching progression.
+
+### 🧹 [Data Cleaning](./data_cleaning/)
+Foundational text and data preprocessing utilities.
+* **`string_cleaner.py`**: Optimised text standardisation using Pythonic list comprehensions to fix whitespace and capitalization on raw datasets.
+* **`phone_sanitiser.py`**: Standalone Australian phone number sanitisation and structural block formatting with support for mobile, landlines (Perth/WA area codes), 13/1300/1800 numbers, and international prefixes. *(Contributed by [@HeaTTap](https://github.com/HeaTTap) via [#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))*
+
+### 💾 [Database Basics](./database_basics/)
+System durability, context safety, and resource management.
+* **`connection_tester.py`**: Safe SQLite execution environments wrapping queries in strict `try-except-finally` blocks to guarantee resource closure and prevent server memory leaks.
+* **`sqlite_crud.py`**: Transaction-safe SQLite Create, Read, Update, and Delete operations using context managers, parameterized queries, and dictionary-like query results.
+
+### 🖥️ [Native GUI](./native_gui/)
+Cross-platform graphical user interface examples using Python's built-in Tkinter toolkit.
+* **[Exhibit Launcher](./native_gui/exhibit_launcher.py)**: Provides a single graphical menu for opening the Native GUI exhibits one at a time.
+* **[Comprehensive Tkinter Showcase](./native_gui/tkinter_showcase.py)**: Combines persistent navigation, responsive layout, validation, keyboard events, and dialogs in one clean application-style example.
+* **[Basic Window Viewer](./native_gui/basic_window_viewer.py)**: Displays formatted text in a native desktop window.
+* **[Button & Event Handling](./native_gui/button_event_handling.py)**: Introduces callbacks, button events, widget updates, and simple GUI state changes.
+* **[User Input & Validation](./native_gui/user_input_validation.py)**: Collects, normalises, and validates text input with keyboard and button submission.
+* **[Layout & Resizing](./native_gui/layout_resizing.py)**: Uses `Frame`, `grid`, relative weights, and `sticky` to build a responsive resizable interface.
+* **[Dialogs & Multi-step Interaction](./native_gui/dialogs_multistep.py)**: Uses modal dialogs and Yes, No, or Cancel decisions to control a simple multi-step workflow.
+
+See the **[Native GUI Guide](./native_gui/README.md)** for the learning path, launcher notes, and related documentation.
+
+### 🧩 [Object-Oriented Python](./object_oriented/)
+
+Practical object-oriented design examples exploring patterns, composition, responsibilities, and the trade-offs involved in building collaborating Python objects.
+
+* **[Composition](./object_oriented/composition/)**: Builds objects from collaborating behaviours and explores who should own composition decisions.
+* **[Domain Modelling](./object_oriented/domain_modelling/)**: Explores when domain differences should remain data and when type-specific behaviour justifies distinct domain types.
+* **[Encapsulation & Invariants](./object_oriented/encapsulation/)** determines how an object controls access to its state and preserves the rules that must remain true as that state changes. 
+* **[Factory](./object_oriented/factory/)**: Centralises object creation behind a stable interface.
+* **[Inheritance](./object_oriented/inheritance/)** determines when one type genuinely specialises another and can honour the same contract, rather than using a superclass merely to reuse implementation.
+* **[Responsibilities & Collaboration](./object_oriented/responsibilities/)** determines which object should own each responsibility and how objects should collaborate to complete larger tasks.
+
+See the **[Object-Oriented Python Guide](./object_oriented/README.md)** for the full introduction, topic navigation, glossary links, and detailed documentation for each exhibit.
+
+### 🐍 [Pythonic Thinking](./pythonic_thinking/)
+
+Explore the mental models, characteristic idioms, common surprises, and language behaviours that help explain not just how to write Python, but why Python works the way it does.
+
+* **[Mental Model](./pythonic_thinking/mental_model/)**: Builds foundations for reasoning about names and objects, mutation and copying, iteration, and functions as first-class objects.
+* **[Type System](./pythonic_thinking/type_system/)**: Explores Python's dynamic type system, type annotations, type relationships, and how static analysis tools reason about Python code.
+* **[Context Managers](./pythonic_thinking/context_managers/)**: Explores Python's `with` statement and context manager protocol for reliable lifecycle, resource, and exception handling.
+
+See the **[Pythonic Thinking Guide](./pythonic_thinking/README.md)** for the full conceptual roadmap and planned exhibits.
+
+### 🔐 [User Management](./user_management/)
+Authentication mechanisms and secure input architecture.
+* **`password_hasher.py`**: Cryptographic credential handling implementing `hashlib.pbkdf2_hmac` with unique byte salts to defend against rainbow table and brute-force attacks.
+* **`email_validator.py`**: Lightweight, regex-free input validation module using fast Pythonic string parsing boundaries to catch and sanitize malformed data before database staging.
+
+---
+
+## 🎓 [Interview Preparation](./interview_preparation/)
+
+Explore a structured catalogue of common Python interview questions designed to identify the underlying knowledge being assessed. Questions include a minimum expected level, related follow-up questions, searchable tags, and trusted Python references. The catalogue will also cross-reference relevant teaching exhibits throughout the Zoo.
 
 ---
 
@@ -194,6 +200,6 @@ Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python com
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _20 September 2026_ | _lizc-au_ |
+| _README.md_ | _21 September 2026_ | _lizc-au_ |
 
 ---
