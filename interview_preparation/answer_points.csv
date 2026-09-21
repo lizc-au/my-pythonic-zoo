@@ -1,0 +1,40 @@
+answer_point_id,question_id,minimum_level,display_order,explanation,code_example
+AP001,IQ001,Junior,1,"== compares whether two objects have equal values.","first_list == second_list"
+AP002,IQ001,Junior,2,"is compares whether two references point to the same object.","first_list is second_list"
+AP003,IQ001,Mid-level,3,"Equality behaviour can be customised through __eq__(), while identity cannot be customised.",
+AP004,IQ002,Junior,1,"Use is or is not when comparing with None.","result is None"
+AP005,IQ002,Junior,2,"Identity comparison is appropriate when checking a specific singleton or sentinel object.","value is MISSING"
+AP006,IQ002,Mid-level,3,"Do not use is for equal strings or numbers because implementation details such as interning can make identity appear inconsistent.","value == expected_text"
+AP007,IQ003,Junior,1,"A mutable object can be changed in place, while an immutable object cannot.","animals.append(""lion"")"
+AP008,IQ003,Junior,2,"Lists and dictionaries are mutable; strings, integers, and tuples are immutable.",
+AP009,IQ003,Mid-level,3,"Rebinding a name is different from mutating an object: rebinding changes which object the name references.","animals = replacement_animals"
+AP010,IQ004,Mid-level,1,"A shallow copy creates a new outer object but retains references to nested objects.","shallow_copy = copy.copy(original)"
+AP011,IQ004,Mid-level,2,"A deep copy recursively copies nested objects where possible.","deep_copy = copy.deepcopy(original)"
+AP012,IQ004,Mid-level,3,"Changes to shared nested objects can appear in both the original and a shallow copy.",
+AP013,IQ005,Junior,1,"Passing a function without parentheses passes the function object itself.","button(command=handle_click)"
+AP014,IQ005,Junior,2,"Adding parentheses calls the function immediately and passes its return value.","result = handle_click()"
+AP015,IQ005,Mid-level,3,"A callback is stored and invoked later when an event or condition occurs.",
+AP016,IQ006,Mid-level,1,"Functions can be assigned to names and stored in data structures.","action = greet"
+AP017,IQ006,Mid-level,2,"Functions can be passed as arguments and returned from other functions.","sorted(names, key=str.casefold)"
+AP018,IQ006,Mid-level,3,"Functions are objects with attributes and participate in Python's callable protocol.","callable(greet)"
+AP019,IQ007,Junior,1,"An iterable can provide an iterator when passed to iter().","iterator = iter(animals)"
+AP020,IQ007,Junior,2,"An iterator produces one item at a time when passed to next().","animal = next(iterator)"
+AP021,IQ007,Mid-level,3,"Iterators are consumed as they advance, while many iterable containers can create a fresh iterator for each traversal.",
+AP022,IQ008,Mid-level,1,"A for loop obtains an iterator by calling iter() on the iterable.","iterator = iter(animals)"
+AP023,IQ008,Mid-level,2,"It repeatedly calls next() to retrieve values.","animal = next(iterator)"
+AP024,IQ008,Mid-level,3,"The loop ends normally when the iterator raises StopIteration.","try:\n    animal = next(iterator)\nexcept StopIteration:\n    pass"
+AP025,IQ009,Junior,1,"Type annotations communicate intended types to readers.","animal: str = ""python"""
+AP026,IQ009,Junior,2,"Static analysis tools and editors use annotations to detect likely mistakes and improve assistance.","def greet(name: str) -> str:\n    return f""Hello, {name}!"""
+AP027,IQ009,Mid-level,3,"Annotations document expectations without changing Python's fundamentally dynamic type system.",
+AP028,IQ010,Mid-level,1,"Python does not normally enforce type annotations at runtime.","count: int = ""three"""
+AP029,IQ010,Mid-level,2,"Static type checkers examine annotations without executing the program.",
+AP030,IQ010,Mid-level,3,"Runtime validation requires explicit code or a library designed to perform it.",
+AP031,IQ011,Junior,1,"A context manager controls setup and cleanup around a defined block of work.","with open(""animals.txt"") as file:\n    animals = file.read()"
+AP032,IQ011,Junior,2,"The with statement ensures the context is exited even when the block raises an exception.",
+AP033,IQ011,Mid-level,3,"Common uses include files, locks, database transactions, temporary resources, and temporary state changes.",
+AP034,IQ012,Mid-level,1,"__enter__() prepares the context and returns the value optionally bound by as.","def __enter__(self):\n    return self"
+AP035,IQ012,Mid-level,2,"__exit__() performs cleanup when execution leaves the with block.","def __exit__(self, exc_type, exc_value, traceback):\n    self.close()"
+AP036,IQ012,Mid-level,3,"__exit__() receives information about an exception raised inside the block, or three None values after normal completion.",
+AP037,IQ013,Mid-level,1,"__exit__() can inspect the exception type, value, and traceback.",
+AP038,IQ013,Mid-level,2,"Returning a truthy value suppresses the exception; returning a false value or None allows it to propagate.","return True  # Suppress the exception"
+AP039,IQ013,Mid-level,3,"The method may perform cleanup or logging regardless of whether it suppresses the exception.",
