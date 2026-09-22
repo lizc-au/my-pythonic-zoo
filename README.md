@@ -111,7 +111,9 @@ Authentication mechanisms and secure input architecture.
 
 ## 🎓 [Interview Preparation](./interview_preparation/)
 
-Explore a structured catalogue of common Python interview questions designed to identify the underlying knowledge being assessed. Questions include a minimum expected level, related follow-up questions, searchable tags, and trusted Python references. The catalogue will also cross-reference relevant teaching exhibits throughout the Zoo.
+Explore a growing catalogue of Python interview questions designed to identify the underlying knowledge being assessed. Questions include minimum expected levels, related follow-ups, concise answer points, small code examples, trusted Python references, and links to relevant teaching exhibits throughout the Zoo.
+
+Use the Tkinter viewer to filter questions by topic and level, reveal answers, follow related question sequences, and open supporting references and runnable exhibits. This remains a work in progress, with further questions and supporting material planned.
 
 ---
 
@@ -200,6 +202,6 @@ Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python com
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _21 September 2026_ | _lizc-au_ |
+| _README.md_ | _22 September 2026_ | _lizc-au_ |
 
 ---
