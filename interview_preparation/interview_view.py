@@ -74,6 +74,8 @@ class InterviewView(ttk.Frame):
         root.title("My Pythonic Zoo - Interview Preparation")
         root.geometry(f"{window_width}x600+{left_position}+20")
         root.minsize(800, 500)
+        style = ttk.Style(root)
+        style.configure("TButton", padding=(12, 6))
 
     def set_status(self, message: str) -> None:
         """Update the status line."""

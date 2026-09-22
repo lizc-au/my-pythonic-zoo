@@ -26,6 +26,7 @@ class FilterBar(ttk.Frame):
         self.topic_var = tk.StringVar(value="All topics")
         self.level_var = tk.StringVar(value="Junior")
         self.on_change = on_change
+        self.search_var = tk.StringVar()
 
         ttk.Label(self, text="Topic:").pack(side=tk.LEFT)
         topic_box = ttk.Combobox(
@@ -38,7 +39,25 @@ class FilterBar(ttk.Frame):
         topic_box.pack(side=tk.LEFT, padx=(5, 20))
         topic_box.bind("<<ComboboxSelected>>", self._notify_change)
 
-        ttk.Label(self, text="Interview level:").pack(side=tk.LEFT)
+        ttk.Label(self, text="Search:").pack(side=tk.LEFT, padx=(20, 0))
+        search_box = ttk.Entry(
+            self,
+            textvariable=self.search_var,
+            width=28,
+        )
+        search_box.pack(side=tk.LEFT, padx=5)
+        search_box.bind("<KeyRelease>", self._notify_change)
+
+        ttk.Button(
+            self,
+            text="Clear",
+            command=self.clear_search,
+        ).pack(side=tk.LEFT, padx=(5, 0))
+
+        ttk.Label(
+            self,
+            text="Interview level:",
+        ).pack(side=tk.LEFT, padx=(40, 0))
         level_box = ttk.Combobox(
             self,
             textvariable=self.level_var,
@@ -69,6 +88,21 @@ class FilterBar(ttk.Frame):
 
     def _notify_change(self, _event: tk.Event) -> None:
         """Notify the controller that a filter changed."""
+        self.on_change()
+
+    @property
+    def search_query(self) -> str:
+        """Return the learner's search text."""
+        return self.search_var.get().strip()
+
+    @property
+    def search_text(self) -> str:
+        """Return normalised text used for matching."""
+        return self.search_query.casefold()
+
+    def clear_search(self) -> None:
+        """Clear the search and refresh the question list."""
+        self.search_var.set("")
         self.on_change()
 
 

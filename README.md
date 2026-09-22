@@ -113,7 +113,7 @@ Authentication mechanisms and secure input architecture.
 
 Explore a growing catalogue of Python interview questions designed to identify the underlying knowledge being assessed. Questions include minimum expected levels, related follow-ups, concise answer points, small code examples, trusted Python references, and links to relevant teaching exhibits throughout the Zoo.
 
-Use the Tkinter viewer to filter questions by topic and level, reveal answers, follow related question sequences, and open supporting references and runnable exhibits. This remains a work in progress, with further questions and supporting material planned.
+Use the Tkinter viewer to search questions and filter them by topic and level, reveal answers, follow related question sequences, and open supporting references and runnable exhibits. This remains a work in progress, with further questions and supporting material planned.
 
 ---
 

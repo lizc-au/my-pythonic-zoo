@@ -64,6 +64,7 @@ class InterviewController:
                 if question.active
                 and LEVEL_ORDER[question.minimum_level] <= selected_level
                 and selected_topic in ("All topics", question.topic)
+                and self._matches_search(question)
             ),
             key=lambda question: (
                 question.topic,
@@ -77,6 +78,20 @@ class InterviewController:
             self.current_question_id = None
             self.view.details.show_empty()
             self.view.set_status("No questions match these filters.")
+
+    def _matches_search(self, question: Question) -> bool:
+        """Match search text against learner-facing question fields."""
+        search_text = self.view.filters.search_text
+        searchable_fields = (
+            question.question,
+            question.topic,
+            question.tags,
+            question.tests_knowledge_of,
+        )
+
+        return not search_text or any(
+            search_text in field.casefold() for field in searchable_fields
+        )
 
     def select_question(self, question_id: str) -> None:
         """Display one question while keeping its answer hidden."""
@@ -115,25 +130,27 @@ class InterviewController:
             webbrowser.open(question.reference_url)
 
     def open_follow_up(self) -> None:
-        """Open the linked follow-up or the next visible question."""
+        """Open an in-scope follow-up or the next visible question."""
         question = self._current_question()
         if question is None:
             return
 
-        next_question_id = (
-            question.follow_up_question_id
-            or self.view.questions.question_after(question.question_id)
+        follow_up_id = self._available_follow_up_id(question)
+        next_question_id = follow_up_id or self.view.questions.question_after(
+            question.question_id
         )
+
         if next_question_id is None:
             self.view.filters.select_level(self.requested_level)
             self.refresh_questions()
             return
 
         next_question = self.catalogue.questions[next_question_id]
-        if not question.follow_up_question_id:
-            self.view.filters.select_level(self.requested_level)
-        selected_level = self.view.filters.selected_level
 
+        if not follow_up_id:
+            self.view.filters.select_level(self.requested_level)
+
+        selected_level = self.view.filters.selected_level
         if LEVEL_ORDER[next_question.minimum_level] > LEVEL_ORDER[selected_level]:
             self.view.filters.select_level(next_question.minimum_level)
 
@@ -151,11 +168,23 @@ class InterviewController:
         webbrowser.open(exhibit_path.resolve().as_uri())
         self.view.set_status(f"Opened {exhibit.exhibit_name}.")
 
+    def _available_follow_up_id(self, question: Question) -> str:
+        """Return a follow-up only when it satisfies the search."""
+        follow_up_id = question.follow_up_question_id
+
+        if follow_up_id and self.view.filters.search_text:
+            follow_up = self.catalogue.questions[follow_up_id]
+            if not self._matches_search(follow_up):
+                follow_up_id = ""
+
+        return follow_up_id
+
     def _next_action_text(self, question: Question) -> str | None:
         """Describe the next available navigation action."""
         next_action_text = None
+        follow_up_id = self._available_follow_up_id(question)
 
-        if question.follow_up_question_id:
+        if follow_up_id:
             next_action_text = "Next follow-up"
         else:
             next_question_id = self.view.questions.question_after(question.question_id)

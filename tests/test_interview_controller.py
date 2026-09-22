@@ -48,6 +48,7 @@ def make_controller(
     *,
     current_level: str = "Junior",
     requested_level: str = "Junior",
+    search_text: str = "",
 ) -> InterviewController:
     """Create a controller with mocked view dependencies."""
     questions = {
@@ -75,6 +76,7 @@ def make_controller(
     )
     controller.view = MagicMock()
     controller.view.filters.selected_level = current_level
+    controller.view.filters.search_text = search_text
     controller.current_question_id = None
     controller.requested_level = requested_level
     return controller
@@ -149,6 +151,21 @@ def test_select_question_sets_correct_navigation_label(
         question,
         [],
         expected_label,
+    )
+
+
+def test_search_skips_follow_up_outside_results() -> None:
+    """Continue through search results when a follow-up does not match."""
+    controller = make_controller(search_text="iq001")
+    controller.current_question_id = "IQ001"
+    mock_method(controller.view.questions.question_after).return_value = "IQ004"
+
+    with patch.object(controller, "refresh_questions") as refresh:
+        controller.open_follow_up()
+
+    refresh.assert_called_once_with()
+    mock_method(controller.view.questions.select_question).assert_called_once_with(
+        "IQ004"
     )
 
 

@@ -6,16 +6,21 @@ The questions guide learners toward the knowledge being assessed, concise answer
 
 > **Work in progress:** This is a growing learning resource, not an exhaustive list of Python interview questions. Further questions, answer points, code snippets, and exhibit links are planned as the Zoo develops. The catalogue may never be considered completely finished because interview subjects and expectations continue to evolve. Suggestions and corrections are welcome.
 
+The current viewer supports self-review by revealing expected answer points; it does not yet assess or score answers entered by the learner.
+
 ## Interview Viewer
 
 The Tkinter viewer allows learners to:
 
 - Filter questions by topic and interview level.
+- Search question text, topics, tags, and the knowledge being assessed.
 - Reveal concise answer points and small code examples.
 - Follow related questions from introductory concepts into deeper material.
 - Open official Python references.
 - Open related runnable exhibits from the Zoo.
 - Return to the originally selected level after temporarily following a harder question.
+
+Search is case-insensitive and uses literal substring matching. While search results are active, follow-up navigation remains within those results rather than opening an unrelated question outside the search scope.
 
 On Windows, launch the application without a console window by double-clicking:
 
