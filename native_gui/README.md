@@ -1,83 +1,60 @@
-# 🖥️ Native GUI
+# Native GUI
 
-Python's built-in `tkinter` module provides access to the Tk graphical user interface toolkit. These exhibits introduce native desktop GUI programming by building small applications that demonstrate one concept at a time.
+Build small desktop applications with Python's built-in `tkinter` toolkit. Each exhibit focuses on one part of an event-driven interface: the program creates a window, enters an event loop, and responds to actions such as clicks and typing.
 
-GUI applications are **event-driven**. Instead of simply executing from top to bottom and finishing, they create an interface, enter an event loop, and respond to actions such as button clicks and user input.
+## Follow the Learning Path
 
----
+| Step | Exhibit | Main idea |
+| :--- | :--- | :--- |
+| 1 | [Basic Window Viewer](./basic_window_viewer.py) | Create a window and display formatted text with widgets and tags. |
+| 2 | [Button & Event Handling](./button_event_handling.py) | Use callbacks, button events, and widget updates to change interface state. |
+| 3 | [User Input & Validation](./user_input_validation.py) | Read, normalise, validate, and clear an entry; submit by button or Enter key. |
+| 4 | [Layout & Resizing](./layout_resizing.py) | Arrange widgets with `Frame` and `grid`, then let selected areas expand. |
+| 5 | [Dialogs & Multi-step Interaction](./dialogs_multistep.py) | Use a modal Yes, No, or Cancel decision to control a workflow. |
 
-## 🗺️ Exhibits
+Start from the repository root with `python native_gui/exhibit_launcher.py` to choose an exhibit. The launcher opens one exhibit in a separate Python process, hides while it is open, and returns when it closes.
 
-### [Native GUI Exhibit Launcher](./exhibit_launcher.py)
+## Bring the Pieces Together
 
-Open the Native GUI category from a single Tkinter menu and launch each exhibit in its own Python process.
+The [Comprehensive Tkinter Showcase](./tkinter_showcase.py) combines navigation, responsive layout, validation, keyboard events, and dialogs in one application-style example. Its shorter comments and reusable view helpers make it a starting point for studying a more finished structure.
 
-The launcher deliberately shows one exhibit at a time: it hides while the selected exhibit is open, then returns when that exhibit closes. Choosing another exhibit starts it fresh, and closing the launcher cleans up any active child exhibit.
+Run it from the repository root with `python native_gui/tkinter_showcase.py`.
 
-On Windows, [`launch_exhibit_launcher.pyw`](./launch_exhibit_launcher.pyw) provides the corresponding no-console entry point.
+<details>
+<summary>Windows launchers without a console</summary>
 
-### [Comprehensive Tkinter Showcase](./tkinter_showcase.py)
+Each `.pyw` file starts its corresponding GUI without a console window when launched through `pythonw.exe`.
 
-Combine the Native GUI concepts into one clean, application-style example with persistent navigation, responsive layout, user input and validation, keyboard events, dialogs, and reusable view helpers.
+| Application | Windows entry point |
+| :--- | :--- |
+| Exhibit menu | [`launch_exhibit_launcher.pyw`](./launch_exhibit_launcher.pyw) |
+| Comprehensive showcase | [`launch_tkinter_showcase.pyw`](./launch_tkinter_showcase.pyw) |
+| Basic window | [`launch_basic_window_viewer.pyw`](./launch_basic_window_viewer.pyw) |
+| Button events | [`launch_button_event_handling.pyw`](./launch_button_event_handling.pyw) |
+| User input | [`launch_user_input_validation.pyw`](./launch_user_input_validation.pyw) |
+| Layout and resizing | [`launch_layout_resizing.pyw`](./launch_layout_resizing.pyw) |
+| Dialogs | [`launch_dialogs_multistep.pyw`](./launch_dialogs_multistep.pyw) |
 
-Unlike the separate teaching exhibits, this showcase keeps comments minimal and focuses on a tidy finished structure that can serve as a starting template for a small Tkinter desktop application.
+</details>
 
-On Windows, [`launch_tkinter_showcase.pyw`](./launch_tkinter_showcase.pyw) provides the corresponding no-console entry point.
+<details>
+<summary>Concepts to notice as you work through the exhibits</summary>
 
-### [Basic Window Viewer](./basic_window_viewer.py)
+| Exhibit | Detail to inspect |
+| :--- | :--- |
+| Button events | A function object is passed as a callback; a `lambda` adapts a callback when needed. See [Functions as Objects](../pythonic_thinking/mental_model/functions_as_objects_example.py). |
+| User input | `.bind()` handles Enter, `.focus_set()` sets initial focus, and `strip()` with `casefold()` supports forgiving text comparison. |
+| Layout | `rowconfigure()` and `columnconfigure()` set relative weights; `sticky="nsew"` stretches a widget in its grid cell. |
+| Dialogs | A parented `askyesnocancel()` dialog returns `True`, `False`, or `None`. See the [Python messagebox documentation](https://docs.python.org/3/library/tkinter.messagebox.html). |
 
-Create a native window and display formatted text using Tkinter widgets and text tags.
+</details>
 
-On Windows, [`launch_basic_window_viewer.pyw`](./launch_basic_window_viewer.pyw) provides a GUI-only entry point that can run through `pythonw.exe` without displaying a console window.
-
-### [Button & Event Handling](./button_event_handling.py)
-
-Introduce event-driven interaction using buttons, callbacks, widget updates, and simple interface state changes.
-
-The exhibit also demonstrates passing function objects to Tkinter and using a `lambda` expression as a callback adapter. See [Functions as Objects](../pythonic_thinking/mental_model/functions_as_objects_example.py) for the underlying Python mental model.
-
-On Windows, [`launch_button_event_handling.pyw`](./launch_button_event_handling.pyw) provides the corresponding no-console entry point.
-
-### [User Input & Validation](./user_input_validation.py)
-
-Collect text with a Tkinter `Entry`, normalise and validate user input, update interface feedback, and clear successful input ready for the next entry.
-
-The exhibit also demonstrates binding the Enter key to an action with `.bind()`, setting initial keyboard focus with `.focus_set()`, and using `strip()` with `casefold()` for case-insensitive input comparison.
-
-On Windows, [`launch_user_input_validation.pyw`](./launch_user_input_validation.pyw) provides the corresponding no-console entry point.
-
-### [Layout & Resizing](./layout_resizing.py)
-
-Organise widgets with Tkinter `Frame` containers and the `grid` geometry manager, then make selected rows and columns expand when the window is resized.
-
-The exhibit demonstrates `rowconfigure()`, `columnconfigure()`, relative grid `weight` values, and `sticky="nsew"` for responsive widget stretching.
-
-On Windows, [`launch_layout_resizing.pyw`](./launch_layout_resizing.pyw) provides the corresponding no-console entry point.
-
-### [Dialogs & Multi-step Interaction](./dialogs_multistep.py)
-
-Use Tkinter message boxes to pause a workflow, collect a user decision, and continue differently for Yes, No, or Cancel.
-
-The exhibit demonstrates an explicitly parented modal dialog, a small wrapper around Tkinter's `askyesnocancel()` API, and three distinct return values: `True`, `False`, and `None`.
-
-On Windows, [`launch_dialogs_multistep.pyw`](./launch_dialogs_multistep.pyw) provides the corresponding no-console entry point.
-
-See the [Python `tkinter.messagebox` documentation](https://docs.python.org/3/library/tkinter.messagebox.html) for the standard message-box functions and return values.
+For the broader API, see the [Python tkinter documentation](https://docs.python.org/3/library/tkinter.html).
 
 ---
 
-## 🌱 Where This Leads
-
-Later exhibits can build on these foundations with user input, validation, layout management, richer `ttk` widgets, dialogs, and increasingly application-like desktop interfaces.
-
-For a comprehensive reference to Tkinter's classes and API, see the [Python tkinter documentation](https://docs.python.org/3/library/tkinter.html).
-
-[← Back to the Zoo Map](../README.md)
+[Return to the Zoo map](../README.md) to explore another area.
 
 ---
 
-| File | Last Updated | Maintainer |
-| :--- | :---: | ---: |
-| _native_gui/README.md_ | _11 September 2026_ | _lizc-au_ |
-
----
+_Last updated: 24 September 2026 · Maintained by [@lizc-au](https://github.com/lizc-au)_

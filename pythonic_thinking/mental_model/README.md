@@ -1,45 +1,38 @@
-# 🧠 Mental Model
+# Mental Model
 
-Python becomes easier to reason about when **your mental model matches its underlying behaviour**.
+Build a clearer picture of how Python works beneath its familiar syntax. These four exhibits explain names, mutation, iteration, and functions as objects.
 
-This collection explores several foundational ideas that influence how Python programs behave: how names relate to objects, what mutation means, how iteration works, and why functions can be treated like other objects.
+## Follow the Exhibits
 
-Understanding these concepts provides a foundation for many of the pitfalls, idioms, and design choices explored elsewhere in **Pythonic Thinking**.
+| Step | Exhibit | Main idea | Helps explain |
+| :--- | :--- | :--- | :--- |
+| 1 | [Names and Objects](./names_and_objects_example.py) | A name refers to an object; assignment does not inherently copy it. | Identity, arguments, and shared references |
+| 2 | [Mutation and Copying](./mutation_and_copying_example.py) | Rebinding a name differs from changing an object. | Shared mutable state, shallow copies, and deep copies |
+| 3 | [Iteration](./iteration_example.py) | A `for` loop requests values from an iterable through an iterator. | Generators, comprehensions, `enumerate()`, and `zip()` |
+| 4 | [Functions as Objects](./functions_as_objects_example.py) | Functions can be stored, passed, and returned like other objects. | Callbacks, adapters, decorators, `lambda`, and `functools.partial()` |
 
----
+Start from the repository root with `python pythonic_thinking/mental_model/names_and_objects_example.py`. Each exhibit runs independently, though the table gives a useful study order.
 
-## 🗺️ Exhibits
+<details>
+<summary>How these ideas connect</summary>
 
-### [Names and Objects](./names_and_objects_example.py)
+| Foundation | Later questions it helps answer |
+| :--- | :--- |
+| Names and objects | Why can two names refer to the same list? What does passing an object to a function do? |
+| Mutation and copying | Why did a change appear elsewhere? When is a shallow copy insufficient? |
+| Iteration | How do generators supply values? Why can an iterator be exhausted? |
+| Functions as objects | How can a button receive a callback? What do `lambda` and `partial()` provide? |
 
-Understand that Python variables are names bound to objects rather than containers that inherently store or copy values. This foundation helps explain assignment, identity, function arguments, and many apparently surprising Python behaviours.
+These ideas recur throughout [Pythonic Thinking](../README.md). Later exhibits build on them instead of treating each behaviour as an isolated rule.
 
-### [Mutation and Copying](./mutation_and_copying_example.py)
-
-Explore the difference between rebinding a name and changing an existing object, why multiple names can refer to the same mutable object, and why shallow and deep copying are importantly different operations.
-
-### [Iteration](./iteration_example.py)
-
-Understand Python's iterable and iterator model, why `for` loops operate on objects that produce values rather than acting primarily as counting loops, and how this model supports many Pythonic constructs.
-
-### [Functions as Objects](./functions_as_objects_example.py)
-
-Explore what it means for functions to be first-class objects: they can be assigned to names, stored, passed to other functions, and returned like other Python objects. The exhibit also introduces `lambda` expressions for creating short function objects at the point of use, and `functools.partial()` for creating callables with selected arguments already supplied. These techniques are especially useful for callbacks, adapters, decorators, and other patterns that pass behaviour around as data.
-
----
-
-## 🔗 Where These Ideas Lead
-
-These foundations recur throughout **Pythonic Thinking**. Names and mutation help explain shared state and mutable defaults; the iteration model leads naturally to generators, comprehensions, `enumerate()`, and `zip()`; and treating functions as objects provides the foundation for callbacks and decorators.
-
-Later exhibits build on these ideas rather than treating each Python behaviour as an isolated rule to memorise.
-
-[← Back to Pythonic Thinking](../README.md)
+</details>
 
 ---
 
-| File | Last Updated | Maintainer |
-| :--- | :---: | ---: |
-| _pythonic_thinking/mental_model/README.md_ | _11 September 2026_ | _lizc-au_ |
+[Return to Pythonic Thinking](../README.md) for other topics.
+
+[Return to the Zoo map](../../README.md) to explore another area.
 
 ---
+
+_Last updated: 24 September 2026 · Maintained by [@lizc-au](https://github.com/lizc-au)_

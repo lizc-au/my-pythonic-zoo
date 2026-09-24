@@ -1,226 +1,91 @@
 # Object-Oriented Python
 
-This section explores object-oriented design through small, runnable Python
-examples.
+Explore object-oriented design through small, runnable Python examples. Each learning path begins with a design question and shows what a technique helps you decide.
 
-The goal is not to collect patterns for their own sake. Each exhibit starts
-with a specific design pressure and shows how a particular object-oriented
-technique can help address it.
+## Suggested Learning Order
 
-The examples are intentionally small, but the design questions are the same
-ones that appear in larger production systems.
+| Step | Topic | Design question |
+| :--- | :--- | :--- |
+| 1 | [Domain Modelling](./domain_modelling/README.md) | Should a difference remain data, or does it justify a distinct type with its own behaviour? |
+| 2 | [Encapsulation & Invariants](./encapsulation/README.md) | Which rules govern an object's state, and how should changes be controlled? |
+| 3 | [Responsibilities & Collaboration](./responsibilities/README.md) | Which object should own each task, and how should objects work together? |
+| 4 | [Composition](./composition/README.md) | Which behaviours should be combined, and who should choose them? |
+| 5 | [Inheritance](./inheritance/README.md) | Does a subtype genuinely specialise a base type and honour its contract? |
+| 6 | [Factory Pattern](./factory/README.md) | Who should construct a correctly configured object for its clients? |
 
----
+Each linked guide compares runnable designs and explains their trade-offs. Follow the order for a gradual introduction, or open the question most relevant to your own code.
 
-## Suggested learning order
+## Try an Example
 
-1. [Domain Modelling](domain_modelling/README.md)
-   - Decide when a difference should remain data and when it should become a
-     distinct domain type.
-   - Compare one shared `Animal` model with explicit animal types introduced
-     only when type-specific behaviour creates a meaningful responsibility.
+From the repository root, run `python -m object_oriented.domain_modelling.data_model_example`. Then compare it with `python -m object_oriented.domain_modelling.domain_types_example` to see when differences remain data and when they become types.
 
-2. [Encapsulation & Invariants](encapsulation/README.md)
-   - Explore how objects can own and protect the rules governing their state.
-   - Compare freely assignable state with a deliberate public interface for
-    controlled state changes.
-   - Examine what `_name`, `__name`, properties, and name mangling actually do
-    and do not protect in Python.
+<details>
+<summary>Commands for every learning path</summary>
 
-3. [Responsibilities & Collaboration](responsibilities/README.md)
-   - Decide which object should own which work.
-   - Compare an overloaded `Animal` with focused collaborating objects.
-   - Explore cohesion, delegation, responsibility boundaries, and the
-     Single Responsibility Principle.    
+| Topic | Command |
+| :--- | :--- |
+| Domain Modelling | `python -m object_oriented.domain_modelling.data_model_example` |
+| Domain Modelling | `python -m object_oriented.domain_modelling.domain_types_example` |
+| Encapsulation | `python -m object_oriented.encapsulation.unprotected_state_example` |
+| Encapsulation | `python -m object_oriented.encapsulation.protected_state_example` |
+| Responsibilities | `python -m object_oriented.responsibilities.overloaded_animal_example` |
+| Responsibilities | `python -m object_oriented.responsibilities.collaborating_objects_example` |
+| Composition | `python -m object_oriented.composition.client_selected_example` |
+| Composition | `python -m object_oriented.composition.construction_selected_example` |
+| Composition | `python -m object_oriented.composition.domain_type_selected_example` |
+| Inheritance | `python -m object_oriented.inheritance.inappropriate_inheritance_example` |
+| Inheritance | `python -m object_oriented.inheritance.appropriate_inheritance_example` |
+| Factory | `python -m object_oriented.factory.factory_example` |
 
-4. [Composition](composition/README.md)
-   - Build objects from collaborating behaviours.
-   - Compare client-selected, construction-selected, and domain-type-selected
-     composition.
-   - Explore dependency injection and responsibility placement.
+</details>
 
-5. [Inheritance](inheritance/README.md)
-   - Decide when a subtype genuinely represents a specialised form of its base
-     type rather than merely sharing some implementation.
-   - Compare inappropriate capability-based inheritance with meaningful
-     specialisation of a shared `Animal` abstraction.
-   - Explore contracts, substitutability, abstract base classes, and when
-     composition is a better design.
+## How the Techniques Work Together
 
-6. [Factory Pattern](factory/README.md)
-   - Centralise object creation.
-   - Return a stable abstraction rather than exposing construction details.
-   - Understand registries, protocols, polymorphism, and client code.            
+A program may use several techniques at once because each answers a different design question.
 
----
+| Technique | Responsibility in a shared animal example |
+| :--- | :--- |
+| Domain Modelling | Decide whether species differences are data or distinct domain types. |
+| Encapsulation & Invariants | Control changes to an animal's state and preserve its rules. |
+| Responsibilities & Collaboration | Assign work to focused objects rather than overloading one `Animal`. |
+| Composition | Connect an `Animal` with a `Movement` behaviour. |
+| Inheritance | Use specialisation only when the subtype honours the base contract. |
+| Factory | Construct and return the correctly configured object. |
 
-## Patterns are not mutually exclusive
+The question to ask is: **What responsibility needs a home, and which technique expresses that choice clearly?**
 
-Object-oriented techniques and design patterns solve different kinds of
-problems.
+<details>
+<summary>Why the examples stay small</summary>
 
-A production design might use several of them together.
+Small examples keep one design decision visible at a time. Real applications also need persistence, configuration, logging, interfaces, APIs, and other concerns that can obscure the relationship being taught.
 
-For example:
+The examples still aim to be defensible for their scope. An abstraction should solve a real design problem in the example, rather than exist merely to demonstrate a pattern.
 
-```text
-Factory
-    chooses what to construct
-        |
-        v
-Animal
-    is composed with
-        |
-        v
-Movement
-```
+</details>
 
-At the same time:
+<details>
+<summary>Design approach used in these exhibits</summary>
 
-- **Composition** defines how `Animal` collaborates with `Movement`.
-- **Domain Modelling** determines whether differences such as animal species
-  should remain data or justify distinct domain types with their own
-  responsibilities.
-- **Encapsulation & Invariants** determines how an object controls access to its
-  state and preserves the rules that must remain true as that state changes.
-- **Factory** may own construction of the correctly composed object.  
-- **Inheritance** determines when one type genuinely specialises another and
-  can honour the same contract, rather than using a superclass merely to reuse
-  implementation.
-- **Responsibilities & Collaboration** determines which object should own each
-  responsibility and how objects should collaborate to complete larger tasks.
+| Preference | Why it helps |
+| :--- | :--- |
+| Focused objects | Responsibilities are easier to find and change. |
+| Explicit contracts | Expectations become clear when an abstraction needs them. |
+| Composition when appropriate | Avoid hierarchies that imply the wrong relationship. |
+| Limited mutation | State is simpler to reason about when changes have a purpose. |
+| Small modules | Related concepts can be studied without unrelated concerns. |
+| Practical trade-offs | A technique is useful in context, not as an absolute rule. |
+| Explanatory documentation | Readers can see why a design exists as well as what it does. |
 
-The important question is therefore not:
-
-> Which pattern should this program use?
-
-A better question is:
-
-> What design responsibility am I trying to place, and which technique helps
-> express it clearly?
-
----
-
-## Why the examples stay small
-
-The code in this section is deliberately compact so that the design decision
-remains visible.
-
-Real applications usually contain additional concerns such as persistence,
-configuration, logging, validation, user interfaces, APIs, and external
-services. Adding all of those concerns to a teaching example can hide the
-relationship being demonstrated.
-
-Small examples make it easier to isolate one design question at a time.
-
-That does not mean the examples should be intentionally poor or unrealistic.
-Where an abstraction is introduced, it should have a genuine reason to exist
-and should be defensible for the scope of the example.
-
----
-
-## Run the examples
-
-From the repository root:
-
-**Composition** provides three runnable variants:
-
-```text
-python -m object_oriented.composition.client_selected_example
-python -m object_oriented.composition.construction_selected_example
-python -m object_oriented.composition.domain_type_selected_example
-```
-
-**Domain Modelling** provides two contrasting models:
-
-```text
-python -m object_oriented.domain_modelling.data_model_example
-python -m object_oriented.domain_modelling.domain_types_example
-```
-
-**Encapsulation & Invariants** provides two contrasting examples:
-
-```text
-python -m object_oriented.encapsulation.unprotected_state_example
-python -m object_oriented.encapsulation.protected_state_example
-```
-
-**Factory** provides a runnable example:
-
-```text
-python -m object_oriented.factory.factory_example
-```
-
-**Inheritance** provides two contrasting examples:
-
-```text
-python -m object_oriented.inheritance.inappropriate_inheritance_example
-python -m object_oriented.inheritance.appropriate_inheritance_example
-```
-
-**Responsibilities & Collaboration** provides two contrasting designs:
-
-```text
-python -m object_oriented.responsibilities.overloaded_animal_example
-python -m object_oriented.responsibilities.collaborating_objects_example
-```
-
----
+</details>
 
 ## Glossary
 
-The [Object-Oriented Python Glossary](GLOSSARY.md) provides plain-language
-definitions for terminology used throughout these exhibits.
-
-Useful starting points include:
-
-- [Abstraction](GLOSSARY.md#abstraction)
-- [Attribute](GLOSSARY.md#attribute)
-- [Behaviour](GLOSSARY.md#behaviour)
-- [Class](GLOSSARY.md#class)
-- [Cohesion](GLOSSARY.md#cohesion)
-- [Collaboration](GLOSSARY.md#collaboration)
-- [Composition](GLOSSARY.md#composition)
-- [Coupling](GLOSSARY.md#coupling)
-- [Delegation](GLOSSARY.md#delegation)
-- [Dependency](GLOSSARY.md#dependency)
-- [Dependency Injection](GLOSSARY.md#dependency-injection)
-- [Domain Modelling](GLOSSARY.md#domain-modelling)
-- [Encapsulation](GLOSSARY.md#encapsulation)
-- [Factory](GLOSSARY.md#factory)
-- [Inheritance](GLOSSARY.md#inheritance)
-- [Invariant](GLOSSARY.md#invariant)
-- [Liskov Substitution Principle (LSP)](GLOSSARY.md#liskov-substitution-principle-lsp)
-- [Method](GLOSSARY.md#method)
-- [Object](GLOSSARY.md#object)
-- [Polymorphism](GLOSSARY.md#polymorphism)
-- [Protocol](GLOSSARY.md#protocol)
-- [Responsibility](GLOSSARY.md#responsibility)
-- [Single Responsibility Principle (SRP)](GLOSSARY.md#single-responsibility-principle-srp)
-- [State](GLOSSARY.md#state)
-- [Structural Typing](GLOSSARY.md#structural-typing)
+The [Object-Oriented Python Glossary](./GLOSSARY.md) defines terms used throughout these exhibits, including abstraction, cohesion, coupling, delegation, polymorphism, and responsibility. Consult it whenever a design term is unfamiliar.
 
 ---
 
-## Approach used throughout this section
-
-These exhibits favour:
-
-- focused objects with clear responsibilities;
-- explicit contracts where they improve understanding;
-- composition over unnecessary inheritance hierarchies;
-- immutable data structures where mutation is not required;
-- small modules rather than large files containing unrelated concerns;
-- practical trade-offs rather than absolute rules;
-- documentation that explains **why** a design exists, not merely what the code
-  does.
-
-The aim is to make object-oriented design easier to reason about by connecting
-terminology directly to executable examples.
+[Return to the Zoo map](../README.md) to explore another area.
 
 ---
 
-| File | Last Updated | Maintainer |
-| :--- | :---: | ---: |
-| _object_oriented/README.md_ | _4 September 2026_ | _lizc-au_ |
-
+_Last updated: 24 September 2026 · Maintained by [@lizc-au](https://github.com/lizc-au)_

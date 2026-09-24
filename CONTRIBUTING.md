@@ -1,22 +1,21 @@
 # Contributing to my-pythonic-zoo
 
-Thank you for visiting! This repository is designed to be a reliable, highly readable cookbook of clean Python logic. 
+Thank you for visiting! This repository is designed to be a reliable, highly readable collection of Python learning exhibits.
 
 We actively welcome contributions, optimization pull requests, and use-case feature requests.
 
 ## Pull Request & Assignment Policy
 
-To help prevent duplicate effort, contributors are encouraged to start with an open issue or discuss a proposed change before beginning substantial work. If an issue already exists, please comment on it so we can coordinate scope and avoid multiple contributors working on the same task.
+Before starting a substantial change, create an [issue](https://github.com/lizc-au/my-pythonic-zoo/issues) or comment on a relevant existing one. This helps us agree on scope and avoid duplicate work.
 
-Pull Requests submitted without an assigned issue are still welcome. If the PR relates to an existing roadmap item, we may ask that it be linked to the relevant issue before review.
+Pull Requests without an assigned issue are welcome. If a PR relates to an existing issue, link it in the description.
 
 ## Contribution Workflow
 
-1. **Choose Your Contribution:** Check the open issues labelled `good-first-issue` or `help wanted`, or propose your own improvement. For substantial changes, opening an issue first is encouraged so the scope can be discussed before you begin.
-2. **Coordinate Existing Issues:** If you are working on an existing issue, leave a quick comment before starting so we can avoid duplicate effort.
-3. **Fork & Branch:** Create a branch on your fork (`git checkout -b feat/my-new-script`).
-4. **Clean & Test:** Run the local quality checks described below and resolve any failures before submitting your PR.
-5. **Submit a PR:** Open a Pull Request describing the change and why it is useful. If it relates to an issue, reference it (e.g., `Fixes #3`). If an autonomous agent substantially contributed to the work or submitted the PR, follow the disclosure guidance below.
+1. **Choose a contribution:** Browse the [open issues](https://github.com/lizc-au/my-pythonic-zoo/issues) or propose your own improvement. For substantial work, coordinate on an issue first.
+2. **Fork and branch:** Create a branch on your fork for that issue or focused change (`git checkout -b feat/my-new-script`). Use a separate branch for a separate issue so each Pull Request stays easy to review.
+3. **Check your work:** Run the local quality checks below and resolve failures before submitting a Pull Request.
+4. **Submit a Pull Request:** Describe the change and link any related issue. Use a closing keyword such as `Fixes #123` only when the PR fully resolves that issue; follow the agent disclosure guidance below when applicable.
 
 ### Local Development Setup
 
@@ -59,7 +58,9 @@ Docstrings use reStructuredText (reST) conventions. Enclose Python identifiers a
 
 Prefer docstrings that explain **why** an abstraction or design choice exists, its important benefits or trade-offs, and when an alternative may be more appropriate. Avoid docstrings that merely repeat information already clear from the identifier or signature.
 
-README files use Markdown rather than reStructuredText.
+README files use Markdown rather than reStructuredText. Keep each prose paragraph to at most two sentences; put longer explanations in a Markdown table or a `<details>` section.
+
+Use real folder and script links and commands in README examples. Update the relevant category guide when adding or changing an exhibit.
 
 ---
 
@@ -119,6 +120,8 @@ This project is maintained by a single maintainer. Issues and Pull Requests are 
 
 ---
 
-| File | Last Updated | Maintainer |
-| :--- | :---: | ---: |
-| _CONTRIBUTING.md_ | _2 September 2026_ | _lizc-au_ |
+[Return to the zoo map](README.md)
+
+---
+
+_Last updated: 24 September 2026 · Maintained by [@lizc-au](https://github.com/lizc-au)_
