@@ -1,169 +1,94 @@
 # Algorithms
 
-This category explores algorithms by building the mental model behind them,
-not just presenting a finished implementation.
+Explore algorithms through small, runnable demonstrations of the structures and decisions behind them. The longer paths introduce each prerequisite before assembling the complete technique.
 
-The examples favour small, runnable demonstrations that expose the decisions,
-data structures, and transformations involved. Where an algorithm depends on
-less familiar foundations, those foundations may be taught as part of a
-deliberate progression before the complete algorithm is assembled.
+## Choose a Learning Path
+
+| Path | Start with | Build toward |
+| :--- | :--- | :--- |
+| [Binary Search Trees](#binary-search-trees) | Nodes and the ordering invariant | Traversal, updates, and an interactive visualizer |
+| [Dancing Links](#dancing-links) | Exact Cover and Algorithm X | A linked matrix with reversible cover and uncover |
 
 ## Binary Search Trees
 
-A Binary Search Tree (BST) stores values in linked nodes while maintaining an
-ordering rule: every value in a node's left subtree is smaller than that node,
-and every value in its right subtree is larger.
+A binary search tree (BST) stores values in linked nodes. Every value in a node's left subtree is smaller than that node, and every value in its right subtree is larger.
 
-This progression introduces the structure and its operations in stages before
-combining them into an interactive terminal visualizer. The examples use an
-ordinary, unbalanced BST as a teaching structure. Its operations can be
-efficient when the tree is reasonably balanced, but a skewed tree can degrade
-to linear behaviour.
+| Stage | Exhibit or plan | What it teaches |
+| :--- | :--- | :--- |
+| 1 · Available | [Structure and Ordering](./binary_search_tree/bst_structure_example.py) | Nodes, empty branches, manual links, and the full subtree ordering rule. |
+| 2 · Planned | [Traversal, Insertion and Searching](https://github.com/lizc-au/my-pythonic-zoo/issues/52) | In-order traversal and operations guided by the invariant. |
+| 3 · Planned | [Deletion](https://github.com/lizc-au/my-pythonic-zoo/issues/53) | Leaf, one-child, and two-child cases. |
+| 4 · Planned | [Rendering and Interactive Terminal Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/54) | Draw the tree and interact with its completed operations. |
 
-### Study Sequence
+Run the first stage from the repository root with `python algorithms/binary_search_tree/bst_structure_example.py`. Stage 1 was contributed by [@Reh1t in PR #55](https://github.com/lizc-au/my-pythonic-zoo/pull/55).
 
-Follow the exhibits in this order:
+<details>
+<summary>Why this path uses an ordinary BST</summary>
 
-1. **[Structure and Ordering](./binary_search_tree/bst_structure_example.py)**
-   introduces nodes, child references, empty branches, and the full BST ordering
-   invariant by constructing trees manually.
-   *(Contributed by [@Reh1t](https://github.com/Reh1t) via
-   [#55](https://github.com/lizc-au/my-pythonic-zoo/pull/55))*
+The examples use an unbalanced BST so its structure and ordering decisions remain visible. Operations can be efficient when the tree is reasonably balanced, while a skewed tree can degrade to linear behaviour.
 
-2. **[Traversal, Insertion and Searching](https://github.com/lizc-au/my-pythonic-zoo/issues/52)**
-   will introduce recursive in-order traversal, automate the ordering decisions,
-   and use the invariant to guide searches.
+Production systems commonly use balanced or storage-oriented tree variants supplied by libraries, runtimes, or databases. A later Native GUI exhibit may reuse the completed operations to teach Tkinter Canvas drawing and event handling.
 
-3. **[Deletion](https://github.com/lizc-au/my-pythonic-zoo/issues/53)**
-   will explain the leaf, one-child, and two-child deletion cases.
+Each stage is intended to remain runnable on its own. Some repetition helps a learner study one stage without reconstructing earlier modules.
 
-4. **[Rendering and Interactive Terminal Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/54)**
-   will render the tree without changing it, then combine the completed
-   operations in an interactive terminal application.
-
-Each module is intended to remain directly runnable and understandable on its
-own. A small amount of repetition is deliberate so learners can study one stage
-without first reconstructing its foundations from several other files.
-
-### Where this leads
-
-In production systems, developers usually rely on balanced structures such as
-AVL or Red-Black trees, or storage-oriented B-tree variants supplied by
-libraries, language runtimes, and databases, rather than implementing an
-ordinary Binary Search Tree directly. For that reason, this progression
-culminates in visualizers that make the underlying structure and algorithms
-observable instead of inventing a contrived business application.
-
-The interactive terminal visualizer will complete this algorithmic progression.
-A later Native GUI exhibit may reuse the completed BST operations in a Tkinter
-visualizer, focusing on Canvas drawing, event handling, and responsive layout
-while cross-referencing these modules for the underlying tree algorithms.
-
----
+</details>
 
 ## Dancing Links
 
-### What is Dancing Links?
+Dancing Links (DLX) is Donald Knuth's linked-structure technique for implementing Algorithm X, a search algorithm for Exact Cover problems. Its circular, doubly linked matrix lets the search remove possibilities and restore them when it backtracks.
 
-Dancing Links (DLX) is Donald Knuth's technique for implementing Algorithm X,
-a backtracking algorithm for Exact Cover problems. It represents the problem as
-a circular, doubly linked matrix whose nodes can be temporarily removed and
-restored very efficiently as the search explores different possibilities.
+| Stage | Exhibit | What it teaches |
+| :--- | :--- | :--- |
+| 1 | [Exact Cover](./dancing_links/exact_cover_example.py) | Choose rows that cover every required column exactly once. |
+| 2 | [Algorithm X](./dancing_links/algorithm_x_example.py) | Search recursively and backtrack through possible covers. |
+| 3 | [Linked Nodes](./dancing_links/linked_nodes_example.py) | Unlink and restore a node using retained references. |
+| 4 | [Circular Links](./dancing_links/circular_links_example.py) | Make horizontal and vertical links wrap around. |
+| 5 | [Toroidal Matrix](./dancing_links/toroidal_matrix_example.py) | Combine both circular directions in one structure. |
+| 6 | [Cover and Uncover](./dancing_links/cover_uncover_example.py) | Remove and restore linked possibilities reversibly. |
+| 7 | [Exact Cover Matrix](./dancing_links/exact_cover_matrix_example.py) | Translate requirements and choices into linked nodes. |
+| 8 | [Dancing Links](./dancing_links/dancing_links_example.py) | Run Algorithm X over the linked matrix. |
 
-The name comes from those reversible link changes: as Algorithm X moves forward
-and backtracks, links disappear from and return to the active structure. The
-individual exhibits below explain each part of that mechanism in detail, so this
-README provides only the overview rather than repeating their teaching material.
+Run the first stage from the repository root with `python algorithms/dancing_links/exact_cover_example.py`. Follow the rows in order, as later exhibits build on concepts introduced earlier.
 
-Dancing Links can look surprisingly opaque when encountered as a finished
-implementation. This progression therefore separates the ideas that make it
-work, introducing each one before combining them.
+<details>
+<summary>Why Exact Cover and Algorithm X appear in this folder</summary>
 
-### Study Sequence
+Exact Cover is the problem, Algorithm X is the search algorithm, and Dancing Links is one way to implement that search. The first two work independently, but these exhibits introduce them as prerequisites to the DLX progression.
 
-Follow the exhibits in this order:
+Broader treatments of Exact Cover or Algorithm X could later live elsewhere. The versions here stay focused on preparing the reader for Dancing Links.
 
-1. **[Exact Cover](./dancing_links/exact_cover_example.py)** introduces the
-   problem: choose rows so every required column is covered exactly once.
+</details>
 
-2. **[Algorithm X](./dancing_links/algorithm_x_example.py)** introduces the
-   recursive search and backtracking algorithm used to solve Exact Cover
-   problems.
+<details>
+<summary>Why the exhibits repeat some code</summary>
 
-3. **[Linked Nodes](./dancing_links/linked_nodes_example.py)** demonstrates how
-   a node can be temporarily unlinked without being destroyed, then restored
-   using the references it retained.
+These are self-contained teaching exhibits, so later stages repeat familiar classes and links while adding one new idea. After studying the full sequence, refactoring it into reusable components is a useful follow-on exercise.
 
-4. **[Circular Links](./dancing_links/circular_links_example.py)** removes the
-   special end cases of a linear chain by making horizontal and vertical links
-   wrap around.
+A separate modular example could sit alongside this progression. To propose one, open an [issue](https://github.com/lizc-au/my-pythonic-zoo/issues) and follow the [contribution guide](../CONTRIBUTING.md).
 
-5. **[Toroidal Matrix](./dancing_links/toroidal_matrix_example.py)** combines
-   the horizontal and vertical circles so every node participates in both at
-   once.
+</details>
 
-6. **[Cover and Uncover](./dancing_links/cover_uncover_example.py)** demonstrates
-   the reversible structural changes that allow a search to remove possibilities
-   temporarily and restore them during backtracking.
+<details>
+<summary>Where Dancing Links may lead</summary>
 
-7. **[Exact Cover Matrix](./dancing_links/exact_cover_matrix_example.py)**
-   translates the original Exact Cover requirements and choices into the linked
-   matrix representation that Dancing Links operates on.
+The current Exact Cover example starts with a small problem so the mechanics are easy to see. Planned puzzle exhibits will increase the scale before tackling a logic puzzle:
 
-8. **[Dancing Links](./dancing_links/dancing_links_example.py)** combines the
-   complete progression: Algorithm X searches the Exact Cover matrix while
-   cover and uncover modify its linked structure reversibly.
+| Planned stage | Grid |
+| :--- | :--- |
+| Shi Doku | 4×4 |
+| Go Doku | 5×5 |
+| Roku Doku | 6×6 |
+| Sudoku | 9×9 |
+| Logic puzzle solver | Varies by puzzle |
 
-Each exhibit is intended to be understood before moving to the next. The later
-examples deliberately assume familiarity with the concepts introduced earlier
-rather than attempting to explain the entire technique again in every file.
+Each stage will translate its constraints into Exact Cover and solve them with Algorithm X and Dancing Links.
 
-### Why are Exact Cover and Algorithm X in the Dancing Links folder?
-
-Exact Cover and Algorithm X are not themselves Dancing Links. Exact Cover is the
-problem being solved, while Algorithm X is the search algorithm. Both can be
-studied and implemented without DLX.
-
-These particular exhibits live in `dancing_links` because they were written as
-the opening stages of this teaching progression. Moving them elsewhere would
-separate the prerequisites from the sequence that depends on them.
-
-If the Algorithms category later develops broader treatments of Exact Cover or
-Algorithm X, those can exist independently. The versions here can remain focused
-on preparing the reader for Dancing Links.
-
-### Why do the examples repeat some code?
-
-The exhibits in this section form a teaching progression, not a production
-application split across modules. Each example is intentionally self-contained
-so it can be opened, run, and studied independently. Later exhibits therefore
-repeat some familiar classes and linking operations while adding the next
-concept, rather than importing their implementation from earlier teaching
-examples.
-
-Once you understand the complete progression, you may prefer to refactor the
-implementation into reusable components. That is a worthwhile next exercise:
-the individual responsibilities and their relationships should now be familiar
-enough to decide where the module boundaries belong.
-
-If you take that challenge on, consider opening an Issue and working on a
-branch, then contribute the result back as a separate, fully modularised example
-in its own sub-folder. The teaching progression can remain intact alongside it,
-giving visitors both a step-by-step explanation and an example of how the same
-design might be structured for reuse and maintenance.
-
-### Where this leads
-
-The small Exact Cover problem used throughout this study sequence keeps the
-mechanics visible while the technique is being learned. A future exhibit is
-planned to apply the completed Dancing Links implementation to a more substantial
-Sudoku or logic-puzzle problem, showing how a real constraint problem can first
-be translated into Exact Cover and then solved using Algorithm X with DLX.
+</details>
 
 ---
 
-| File | Last Updated | Maintainer |
-| :--- | :---: | ---: |
-| _algorithms/README.md_ | _20 September 2026_ | _lizc-au_ |
+[Return to the Zoo map](../README.md) to explore another area.
 
 ---
+
+_Last updated: 24 September 2026 · Maintained by [@lizc-au](https://github.com/lizc-au)_

@@ -1,252 +1,71 @@
-# Factory Pattern - Creating Zoo Animals
+# Factory Pattern
 
-The Factory Pattern separates **object creation** from the code that uses the
-created objects.
+A factory separates object creation from the code that uses the result. This exhibit selects a Python, Panda, Lion, or Elephant while client code works with one `Animal` contract.
 
-This factory example uses four MyPythonicZoo animals:
+## When a Factory Helps
 
-- Python
-- Panda
-- Lion
-- Elephant
+| Situation | Construction choice |
+| :--- | :--- |
+| The code already knows it needs a Lion. | Use `lion = Lion()` directly. |
+| The animal type comes from input or configuration. | Use `AnimalFactory.create(animal_type)` to select the constructor. |
+| Different objects need different setup or collaborators. | Put that construction policy behind a clear boundary. |
 
-The animals deliberately have very simple behaviour. The purpose of this
-factory example is not to build a complete animal model, but to demonstrate a
-production-shaped Factory design without unrelated complexity.
+A factory is useful when selection or assembly is a real responsibility. Direct construction remains clearer when the choice is already known.
 
----
+## Follow the Design
 
-## The problem Factory Pattern solves
+| File | Role |
+| :--- | :--- |
+| [`animals/animal.py`](./animals/animal.py) | Define the `Animal` Protocol and its `speak()` contract. |
+| [Concrete animals](./animals/) | Provide `Python`, `Panda`, `Lion`, and `Elephant` implementations. |
+| [`animals/__init__.py`](./animals/__init__.py) | Expose the intended public animal imports. |
+| [`animal_factory.py`](./animal_factory.py) | Map identifiers to concrete constructors. |
+| [`factory_example.py`](./factory_example.py) | Ask the factory for animals, then use the returned contract. |
 
-If the coder already knows exactly which animal is needed at that point in the code, `lion = Lion()` will suffice to create a lion object. There is no need for a Factory because the choice of Lion has already been made and so can be hard-coded.
+The registry maps strings such as `"lion"` to class objects such as `Lion`. Python classes can be stored as values and called later to create instances.
 
-A Factory becomes useful when the choice can vary. For example, the animal type might come from user input, a configuration file, or another part of the program:
+Run `python -m object_oriented.factory.factory_example` from the repository root. The animals respond in order with `Hiss!`, `Bleat!`, `Roar!`, and `Trumpet!`.
 
-`animal = AnimalFactory.create(animal_type)`
+<details>
+<summary>How the factory and Protocol work together</summary>
 
-If animal_type contains `"lion"`, the Factory creates a Lion. If it contains `"panda"`, it creates a Panda.
+Client code can request `animal = AnimalFactory.create(animal_type)` and then call `animal.speak()`. It does not need to import each concrete class or branch on `isinstance(animal, Lion)`.
 
-The calling code supplies the choice, while the Factory handles the details of creating the right kind of animal.
+| Idea | Role here |
+| :--- | :--- |
+| Factory | Owns the choice and construction of a concrete animal. |
+| `Animal` Protocol | Describes the behaviour returned objects must provide. |
+| Polymorphism | Lets the client call `speak()` on different concrete animals. |
+| Structural typing | Recognises compatible behaviour without requiring concrete classes to inherit from `Animal`. |
 
----
+The concrete classes share neither implementation nor state in this example, so a Protocol expresses the narrow contract. An abstract base class may fit a design that needs shared code, state, or an explicit inheritance relationship.
 
-## The design used here
+</details>
 
-The factory example separates several responsibilities:
+<details>
+<summary>Where factories are useful and what they cost</summary>
 
-[animals/animal.py](./animals/animal.py)
-    Defines the Animal Protocol - the behaviour Factory-created objects promise.
+| Use case | Creation responsibility |
+| :--- | :--- |
+| User input or configuration | Select an implementation by name or setting. |
+| Environment or testing | Choose a suitable implementation or test double. |
+| Plug-ins | Construct a registered extension without teaching every client its class. |
+| Complex setup | Validate configuration and assemble required collaborators. |
 
-[animals/python.py](./animals/python.py)
-[animals/panda.py](./animals/panda.py)
-[animals/lion.py](./animals/lion.py)
-[animals/elephant.py](./animals/elephant.py)
-    Provide concrete implementations of that contract.
+A factory keeps selection logic in one place and gives clients a stable contract. It also adds another abstraction to trace, so use it when the creation decision justifies that cost.
 
-[animals/__init__.py](./animals/__init__.py)
-    Defines the public interface of the animals package.
+Related exhibits explore [Composition](../composition/README.md), [Domain Modelling](../domain_modelling/README.md), and [Responsibilities & Collaboration](../responsibilities/README.md). Those techniques may work alongside a factory because each addresses a different design decision.
 
-[animal_factory.py](./animal_factory.py)
-    Owns the mapping between identifiers and concrete animal creators.
+</details>
 
-[factory_example.py](./factory_example.py)
-    Represents client code that asks the factory for animals and uses them.
-
-`AnimalFactory` uses a registry rather than a growing chain of `if`, `elif`, or
-`match` branches:
-
-```python
-_animal_types = {
-    "python": Python,
-    "panda": Panda,
-    "lion": Lion,
-    "elephant": Elephant,
-}
-```
-
-Python classes are objects themselves, so they can be stored as values in the
-registry and called later to create instances.
-
-## Factory and polymorphism working together
-
-The most important client code in the factory example is deliberately small:
-
-```python
-animal = AnimalFactory.create(animal_type)
-animal.speak()
-```
-
-`AnimalFactory.create()` promises to return an object satisfying the `Animal`
-Protocol.
-
-The client therefore does not need to ask:
-
-```python
-if isinstance(animal, Lion):
-    ...
-elif isinstance(animal, Panda):
-    ...
-```
-
-Nor does it need to know which concrete constructor the factory selected.
-
-It knows only that the returned object satisfies the `Animal` contract and can
-therefore call:
-
-```python
-animal.speak()
-```
-
-This is [polymorphism](../GLOSSARY.md#polymorphism) through
-[structural typing](../GLOSSARY.md#structural-typing): the concrete classes satisfy
-the Protocol because they provide the required behaviour, rather than because
-they inherit from a shared base class.
+The [Object-Oriented Python Glossary](../GLOSSARY.md) defines [factory](../GLOSSARY.md#factory), [registry](../GLOSSARY.md#registry), [Protocol](../GLOSSARY.md#protocol), and [polymorphism](../GLOSSARY.md#polymorphism).
 
 ---
 
-## Why use a Protocol?
+[Return to Object-Oriented Python](../README.md) for other design questions.
 
-The concrete animal classes do not share implementation or state in this
-factory example. They simply need to provide compatible behaviour.
-
-Using a `Protocol` allows the design to express:
-
-> An Animal is anything that satisfies the behaviour required by this contract.
-
-That avoids introducing an inheritance hierarchy solely for the purpose of
-typing.
-
-An abstract base class may be more appropriate when related classes genuinely
-need shared implementation, shared state, or an explicitly enforced
-inheritance relationship.
-
-See `animals/animal.py` for the complete contract and its scope.
+[Return to the Zoo map](../../README.md) to explore another area.
 
 ---
 
-## Real-world uses of factories
-
-The construction in this factory example is intentionally small, but the same pattern
-can isolate much more substantial creation decisions.
-
-A factory can be useful for:
-
-- **Configuration-driven creation** - select an implementation from a
-  configuration file, command-line option, or application setting.
-- **User-driven selection** - create the appropriate object for a type selected
-  through a UI, API request, imported file, or other external input.
-- **Dependency construction** - create objects that require different
-  collaborators or services without making callers understand those details.
-- **Environment-specific implementations** - select different implementations
-  for development, testing, operating systems, deployment environments, or
-  available capabilities.
-- **Plug-in architectures** - create implementations registered by extensions
-  without requiring client code to know every concrete type.
-- **Complex construction** - encapsulate creation that requires validation,
-  configuration, several constructor arguments, or collaborating objects.
-- **Stable client interfaces** - allow concrete implementations to change while
-  callers continue depending on the same contract.
-
-A factory does not need to perform all of these jobs. They are examples of
-creation responsibilities that can justify introducing a factory boundary.
-
----
-
-## Benefits
-
-This design provides several practical benefits:
-
-- Client code is decoupled from concrete animal classes.
-- Object-selection logic has one clear home.
-- The factory returns a stable `Animal` contract.
-- New registered implementations do not require another conditional branch.
-- Concrete classes remain small and independently focused.
-- Static type checking can verify the contract.
-- Creation policy can change without forcing equivalent changes throughout
-  client code.
-
----
-
-## Trade-offs
-
-A factory introduces another abstraction and another place a developer must
-look when tracing object creation.
-
-That cost is worthwhile when creation genuinely requires selection, policy, or
-encapsulation. It is unnecessary when direct construction is already clear.
-
-Do not replace:
-
-```python
-lion = Lion()
-```
-
-with a factory merely because factories are considered a design pattern.
-
-A design pattern should solve an identifiable design problem.
-
----
-
-## Related object-oriented examples
-
-This factory example intentionally keeps the `Animal` contract narrow.
-
-For other OO design questions, see the related example sets:
-
-- **Composition** - modelling multiple or changeable behaviours separately and
-  combining them with objects that use them.
-- **Domain Modelling** - deciding whether differences between objects belong in
-  data or justify separate types.
-- **Responsibilities and Collaboration** - deciding which object should own a
-  responsibility and how focused objects should work together.
-
-These examples use familiar Zoo concepts, but the design principles apply
-equally to objects such as documents, orders, notifications, reports, storage
-providers, or payment processors.
-
----
-
-## Run the factory example
-
-From the repository root:
-
-```text
-python -m object_oriented.factory.factory_example
-```
-
-Expected output:
-
-```text
-Hiss!
-Bleat!
-Roar!
-Trumpet!
-```
-
-The output is intentionally simple. The interesting part of this factory example is
-how the objects are designed, created, typed, and used.
-
----
-
-## Related concepts
-
-The [Object-Oriented Python Glossary](../GLOSSARY.md) explains terminology used
-throughout this factory example, including:
-
-- [Abstraction](../GLOSSARY.md#abstraction)
-- [Client Code](../GLOSSARY.md#client-code)
-- [Concrete Class](../GLOSSARY.md#concrete-class)
-- [Contract](../GLOSSARY.md#contract)
-- [Coupling](../GLOSSARY.md#coupling)
-- [Factory](../GLOSSARY.md#factory)
-- [Polymorphism](../GLOSSARY.md#polymorphism)
-- [Protocol](../GLOSSARY.md#protocol)
-- [Public API](../GLOSSARY.md#public-api)
-- [Registry](../GLOSSARY.md#registry)
-- [Structural Typing](../GLOSSARY.md#structural-typing)
-
----
-
-| File | Last Updated | Maintainer |
-| :--- | :---: | ---: |
-| _object_oriented/factory/README.md_ | _4 September 2026_ | _lizc-au_ |
+_Last updated: 24 September 2026 · Maintained by [@lizc-au](https://github.com/lizc-au)_
